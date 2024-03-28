@@ -1,0 +1,78 @@
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+@use '../global/mixins' as *;
+
+.blog-single {
+  padding: 60px 0;
+  position: relative;
+
+  @include breakpoint(lg) {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
+  &__teaser-image {
+    height: 320px;
+    width: 100%;
+    object-fit: cover;
+
+    @include breakpoint(lg) {
+      height: 500px;
+    }
+  }
+
+  &__heading {
+    @extend %heading-large;
+
+    max-width: 800px;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 3.125rem;
+
+    &-border {
+      width: 30px;
+      height: 2px;
+      background: var(--color-primary);
+      margin-right: 10px;
+    }
+  }
+
+  &__introduction {
+    font-style: italic;
+    margin-top: 2rem;
+  }
+
+  &__content {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  &__content-item {
+    margin-bottom: 2rem;
+
+    &__heading {
+      @extend %heading-large;
+
+      font-size: 1.5rem;
+      margin-bottom: 1.875rem;
+    }
+
+    &__image {
+      margin: 2rem 0;
+      width: 100%;
+      aspect-ratio: auto;
+      object-fit: contain;
+      max-height: 80vh;
+
+      @include breakpoint(lg) {
+        max-width: 80%;
+        margin: 2.5rem 0;
+      }
+    }
+  }
+}

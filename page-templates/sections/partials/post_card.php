@@ -1,26 +1,39 @@
-<?php 
-    $title = get_the_title($post_id);
-    $link = get_permalink($post_id);
-    $image = get_the_post_thumbnail($post_id, 'medium', array('class' => 'post-card__image'));
-    $excerpt = get_excerpt_by_id(100, 'content', $post_id);
+<?php
+$title = get_the_title($post_id);
+$link = get_permalink($post_id);
+$image = get_the_post_thumbnail($post_id, 'large', array('class' => 'post-card__image'));
+$intro = get_field('introduction', $post_id);
+$date = get_the_date('F Y', $post_id);
 ?>
 
-<div class="post-card">
-    <span class="post-card__heading">
-        <?php echo $image;?>
-        <strong class="post-card__title">
-            <?php echo $title;?>
-        </strong>
-        <div class="post-card__text">
-            <?php echo $excerpt;?>...
+<?php if (!$intro) {
+    $intro = strip_tags($intro);
+} ?>
+
+<div class="col">
+    <a href="<?php echo $link; ?>" class="text-decoration-none">
+        <div class="post-card">
+            <div class="post-card__content">
+                <?php echo $image; ?>
+
+                <div class="post-card__content--grow">
+                    <?php if ($title): ?>
+                        <div class="post-card__title">
+                            <strong>
+                                <?php echo $title; ?>
+                            </strong>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <?php if ($intro): ?>
+                    <div class="post-card__text">
+                        <?php echo strip_tags($intro); ?>...
+                    </div>
+                <?php endif; ?>
+                <a href="<?php echo $link; ?>" class="post-card__link">
+                    Artikel lesen
+                </a>
+            </div>
         </div>
-        <a href="<?php echo $link;?>" class="post-card__link">
-            Mehr lesen 
-            <img 
-                src="<?php echo get_theme_icon_url('chevron-right.svg') ?>" 
-                alt="" 
-                class="post-card__icon"
-            />
-        </a>
-    </span>
+    </a>
 </div>

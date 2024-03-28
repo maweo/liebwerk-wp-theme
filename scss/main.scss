@@ -31,6 +31,14 @@
 @forward './sections/grid';
 @forward './sections/post-grid';
 
+// Pages
+@forward './pages/blog-single';
+
+// Woocommerce
+@forward './woocommerce/general';
+@forward './woocommerce/archive-product';
+@forward './woocommerce/product-card';
+
 // Sections Partials
 @forward './sections/partials/post-card';
 @forward './sections/google-map';

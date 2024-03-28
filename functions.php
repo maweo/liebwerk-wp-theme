@@ -3,7 +3,7 @@
  * All the functions are in the PHP files in the `functions/` folder.
  */
 
-if ( ! defined('ABSPATH') ) {
+if (!defined('ABSPATH')) {
   exit;
 }
 
@@ -16,6 +16,7 @@ require get_template_directory() . '/config/enqueues.php';
 require get_template_directory() . '/config/acf.php';
 require get_template_directory() . '/config/bloat.php';
 require get_template_directory() . '/config/cpt.php';
+require get_template_directory() . '/config/woocommerce.php';
 
 require get_template_directory() . '/utils/acf_image_utils.php';
 require get_template_directory() . '/utils/content_utils.php';

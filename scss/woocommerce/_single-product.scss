@@ -1,0 +1,101 @@
+@use '../theme/type' as *;
+@use '../global/mixins' as *;
+@use '../theme/colors' as *;
+@use '../theme/buttons' as *;
+
+.liebwerk-single-product {
+  padding: 30px 0;
+
+  @include breakpoint(lg) {
+    padding: 45px 0;
+  }
+
+  &__heading {
+    @extend %heading-small;
+  }
+
+  &__subheading {
+    @extend %heading-small;
+
+    color: var(--color-primary);
+    font-size: 1rem;
+    border-bottom: 1px solid whitesmoke;
+    margin-bottom: 0.5rem;
+  }
+
+  /* stylelint-disable */
+  .woocommerce-product-gallery {
+    width: 100% !important;
+  }
+
+  .woocommerce-product-gallery__image {
+    a {
+      pointer-events: none;
+    }
+
+    img {
+      height: 300px !important;
+      object-fit: cover !important;
+
+      @include breakpoint(lg) {
+        height: 450px !important;
+      }
+    }
+  }
+
+  /* stylelint-enable */
+
+  &__right-col {
+    @include breakpoint(lg) {
+      max-width: 450px;
+    }
+  }
+
+  &__categories {
+    display: flex;
+    flex-flow: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  &__category-item {
+    padding: 4px 8px;
+    border: 1px solid var(--color-primary);
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  &__price-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__price {
+    &--regular {
+      font-weight: 500;
+      font-size: 1.125rem;
+      color: grey;
+      display: block;
+      text-decoration: line-through;
+    }
+
+    &--sale {
+      font-weight: 500;
+      font-size: 1.125rem;
+      color: black;
+    }
+  }
+
+  &__add-to-cart-button {
+    @extend %button;
+
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 50px;
+  }
+}

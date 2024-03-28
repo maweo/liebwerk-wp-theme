@@ -8,8 +8,18 @@ html {
   font-size: 16px;
 }
 
+main,
+body {
+  min-height: 80vh;
+  margin-top: var(--header-height);
+}
+
 .header-height {
   margin-top: var(--header-height);
+}
+
+a {
+  text-decoration: inherit;
 }
 
 p {
