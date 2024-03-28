@@ -3,10 +3,14 @@
 :root {
   --button-padding: 20px 30px;
   --button-font-size: 16px;
-  --button-border-radius: 0; // No Radius in Screendesign
+  --button-border-radius: 0;
 }
 
 %button {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  text-decoration: none;
   cursor: pointer;
   padding: var(--button-padding);
   font-size: var(--button-font-size);
@@ -18,17 +22,6 @@
   @include breakpoint(lg) {
     width: fit-content;
   }
-
-  &:hover {
-    background-color: transparent;
-  }
-}
-
-%button-cta {
-  color: var(--color-black);
-  background-color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-  text-decoration: none;
 
   &:hover {
     color: var(--color-black);
@@ -46,11 +39,11 @@
   text-align: center;
   color: var(--color-text);
   text-decoration: none;
-  transition: ease .3s;
+  transition: ease 0.3s;
 
   &:hover {
-      color: var(--color-text);
-      background-color: var(--color-brand);
+    color: var(--color-text);
+    background-color: var(--color-brand);
   }
 }
 

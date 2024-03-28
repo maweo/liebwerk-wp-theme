@@ -21,18 +21,8 @@
   &__button {
     @extend %button;
 
-    text-decoration: none;
-    background-color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-    color: var(--color-black);
-    margin-top: 50px;
     display: block;
-
-    &:hover {
-      background-color: transparent;
-      transition: 0.3s ease all;
-      color: var(--color-black);
-    }
+    margin-top: 50px;
   }
 
   &__text {

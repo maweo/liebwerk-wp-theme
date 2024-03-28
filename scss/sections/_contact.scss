@@ -107,7 +107,6 @@
 
   input[type='submit'] {
     @extend %button;
-    @extend %button-cta;
 
     display: block;
     margin-top: 40px;

@@ -35,7 +35,6 @@
   &__button {
     width: fit-content;
     @extend %button;
-    @extend %button-cta;
 
     display: block;
     margin-top: 60px;

@@ -52,7 +52,6 @@
 
   &__home-button {
     @extend %button;
-    @extend %button-cta;
 
     display: block;
     margin: 40px auto;

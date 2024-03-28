@@ -4,7 +4,7 @@
 @use '../theme/buttons' as *;
 
 .footer {
-  background-color: var(--color-primary);
+  background: var(--color-white);
   padding: 40px 0;
 
   @include breakpoint(lg) {
@@ -12,10 +12,11 @@
   }
 
   &__logo {
-    max-width: 100%;
+    max-width: 150px;
     height: auto;
     object-fit: contain;
     margin-bottom: 40px;
+    padding: 10px 0 15px;
 
     @include breakpoint(lg) {
       margin-bottom: 20px;
