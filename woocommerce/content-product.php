@@ -26,12 +26,12 @@ if (empty($product) || !$product->is_visible()) {
 
 ?>
 
-<div class="col-md-6 col-lg-6 liebwerk-product-card mb-4">
+<div class="col-md-6 col-lg-4 liebwerk-product-card mb-4">
     <a href="<?php echo get_permalink($product->id) ?>" class="liebwerk-product-card--item">
         <!-- Image -->
         <div class="liebwerk-product-card__image">
             <?php if ($product->get_image_id()): ?>
-                <img src="<?php echo wp_get_attachment_image_url($product->get_image_id(), 'medium'); ?>"
+                <img src="<?php echo wp_get_attachment_image_url($product->get_image_id(), 'large'); ?>"
                     alt="<?php get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE); ?>">
             <?php else: ?>
                 <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/woocommerce-placeholder.png' ?>"

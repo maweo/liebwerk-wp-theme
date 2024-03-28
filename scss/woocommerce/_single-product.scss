@@ -24,26 +24,41 @@
   }
 
   /* stylelint-disable */
-  .woocommerce-product-gallery {
+  .woo-product-gallery-slider {
     width: 100% !important;
   }
 
-  .woocommerce-product-gallery__image {
-    a {
-      pointer-events: none;
-    }
+  .wpgs-for .slick-list {
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 1rem;
 
     img {
-      height: 300px !important;
-      object-fit: cover !important;
-
-      @include breakpoint(lg) {
-        height: 450px !important;
-      }
+      height: 500px !important;
+      object-fit: contain !important;
     }
   }
 
-  /* stylelint-enable */
+  .wpgs-nav .slick-slide {
+    border-radius: 1rem;
+
+    img {
+      height: 110px !important;
+      object-fit: contain !important;
+      background: whitesmoke;
+      border-radius: 1rem;
+    }
+  }
+
+  .flaticon-back {
+    left: 10px;
+  }
+
+  .flaticon-right-arrow {
+    right: 10px;
+  }
+
+  // /* stylelint-enable */
 
   &__right-col {
     @include breakpoint(lg) {
