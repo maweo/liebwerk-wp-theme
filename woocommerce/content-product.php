@@ -26,7 +26,7 @@ if (empty($product) || !$product->is_visible()) {
 
 ?>
 
-<div class="col-md-6 col-lg-6 liebwerk-product-card">
+<div class="col-md-6 col-lg-6 liebwerk-product-card mb-4">
     <a href="<?php echo get_permalink($product->id) ?>" class="liebwerk-product-card--item">
         <!-- Image -->
         <div class="liebwerk-product-card__image">

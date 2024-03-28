@@ -35,7 +35,7 @@ $term_id = $queried_object->term_id ?? null;
             <div class="row">
                 <div class="col-lg-3">
                     <!-- WooCommerce Product filter sidebar -->
-                    <h2>Product Filter</h2>
+                    <?php echo do_shortcode('[br_filters_group group_id=80]'); ?>
                 </div>
                 <div class="col-lg-9">
                     <?php
