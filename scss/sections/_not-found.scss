@@ -1,0 +1,60 @@
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+@use '../global/mixins' as *;
+
+.not-found {
+  min-height: 80vh;
+  margin-bottom: 80px;
+  margin-top: calc(var(--header-height));
+  text-align: center;
+
+  &--fit {
+    padding: 3rem 0;
+  }
+
+  &--fullwidth {
+    padding: 0;
+  }
+
+  &__image {
+    margin-bottom: 2rem;
+
+    &--contain {
+      max-height: 300px;
+      max-width: 200px;
+      object-fit: contain;
+    }
+
+    &--cover {
+      max-height: 300px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__heading {
+    @extend %heading-large;
+
+    margin: 0;
+    text-align: center;
+  }
+
+  &__subheading {
+    @extend %text;
+
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__home-button {
+    @extend %button;
+    @extend %button-cta;
+
+    display: block;
+    margin: 40px auto;
+  }
+}

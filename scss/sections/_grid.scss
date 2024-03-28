@@ -1,0 +1,82 @@
+@use '../global/mixins' as *;
+@use '../global/global' as *;
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+
+.grid {
+  padding: 102px 0;
+
+  &__row {
+    gap: 16px;
+    justify-content: center;
+  }
+
+  &__content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__heading {
+    margin-bottom: 30px;
+    font-weight: bold;
+
+    @include breakpoint(lg) {
+      font-size: 2.625rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+  }
+
+  &__element {
+    padding: 40px 50px;
+    background-color: var(--color-secondary-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include breakpoint(md) {
+      align-items: baseline;
+      text-align: left;
+    }
+
+    &-icon {
+      margin-bottom: 30px;
+      height: 70px;
+      width: 70px;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: cover;
+    }
+
+    &-title {
+      @extend %heading-small;
+
+      margin-bottom: 15px;
+      line-height: 2.125rem;
+    }
+
+    &-text {
+      margin-bottom: 30px;
+      flex: 1;
+    }
+
+    &-link {
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 20px 30px;
+      border: 2px solid var(--color-primary);
+      width: fit-content;
+      display: block;
+      transition: 0.2s all ease-in;
+
+      &:hover {
+        background: var(--color-primary);
+        color: var(--color-text);
+      }
+    }
+  }
+}

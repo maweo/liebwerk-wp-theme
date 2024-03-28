@@ -1,0 +1,108 @@
+@use 'mixins' as *;
+@use 'global' as *;
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+
+.footer {
+  background-color: var(--color-primary);
+  padding: 40px 0;
+
+  @include breakpoint(lg) {
+    padding: 60px 0;
+  }
+
+  &__logo {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 40px;
+
+    @include breakpoint(lg) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    width: 90%;
+    margin-bottom: 21px;
+
+    @include breakpoint(lg) {
+      margin-bottom: 38px;
+    }
+  }
+
+  &__social-links {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__social-link {
+    height: 20px;
+    width: 20px;
+  }
+
+  &__social-link-icon {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__heading {
+    @extend %heading-small;
+
+    margin-bottom: 19px;
+    margin-top: 40px;
+
+    @include breakpoint(lg) {
+      margin-top: 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    color: var(--color-text);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    @include breakpoint(lg) {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 32px;
+    margin-top: 24px;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__address {
+    @extend %text;
+  }
+
+  &__contact-link {
+    color: var(--color-text);
+    margin-top: 10px;
+    display: block;
+
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+}

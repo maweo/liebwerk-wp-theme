@@ -1,0 +1,53 @@
+@use '../../theme/type' as *;
+@use '../../theme/buttons' as *;
+@use '../../global/mixins' as *;
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 5 / 4;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        @extend %sub-heading;
+
+        color: var(--color-black);
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        @extend %text;
+
+        margin-bottom: 30px;
+    }
+
+    &__link {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--color-brand);
+        font-weight: 700;
+        font-family: var(--font-primary);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+
+        &:hover {
+            text-decoration: none;
+            color: var(--color-brand);
+        }
+    }
+
+    &__icon {
+        height: .75rem;
+        width: auto;
+    }
+}

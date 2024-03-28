@@ -1,0 +1,41 @@
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+@use '../global/mixins' as *;
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  padding: 5px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &--white {
+    background-color: var(--color-white);
+  }
+
+  &--black {
+    background-color: var(--color-black);
+  }
+
+  &--primary {
+    background-color: var(--color-primary);
+  }
+
+  &--secondary {
+    background-color: var(--color-secondary);
+  }
+
+  &:hover {
+    filter: brightness(0.95);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  img {
+    object-fit: contain;
+    height: 45px;
+    width: 45px;
+    mix-blend-mode: multiply;
+  }
+}

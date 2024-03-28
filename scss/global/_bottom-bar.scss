@@ -1,0 +1,47 @@
+@use 'mixins' as *;
+@use 'global' as *;
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+
+.bottom-bar {
+  background-color: var(--color-secondary-light);
+  padding: 30px 0;
+
+  &__text {
+    font-size: 0.75rem;
+    color: var(--color-text);
+
+    &--highlight {
+      color: var(--color-primary);
+    }
+  }
+
+  &__company {
+    @include breakpoint(lg) {
+      text-align: right;
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    height: 100%;
+    margin-bottom: 10px;
+
+    @include breakpoint(lg) {
+      justify-content: center;
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-size: 0.75rem;
+    color: var(--color-text);
+
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+}

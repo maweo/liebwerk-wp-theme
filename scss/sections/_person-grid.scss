@@ -1,0 +1,130 @@
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+@use '../global/mixins' as *;
+
+.person-grid {
+  padding: 60px 0;
+
+  @include breakpoint(lg) {
+    padding: 100px 0;
+  }
+
+  &--color {
+    background: var(--color-secondary-light);
+  }
+
+  &__heading {
+    @extend %heading-large;
+
+    margin: 0 0 37px;
+    text-align: center;
+
+    @include breakpoint(lg) {
+      margin: 0 0 50px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 30px;
+
+    @include breakpoint(md) {
+      justify-content: center;
+      gap: 60px;
+      grid-template-columns: repeat(2, minmax(200px, 400px));
+    }
+
+    @include breakpoint(xl) {
+      row-gap: 60px 290px;
+    }
+  }
+
+  &__card {
+    background-color: var(--color-secondary-light);
+    padding: 37px 70px;
+
+    &--color {
+      background-color: var(--color-white);
+    }
+  }
+
+  &__card-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 29px;
+
+    @include breakpoint(lg) {
+      width: 170px;
+      height: 170px;
+    }
+  }
+
+  &__card-name {
+    @extend %heading-small;
+
+    display: block;
+    margin-bottom: 4px;
+    text-align: left;
+
+    @include breakpoint(lg) {
+      margin-bottom: 12px;
+      text-align: center;
+    }
+  }
+
+  &__card-position {
+    @extend %text;
+
+    display: block;
+    text-align: left;
+    margin-bottom: 29px;
+
+    @include breakpoint(lg) {
+      margin-bottom: 29px;
+      text-align: center;
+    }
+  }
+
+  &__card-text {
+    @extend %text;
+
+    display: block;
+    text-align: left;
+    margin-bottom: 30px;
+
+    @include breakpoint(lg) {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__card-contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+
+    @include breakpoint(lg) {
+      gap: 12px;
+    }
+  }
+
+  &__card-contact-link {
+    color: var(--color-primary);
+    font-size: 1rem;
+    text-align: center;
+
+    &:hover {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    @include breakpoint(lg) {
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+}

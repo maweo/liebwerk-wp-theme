@@ -1,0 +1,61 @@
+@use '../global/mixins' as *;
+
+:root {
+  --button-padding: 20px 30px;
+  --button-font-size: 16px;
+  --button-border-radius: 0; // No Radius in Screendesign
+}
+
+%button {
+  cursor: pointer;
+  padding: var(--button-padding);
+  font-size: var(--button-font-size);
+  font-weight: 700;
+  border-radius: var(--button-border-radius);
+  width: 100%;
+  text-align: center;
+
+  @include breakpoint(lg) {
+    width: fit-content;
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+%button-cta {
+  color: var(--color-black);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-black);
+    background-color: var(--color-white);
+  }
+}
+
+%button-highlight {
+  cursor: pointer;
+  padding: 20px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 2px solid var(--color-brand);
+  border-radius: var(--button-border-radius);
+  text-align: center;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: ease .3s;
+
+  &:hover {
+      color: var(--color-text);
+      background-color: var(--color-brand);
+  }
+}
+
+%button-highlight-active {
+  @extend %button-highlight;
+
+  background-color: var(--color-brand);
+}

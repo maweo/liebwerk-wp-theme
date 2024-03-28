@@ -1,0 +1,40 @@
+@use '../global/mixins' as *;
+
+%heading-large {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  font-size: 1.625rem;
+  font-weight: 700;
+
+  @include breakpoint(lg) {
+    font-size: 2.625rem;
+  }
+}
+
+%heading-small {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  @include breakpoint(lg) {
+    font-size: 1.625rem;
+  }
+}
+
+%sub-heading {
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  @include breakpoint(lg) {
+    font-size: 1.625rem;
+  }
+}
+
+%text {
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.5;
+}

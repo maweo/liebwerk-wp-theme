@@ -1,0 +1,11 @@
+@use '../global/mixins' as *;
+
+.text-block {
+  &__heading {
+    color: var(--color-primary);
+
+    @include breakpoint(lg) {
+      color: var(--color-secondary);
+    }
+  }
+}
