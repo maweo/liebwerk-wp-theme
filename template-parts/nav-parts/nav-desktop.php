@@ -76,7 +76,7 @@
                     class="nav-desktop__actions-icon"
                 />
             </a>
-            <a class="ws-nav__actions-link" href="<?php echo wc_get_page_permalink('myaccount') ?>">
+            <a class="nav-desktop__cart-link" href="<?php echo wc_get_page_permalink('myaccount') ?>">
                 <img 
                     src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/user.svg' ?>"
                     alt="Account Icon"

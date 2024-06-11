@@ -34,11 +34,11 @@
   }
 
   &__links li a {
-    color: var(--color-primary);
-    font-weight: 700;
     text-decoration: none;
     transition: all 0.3s ease;
     border-radius: 0;
+    color: var(--color-primary);
+    font-weight: 700;
     font-size: 1.125rem;
     letter-spacing: 0.36px;
   }
@@ -96,7 +96,7 @@
     opacity: 0;
     visibility: hidden;
     box-shadow: 0 6px 10px rgba(0 0 0 / 5%);
-    margin-top: 1px;
+    margin-top: 2px;
     padding: 35px 40px;
     border: 2px solid var(--color-primary);
     border-top: 0;
