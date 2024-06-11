@@ -1,9 +1,9 @@
 <nav class="nav-desktop maweo-border-bottom--<?php echo $borderClass ?>">
     <div class="nav-desktop__wrapper container">
-        <a href="<?php echo get_home_url() ?>">
-            <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>" class="nav-desktop__logo" />
-        </a>
-        <div>
+        <div class="nav-desktop__links-wrapper">
+            <a href="<?php echo get_home_url() ?>">
+                <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>" class="nav-desktop__logo" />
+            </a>
             <ul class="nav-desktop__links">
                 <?php foreach($mainMenuDe['menu_item'] as $index => $menuItem): ?>
                     <?php $menuType = $menuItem['menu_type']; ?>
@@ -67,6 +67,22 @@
                     <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
+        </div>
+        <div class="nav-desktop__actions">
+            <a href="<?php echo wc_get_cart_url(); ?>" class="nav-desktop__cart-link">
+                <img 
+                    src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/cart.svg' ?>"
+                    alt="Cart Icon"
+                    class="nav-desktop__actions-icon"
+                />
+            </a>
+            <a class="ws-nav__actions-link" href="<?php echo wc_get_page_permalink('myaccount') ?>">
+                <img 
+                    src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/user.svg' ?>"
+                    alt="Account Icon"
+                    class="nav-desktop__actions-icon"
+                />
+            </a>
             <?php if($show_language_switcher): ?>
                 <label htmlFor="language-btn" class="nav-desktop__menu-button language-btn">
                     <i class="bi bi-translate"></i>
