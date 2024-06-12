@@ -10,14 +10,13 @@
   width: 100%;
   background: var(--color-white);
 
-  
   &__logo {
     /* stylelint-disable */
-    height: var(--header-height) !important; // Important needed, because WooCommerce overwrites all Image Styles :D 
+    height: var(--header-height) !important; // Important needed, because WooCommerce overwrites all Image Styles :D
     width: 100%;
     padding: 14px 0;
     object-fit: contain;
-    max-width: 160px !important; // Important needed, because WooCommerce overwrites all Image Styles :D 
+    max-width: 160px !important; // Important needed, because WooCommerce overwrites all Image Styles :D
     margin-left: -15px;
     /* stylelint-enable */
   }
@@ -175,8 +174,9 @@
       cursor: pointer;
       margin-left: 10px;
 
-    &:hover {
-      color: var(--color-primary);
+      &:hover {
+        color: var(--color-primary);
+      }
     }
   }
 }
