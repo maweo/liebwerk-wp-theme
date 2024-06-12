@@ -112,6 +112,23 @@
                 </label>
             <?php endif; ?>
 
+            <div class="nav-mobile__actions">
+                <a href="<?php echo wc_get_cart_url(); ?>" class="nav-mobile__actions-link">
+                    <img 
+                        src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/cart.svg' ?>"
+                        alt="Cart Icon"
+                        class="nav-mobile__actions-icon"
+                    />
+                </a>
+                <a href="<?php echo wc_get_page_permalink('myaccount') ?>" class="nav-mobile__actions-link">
+                    <img 
+                        src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/user.svg' ?>"
+                        alt="Account Icon"
+                        class="nav-mobile__actions-icon"
+                    />
+                </a>
+            </div>
+
             <label for="menu-btn" class="nav-mobile__menu-button menu-btn">
                 <i class="bi bi-list"></i>
             </label>
@@ -119,6 +136,7 @@
             <label for="close-btn" class="nav-mobile__menu-button close-btn">
                 <i class="bi bi-x-lg"></i>
             </label>
+
         </div>
     </div>
 </nav>

@@ -11,12 +11,14 @@
   background: var(--color-white);
 
   &__logo {
-    height: var(--header-height);
+    /* stylelint-disable */
+    height: var(--header-height) !important; // Important needed, because WooCommerce overwrites all Image Styles :D
     width: 100%;
-    padding: 10px 0 15px;
+    padding: 14px 0;
     object-fit: contain;
-    max-width: 160px;
+    max-width: 160px !important; // Important needed, because WooCommerce overwrites all Image Styles :D
     margin-left: -15px;
+    /* stylelint-enable */
   }
 
   &__wrapper {
@@ -31,12 +33,13 @@
   }
 
   &__links li a {
-    color: var(--color-black);
     text-decoration: none;
-    padding: 9px 10px;
-    height: 100%;
     transition: all 0.3s ease;
     border-radius: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: 0.36px;
   }
 
   // MEGA MENU
@@ -52,7 +55,6 @@
     &__content {
       margin-top: 1px;
       padding: 20px 20px 30px;
-      background: var(--color-white);
       box-shadow: 0 6px 10px rgba(0 0 0 / 5%);
       width: 100%;
       display: flex;
@@ -87,30 +89,56 @@
   &__dropdown {
     position: absolute;
     background: var(--color-white);
-    width: 210px;
     top: calc(100% + 10px);
-    line-height: 22px;
+    margin-left: -40px;
+    line-height: 18px;
     opacity: 0;
     visibility: hidden;
     box-shadow: 0 6px 10px rgba(0 0 0 / 5%);
-    margin-top: 1px;
-    padding: 10px 0;
+    margin-top: 2px;
+    padding: 35px 40px;
+    border: 2px solid var(--color-primary);
+    border-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
     &--link {
       color: var(--color-black);
       display: block;
-      padding: 0 0 0 15px;
       border-radius: 0;
       background: none;
+      text-decoration: none;
 
       &:hover {
+        text-decoration: none;
         opacity: 0.8;
       }
     }
   }
 
+  &__links-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+  }
+
   &__links {
     display: inline-flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+  }
+
+  &__actions-icon {
+    height: 25px;
   }
 
   &__links li {
@@ -123,10 +151,6 @@
     color: var(--color-black);
 
     &:hover {
-      a {
-        background: rgba(0 0 0 / 15%);
-      }
-
       .nav-desktop__mega-box__sub-menu-title,
       .nav-desktop__mega-box__sub-menu-link,
       .nav-desktop__dropdown--link {
@@ -151,8 +175,7 @@
       margin-left: 10px;
 
       &:hover {
-        filter: brightness(0);
-        opacity: 0.8;
+        color: var(--color-primary);
       }
     }
   }
