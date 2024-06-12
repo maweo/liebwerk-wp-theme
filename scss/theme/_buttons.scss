@@ -1,7 +1,7 @@
 @use '../global/mixins' as *;
 
 :root {
-  --button-padding: 20px 30px;
+  --button-padding: 12px 30px;
   --button-font-size: 16px;
   --button-border-radius: 0;
 }
@@ -24,8 +24,31 @@
   }
 
   &:hover {
-    color: var(--color-black);
-    background-color: var(--color-white);
+    color: var(--color-primary);
+    background-color: transparent;
+  }
+}
+
+%button-secondary {
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  text-decoration: none;
+  cursor: pointer;
+  padding: var(--button-padding);
+  font-size: var(--button-font-size);
+  font-weight: 700;
+  border-radius: var(--button-border-radius);
+  width: 100%;
+  text-align: center;
+
+  @include breakpoint(lg) {
+    width: fit-content;
+  }
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
   }
 }
 
