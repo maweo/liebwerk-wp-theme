@@ -17,77 +17,82 @@
   }
 
   &__heading {
-    @extend %heading-large;
+    @extend %heading-x-large;
 
-    &--light {
-      color: var(--color-black);
-    }
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    line-height: 1;
+  }
 
-    &--dark {
-      color: var(--color-white);
+  &__subheading-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  &__subheading {
+    @extend %sub-heading;
+
+    color: var(--color-gold);
+
+    @include breakpoint(lg) {
+      font-size: 2rem;
     }
   }
 
-  &__text {
-    // for text color -> opposite of overlay
-    &--light {
-      color: var(--color-black);
-    }
+  &__subheading-image {
+    height: auto;
+    width: 2rem;
 
-    &--dark {
-      color: var(--color-white);
+    @include breakpoint(lg) {
+      width: 2.5rem;
     }
   }
 
-  &__button {
-    width: fit-content;
+  &__link-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
   }
 
   &__link {
     @extend %button;
 
     display: block;
-    margin-top: 40px;
+    width: fit-content;
+  }
 
-    @include breakpoint(lg) {
-      margin-top: 42px;
-    }
+  &__link-secondary {
+    @extend %button-secondary;
+
+    display: block;
+    width: fit-content;
   }
 
   &--height {
     min-height: 100%;
 
     &--half {
-      height: 50vh;
+      min-height: 55vh;
     }
 
     &--full {
-      height: 100vh;
-
-      // TODO: - header height
+      min-height: 90vh;
     }
   }
 
-  // overlay: image & video
   &__overlay {
-    &--light {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background-color: var(--color-background-overlay-light);
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba(255 255 255 / 2%);
 
-    &--dark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background-color: var(--color-background-overlay-dark);
+    @include breakpoint(lg) {
+      background-color: none;
     }
   }
 
@@ -98,71 +103,14 @@
     width: 100%;
     height: 100%;
     z-index: -2;
-    background-position: center;
+    background-position: right center;
     background-size: cover;
     background-repeat: no-repeat;
-  }
+    filter: blur(2px);
 
-  &__background-video {
-    position: absolute;
-    z-index: -1;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-
-    &--primary {
-      background-color: var(--color-primary);
+    @include breakpoint(lg) {
+      background-position: center;
+      filter: blur(0);
     }
-
-    &--secondary {
-      background-color: var(--color-secondary);
-    }
-  }
-
-  &__carousel-fullscreen {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-
-    .carousel-inner {
-      height: 100%;
-    }
-  }
-
-  .carousel-inner {
-    .carousel-item {
-      background-color: var(--color-primary);
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      width: 100%;
-      position: relative;
-      z-index: -1;
-    }
-  }
-
-  // bootstrap 5 carousel arrow position
-  .carousel-control-prev {
-    left: 0;
-    width: 5%;
-  }
-
-  .carousel-control-next {
-    right: 0;
-    width: 5%;
   }
 }
