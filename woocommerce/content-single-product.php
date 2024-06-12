@@ -64,10 +64,14 @@ $terms = get_the_terms($product->get_id(), 'product_cat');
                             <?php echo $product->get_name(); ?>
                         </h1>
 
+                        <!-- Price -->
+                        <div class="liebwerk-single-product__price">
+                            <?php echo $product->get_price_html(); ?>
+                        </div>
+
                         <!-- Product SHORT Description -->
                         <?php if ($short_description = $product->get_short_description()): ?>
                             <div class="my-3">
-                                <div class="liebwerk-single-product__subheading">Description:</div>
                                 <!-- short description -->
                                 <?php echo $product->get_short_description(); ?>
                             </div>
