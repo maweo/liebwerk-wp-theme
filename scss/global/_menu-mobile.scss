@@ -38,7 +38,7 @@
     height: 100vh;
     width: 100%;
     max-width: 100%;
-    top: calc(var(--header-height-mobile) + 1px);
+    top: calc(var(--header-height-mobile) - 1px);
     margin: 0;
     background: var(--color-beige);
     display: block;
@@ -199,7 +199,7 @@
 
   .accordion-collapse {
     color: var(--color-primary);
-    background: rgba(0 0 0 / 10%);
+    background: transparent;
   }
 
   .accordion-body {
