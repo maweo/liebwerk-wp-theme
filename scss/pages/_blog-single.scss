@@ -11,13 +11,12 @@
     margin: 0 auto;
   }
 
-  &__teaser-image {
-    height: 320px;
-    width: 100%;
-    object-fit: cover;
+  &__back {
+    color: var(--color-primary);
+    font-weight: bold;
 
-    @include breakpoint(lg) {
-      height: 500px;
+    &:hover {
+      color: var(--color-primary);
     }
   }
 
@@ -25,31 +24,42 @@
     @extend %heading-large;
 
     max-width: 800px;
+    margin-top: 0.8rem;
+    color: var(--color-primary);
   }
 
-  &__date {
-    display: flex;
-    align-items: center;
+  &_info {
     color: var(--color-primary);
-    font-weight: 700;
-    margin-bottom: 3.125rem;
+  }
 
-    &-border {
-      width: 30px;
-      height: 2px;
-      background: var(--color-primary);
-      margin-right: 10px;
+  &__teaser-image {
+    height: 320px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0 0 0 / 10%);
+
+    @include breakpoint(lg) {
+      height: 392px;
     }
   }
 
   &__introduction {
-    font-style: italic;
     margin-top: 2rem;
+
+    @include breakpoint(lg) {
+      width: 720px;
+      margin: 2rem auto;
+    }
   }
 
   &__content {
     margin-top: 4rem;
     margin-bottom: 1rem;
+
+    @include breakpoint(lg) {
+      width: 720px;
+      margin: 2rem auto 1rem;
+    }
   }
 
   &__content-item {
@@ -58,6 +68,7 @@
     &__heading {
       @extend %heading-large;
 
+      color: var(--color-primary);
       font-size: 1.5rem;
       margin-bottom: 1.875rem;
     }
@@ -68,11 +79,6 @@
       aspect-ratio: auto;
       object-fit: contain;
       max-height: 80vh;
-
-      @include breakpoint(lg) {
-        max-width: 80%;
-        margin: 2.5rem 0;
-      }
     }
   }
 }

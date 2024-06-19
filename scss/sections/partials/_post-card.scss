@@ -3,51 +3,50 @@
 @use '../../global/mixins' as *;
 
 .post-card {
+  box-shadow: 0 0 20px rgba(0 0 0 / 5%);
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
+    position: relative;
+    padding: 2rem 1.5rem;
+    flex-grow: 1;
+    min-height: 360px;
+  }
 
-    &__image {
-        width: 100%;
-        aspect-ratio: 5 / 4;
-        height: auto;
-        object-fit: cover;
-        display: block;
-        margin-bottom: 20px;
-    }
+  &__title {
+    @extend %sub-heading;
 
-    &__title {
-        @extend %sub-heading;
+    font-size: 1.5rem;
+    color: var(--color-black);
+    display: block;
+    margin-bottom: 15px;
+  }
 
-        color: var(--color-black);
-        display: block;
-        margin-bottom: 15px;
-    }
+  &__text {
+    @extend %text;
 
-    &__text {
-        @extend %text;
+    /* stylelint-disable */
+    display: -webkit-box;
+    /* stylelint-enable */
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
 
-        margin-bottom: 30px;
-    }
+  &__link {
+    @extend %button-secondary;
 
-    &__link {
-        text-transform: uppercase;
-        text-decoration: none;
-        color: var(--color-brand);
-        font-weight: 700;
-        font-family: var(--font-primary);
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 12px;
-
-        &:hover {
-            text-decoration: none;
-            color: var(--color-brand);
-        }
-    }
-
-    &__icon {
-        height: .75rem;
-        width: auto;
-    }
+    margin-top: auto;
+  }
 }
