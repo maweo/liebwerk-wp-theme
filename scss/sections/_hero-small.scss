@@ -68,20 +68,26 @@
   }
 
   &__image {
-    display: none;
     position: relative;
-    height: 100%;
-    width: 100%;
-    padding-top: 96px;
 
     @include breakpoint(lg) {
       display: block;
+      height: 100%;
+      width: 100%;
+      padding-top: 96px;
     }
 
     img {
       position: absolute;
       right: 0;
       bottom: -96px;
+      opacity: 0.2;
+      filter: blur(2px);
+
+      @include breakpoint(lg) {
+        opacity: 1;
+        filter: blur(0);
+      }
     }
   }
 }
