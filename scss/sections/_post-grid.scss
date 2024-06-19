@@ -12,7 +12,7 @@
     @extend %heading-large;
 
     color: var(--color-secondary);
-    margin-bottom: 50px;
+    margin-bottom: 3rem;
     text-align: center;
   }
 
@@ -35,6 +35,14 @@
     @include breakpoint(xl) {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  &__link {
+    @extend %button-secondary;
+
+    display: block;
+    margin: 1.5rem auto;
+    max-width: fit-content;
   }
 
   &__load-more-button {
