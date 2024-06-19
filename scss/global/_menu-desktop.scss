@@ -5,7 +5,7 @@
 
 .nav-desktop {
   position: fixed;
-  top: 0;
+  top: var(--topbar-height);
   z-index: 99;
   width: 100%;
   background: var(--color-white);
