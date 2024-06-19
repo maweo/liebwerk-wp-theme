@@ -1,0 +1,87 @@
+@use '../global/mixins' as *;
+@use '../global/global' as *;
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+
+.hero-small {
+  position: relative;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+
+  @include breakpoint(lg) {
+    &__min-image-height {
+      min-height: 490px;
+      padding: 0;
+    }
+  }
+
+  &__background-color {
+    background-color: var(--color-secondary-light);
+  }
+
+  &__heading {
+    @extend %heading-x-large;
+
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+    line-height: 1;
+
+    @include breakpoint(xl) {
+      font-size: 5.63rem;
+    }
+  }
+
+  &__text {
+    color: var(--color-primary);
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba(255 255 255 / 2%);
+  }
+
+  &__background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    filter: blur(2px);
+
+    @include breakpoint(lg) {
+      background-position: center;
+      filter: blur(0);
+    }
+  }
+
+  &__image {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-top: 96px;
+
+    @include breakpoint(lg) {
+      display: block;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      bottom: -96px;
+    }
+  }
+}
