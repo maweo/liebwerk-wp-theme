@@ -1,0 +1,68 @@
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+@use '../global/mixins' as *;
+
+.image-text {
+  padding: 80px 0;
+  position: relative;
+
+  &__content {
+    @include breakpoint(lg) {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__heading {
+    @extend %heading-large;
+
+    color: var(--color-black);
+  }
+
+  &__sub-heading {
+    @extend %sub-heading;
+
+    color: var(--color-primary);
+
+    @include breakpoint(lg) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    color: var(--color-black);
+  }
+
+  &__link {
+    @extend %button;
+
+    display: block;
+    margin-top: 40px;
+
+    @include breakpoint(lg) {
+      margin-top: 42px;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+
+  &__image {
+    margin-bottom: 2rem;
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+
+    @include breakpoint(lg) {
+      margin-bottom: 0;
+      max-height: 450px;
+    }
+  }
+}
