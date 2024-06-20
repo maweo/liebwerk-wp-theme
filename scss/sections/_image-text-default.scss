@@ -18,7 +18,13 @@
   &__heading {
     @extend %heading-large;
 
-    color: var(--color-black);
+    &--light {
+      color: var(--color-secondary);
+    }
+
+    &--dark {
+      color: var(--color-primary);
+    }
   }
 
   &__sub-heading {
@@ -37,7 +43,7 @@
   }
 
   &__link {
-    @extend %button;
+    @extend %button-secondary;
 
     display: block;
     margin-top: 40px;
