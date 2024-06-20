@@ -15,6 +15,12 @@
     }
   }
 
+  &__icon {
+    width: 4rem;
+    object-fit: contain;
+    margin-bottom: 0.8rem;
+  }
+
   &__heading {
     @extend %heading-large;
 

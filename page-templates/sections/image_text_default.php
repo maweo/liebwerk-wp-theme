@@ -1,4 +1,5 @@
 <?php
+$heading_icon = get_sub_field('heading_icon');
 $heading = get_sub_field('heading');
 $heading_tag = get_sub_field('heading_tag');
 $headline_color = get_sub_field('headline_color');
@@ -20,6 +21,11 @@ $is_centered_mobile_class = get_sub_field('is_text_centered_mobile') ? " d-block
             <div
                 class="col-12 col-lg-6 order-1 <?php echo $image_position === "right" ? "order-lg-0" : "order-lg-2 offset-lg-1 " ?>">
                 <div class="image-text__content">
+                    <?php if ($heading_icon && $heading_icon['url'] != ""): ?>
+                        <img alt="<?php $heading_icon['alt'] ?>"
+                            class="image-text__icon <?php echo $is_centered_mobile_class ?>"
+                            src="<?php echo $heading_icon['url'] ?>">
+                    <?php endif; ?>
                     <?php echo maweo_get_heading($heading, $heading_tag, "image-text__heading mb-0" . $is_centered_mobile_class . $headline_color) ?>
                     <?php if ($sub_heading): ?>
                         <div class="image-text__sub-heading <?php echo $is_centered_mobile_class ?>">
