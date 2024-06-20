@@ -172,6 +172,9 @@
 
       &:focus {
         color: var(--color-primary);
+        border: 0;
+        box-shadow: none;
+        outline: 0;
       }
     }
 
