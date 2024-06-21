@@ -1,42 +1,44 @@
+@use '../global/mixins' as *;
+@use '../global/global' as *;
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+
 .topbar {
   position: fixed;
   top: 0;
   z-index: 99;
   width: 100%;
-  background-color: #ececcc;
+  background-color: var(--color-topbar);
   height: var(--topbar-height);
   display: flex;
   align-items: center;
-}
 
-.topbar__content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.topbar__text {
-  display: block;
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .topbar__content {
-    justify-content: center;
-    position: relative;
+    @include breakpoint(mobile) {
+      justify-content: center;
+      position: relative;
+    }
   }
 
-  .topbar__text {
+  &__text {
     display: block;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-    visibility: hidden;
-  }
+    font-weight: bold;
 
-  .topbar__text.active {
-    opacity: 1;
-    visibility: visible;
+    @include breakpoint(mobile) {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      visibility: hidden;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 }
