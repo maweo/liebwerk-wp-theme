@@ -1,0 +1,45 @@
+@use '../global/mixins' as *;
+@use '../global/global' as *;
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+
+.topbar {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  background-color: var(--color-topbar);
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint(mobile) {
+      justify-content: center;
+      position: relative;
+    }
+  }
+
+  &__text {
+    display: block;
+    font-weight: bold;
+    color: var(--color-primary);
+
+    @include breakpoint(mobile) {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      visibility: hidden;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
