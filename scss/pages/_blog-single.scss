@@ -28,7 +28,7 @@
     color: var(--color-primary);
   }
 
-  &_info {
+  &__info {
     color: var(--color-primary);
   }
 
@@ -43,8 +43,19 @@
     }
   }
 
+  ul {
+    list-style-type: none;
+  }
+
+  ul > li::before {
+    content: '–';
+    position: absolute;
+    margin-left: -1.7em;
+  }
+
   &__introduction {
     margin-top: 2rem;
+    color: var(--color-primary);
 
     @include breakpoint(lg) {
       width: 720px;
@@ -55,11 +66,14 @@
   &__content {
     margin-top: 4rem;
     margin-bottom: 1rem;
+    color: var(--color-primary);
 
     @include breakpoint(lg) {
       width: 720px;
       margin: 2rem auto 1rem;
     }
+
+    // change list bullet from dot to -
   }
 
   &__content-item {
@@ -70,7 +84,7 @@
 
       color: var(--color-primary);
       font-size: 1.5rem;
-      margin-bottom: 1.875rem;
+      margin-bottom: 8px;
     }
 
     &__image {

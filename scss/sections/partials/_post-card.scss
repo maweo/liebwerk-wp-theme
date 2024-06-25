@@ -20,14 +20,14 @@
     position: relative;
     padding: 2rem 1.5rem;
     flex-grow: 1;
-    min-height: 360px;
+    min-height: 300px;
   }
 
   &__title {
     @extend %sub-heading;
 
     font-size: 1.5rem;
-    color: var(--color-black);
+    color: var(--color-primary);
     display: block;
     margin-bottom: 15px;
   }
@@ -35,10 +35,11 @@
   &__text {
     @extend %text;
 
+    color: var(--color-primary);
     /* stylelint-disable */
     display: -webkit-box;
     /* stylelint-enable */
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     margin-bottom: 1rem;
