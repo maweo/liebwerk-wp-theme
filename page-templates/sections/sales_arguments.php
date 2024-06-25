@@ -16,7 +16,7 @@ $item_repeater = get_sub_field('item_repeater');
                 <?php
                 $image = get_image_data($sales_item['item_icon']);
                 ?>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-6 col-lg-3 mb-4">
                     <div class="sales-arguments__card h-100">
                         <?php if ($image['url']): ?>
                             <img src="<?php echo $image['url'] ?>" class="sales-arguments__card--img"

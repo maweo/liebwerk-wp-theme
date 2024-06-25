@@ -25,9 +25,10 @@
   &__card {
     text-align: center;
     color: var(--color-primary);
+    background-color: var(--color-blue-light);
+    padding: 1.5rem 1rem 1rem;
 
     @include breakpoint(lg) {
-      background-color: var(--color-blue-light);
       padding: 2.5rem 1rem 1rem;
     }
 
@@ -36,9 +37,10 @@
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 0.5rem;
+      min-height: 2rem;
 
       @include breakpoint(lg) {
-        min-height: 2.5rem;
+        min-height: 3rem;
         font-size: 1.25rem;
       }
     }
