@@ -5,7 +5,7 @@
 
 .nav-mobile {
   position: fixed;
-  top: 0;
+  top: var(--topbar-height);
   z-index: 99;
   width: 100%;
   background: var(--color-white);
@@ -38,7 +38,7 @@
     height: 100vh;
     width: 100%;
     max-width: 100%;
-    top: calc(var(--header-height-mobile) + 1px);
+    top: calc((var(--header-height-mobile) + 1px) + var(--topbar-height));
     margin: 0;
     background: var(--color-beige);
     display: block;
@@ -244,4 +244,46 @@
     width: 15px;
     height: auto;
   }
+
+  // LANGUAGE SWITCH
+
+  /* Bootstrap overrides/nesting */
+  /* stylelint-disable */
+  .language-switch {
+    .dropdown {
+      margin-left: -1rem;
+    }
+
+    .dropdown-toggle {
+      border: none;
+      font-weight: 700;
+      color: var(--color-primary);
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+    .dropdown-menu {
+      min-width: 1rem;
+      border-radius: 0;
+      border: 2px solid black;
+      padding: 0.5rem 0;
+      transform: translate(0, 64px) !important;
+
+      li {
+        line-height: 1;
+
+        a {
+          padding: 0.9rem;
+
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+  /* stylelint-enable */
 }
