@@ -6,37 +6,29 @@
 .footer {
   background: var(--color-white);
   padding: 40px 0;
+  border-bottom: 3px solid var(--color-primary);
 
   @include breakpoint(lg) {
-    padding: 60px 0;
+    padding: 48px 0 66px;
   }
 
   &__logo {
-    max-width: 150px;
+    width: 200px;
     height: auto;
     object-fit: contain;
-    margin-bottom: 40px;
-    padding: 10px 0 15px;
-
-    @include breakpoint(lg) {
-      margin-bottom: 20px;
-    }
-  }
-
-  &__text {
-    @extend %text;
-
-    width: 90%;
-    margin-bottom: 21px;
-
-    @include breakpoint(lg) {
-      margin-bottom: 38px;
-    }
   }
 
   &__social-links {
     display: flex;
     gap: 32px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+
+    @include breakpoint(lg) {
+      margin-bottom: 0;
+      justify-content: flex-end;
+    }
   }
 
   &__social-link {
@@ -51,10 +43,14 @@
   }
 
   &__heading {
-    @extend %heading-small;
-
-    margin-bottom: 19px;
-    margin-top: 40px;
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 37px;
+    border-bottom: 3px solid var(--color-highlight);
+    width: fit-content;
 
     @include breakpoint(lg) {
       margin-top: 0;
@@ -64,21 +60,23 @@
   &__links {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+
+    @include breakpoint(lg) {
+      gap: 20px;
+    }
   }
 
   &__link {
-    color: var(--color-text);
+    color: var(--color-primary);
     text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 700;
+    width: fit-content;
 
     &:hover {
-      color: var(--color-text);
-      text-decoration: none;
-    }
-
-    @include breakpoint(lg) {
-      text-transform: uppercase;
-      font-weight: 700;
+      color: var(--color-primary);
     }
   }
 

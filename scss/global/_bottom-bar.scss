@@ -4,7 +4,7 @@
 @use '../theme/buttons' as *;
 
 .bottom-bar {
-  background-color: var(--color-secondary-light);
+  background-color: var(--color-white);
   padding: 30px 0;
 
   &__text {
@@ -24,24 +24,47 @@
 
   &__links {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: center;
     gap: 30px;
     height: 100%;
-    margin-bottom: 10px;
+    padding-bottom: 18px;
 
     @include breakpoint(lg) {
-      justify-content: center;
-      margin-bottom: 0;
+      justify-content: flex-start;
+      padding-bottom: 0;
     }
   }
 
   &__link {
-    font-size: 0.75rem;
-    color: var(--color-text);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 700;
 
     &:hover {
-      color: var(--color-text);
+      color: var(--color-primary);
     }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 75%;
+    margin: 0 auto;
+
+    @include breakpoint(lg) {
+      max-width: unset;
+      margin: unset;
+    }
+  }
+
+  &__icon {
+    max-height: 24px;
+    width: auto;
   }
 }
