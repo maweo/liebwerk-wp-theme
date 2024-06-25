@@ -107,25 +107,17 @@
             </ul>
 
             <?php if ($show_language_switcher): ?>
-                <label for="language-btn" class="nav-mobile__menu-button language-btn">
-                    <i class="bi bi-translate"></i>
-                </label>
+                <?php include (get_stylesheet_directory() . '/template-parts/nav-parts/language-switch.php') ?>
             <?php endif; ?>
 
             <div class="nav-mobile__actions">
                 <a href="<?php echo wc_get_cart_url(); ?>" class="nav-mobile__actions-link">
-                    <img 
-                        src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/cart.svg' ?>"
-                        alt="Cart Icon"
-                        class="nav-mobile__actions-icon"
-                    />
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/cart.svg' ?>" alt="Cart Icon"
+                        class="nav-mobile__actions-icon" />
                 </a>
                 <a href="<?php echo wc_get_page_permalink('myaccount') ?>" class="nav-mobile__actions-link">
-                    <img 
-                        src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/user.svg' ?>"
-                        alt="Account Icon"
-                        class="nav-mobile__actions-icon"
-                    />
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/user.svg' ?>"
+                        alt="Account Icon" class="nav-mobile__actions-icon" />
                 </a>
             </div>
 

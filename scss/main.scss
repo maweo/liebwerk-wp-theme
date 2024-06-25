@@ -3,6 +3,7 @@
 @forward './global/mixins';
 @forward './global/global';
 
+@forward './global/topbar';
 @forward './global/menu-mobile';
 @forward './global/menu-desktop';
 @forward './global/back-to-top';
@@ -18,7 +19,8 @@
 @forward './sections/link-banner';
 @forward './sections/accordion';
 @forward './sections/downloads';
-@forward './sections/image-text';
+@forward './sections/image-text-default';
+@forward './sections/image-text-brush-layout';
 @forward './sections/text-only';
 @forward './sections/hero';
 @forward './sections/contact';

@@ -11,11 +11,13 @@ $border_bottom_color_formatted = strtolower($border_bottom_color);
 
 <?php $borderClass = $border_bottom_color === 'None' ? "brand" : "$border_bottom_color_formatted" ?>
 
+<?php include_once ('nav-parts/topbar.php'); ?>
+
 <div>
   <div class="d-none d-xl-block">
-    <?php include_once('nav-parts/nav-desktop.php'); ?>
+    <?php include_once ('nav-parts/nav-desktop.php'); ?>
   </div>
   <div class="d-block d-xl-none">
-    <?php include_once('nav-parts/nav-mobile.php'); ?>
+    <?php include_once ('nav-parts/nav-mobile.php'); ?>
   </div>
 </div>
