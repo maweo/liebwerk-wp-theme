@@ -12,6 +12,28 @@ $content_repeater = get_field('content');
 $author = get_field('author');
 ?>
 
+<?php
+function calculate_reading_time($content, $words_per_minute = 225)
+{
+  $word_count = str_word_count(strip_tags($content));
+  $reading_time = ceil($word_count / $words_per_minute);
+  return $reading_time;
+}
+
+$total_text = $introduction ? strip_tags($introduction) . ' ' : '';
+$headlines = '';
+if ($content_repeater) {
+  foreach ($content_repeater as $content) {
+    $heading = $content['heading'];
+    $headlines .= $heading ? $heading . ' ' : '';
+    $text = $content['text'];
+    $total_text .= $text ? strip_tags($text) . ' ' : '';
+  }
+}
+
+$reading_time = calculate_reading_time($total_text . ' ' . $headlines);
+?>
+
 
 <main>
   <?php maweo_mainbody_start(); ?>
@@ -19,33 +41,43 @@ $author = get_field('author');
 
     <div class="container">
       <div class="col-12 mb-4">
+        <a href="<?php echo site_url('/blog') ?>" class="blog-single__back">
+          <i class="bi bi-arrow-left"></i>
+          Alle Artikel </a>
         <h1 class="blog-single__heading">
           <?php echo $title; ?>
         </h1>
-        <div class="blog-single__date">
-          <div class="blog-single__date-border"></div>
-          <?php echo get_the_date('d. F Y'); ?>
-        </div>
       </div>
     </div>
 
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+          <div class="d-flex gap-4 mb-2 blog-single__info">
+            <div>
+              Von Liebwerk
+            </div>
+            <?php if ($reading_time): ?>
+              <div>
+                Lesezeit:
+                <?php echo $reading_time; ?> Minuten
+              </div>
+            <?php endif; ?>
+          </div>
           <img src="<?php echo $main_image; ?>" class="blog-single__teaser-image" alt="<?php echo $title; ?>">
         </div>
-        <div class="col-lg-12">
-          <?php if ($introduction): ?>
+        <?php if ($introduction): ?>
+          <div class="col-lg-12">
             <div class="blog-single__introduction">
               <?php echo $introduction ?>
             </div>
-          <?php endif; ?>
-        </div>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
 
     <div class="container">
-      <div class="row blog-single__content">
+      <div class="blog-single__content">
         <div class="col-lg-12">
           <?php if ($content_repeater): ?>
             <?php foreach ($content_repeater as $content): ?>

@@ -28,10 +28,10 @@ $posts = get_posts(
 ?>
 
 <section class="post-grid">
-    <div class="container post-grid__wrapper">
+    <div class="container">
         <?php if ($heading || $text): ?>
             <div class="row">
-                <div class="col-12 col-xl-10">
+                <div class="col-12">
                     <?php if ($heading): ?>
                         <?php echo maweo_get_heading($heading, $heading_tag, "post-grid__heading"); ?>
                     <?php endif; ?>
@@ -48,8 +48,8 @@ $posts = get_posts(
                 <div class="post-grid__posts d-grid" data-page="1"
                     data-max-pages="<?php echo ceil($all_posts->found_posts / $posts_per_page) ?>"
                     data-posts-per-page="<?php echo $posts_per_page ?>" data-post-type="<?php echo $post_type ?>"
-                    data-ajaxurl="<?php echo admin_url('admin-ajax.php'); ?>"
-                    data-security="<?php echo esc_js(wp_create_nonce('post_load_more')); ?>" data-category="">
+                    data-ajaxurl="<?php echo esc_js(admin_url('admin-ajax.php')); ?>"
+                    data-security="<?php echo esc_js(wp_create_nonce("post_pagination")); ?>" data-category="">
                     <div class="post-grid__post-container">
                         <?php foreach ($posts as $post_id): ?>
                             <?php include (get_stylesheet_directory() . '/page-templates/sections/partials/post_card.php'); ?>

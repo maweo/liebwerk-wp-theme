@@ -11,13 +11,12 @@
     margin: 0 auto;
   }
 
-  &__teaser-image {
-    height: 320px;
-    width: 100%;
-    object-fit: cover;
+  &__back {
+    color: var(--color-primary);
+    font-weight: bold;
 
-    @include breakpoint(lg) {
-      height: 500px;
+    &:hover {
+      color: var(--color-primary);
     }
   }
 
@@ -25,31 +24,56 @@
     @extend %heading-large;
 
     max-width: 800px;
+    margin-top: 0.8rem;
+    color: var(--color-primary);
   }
 
-  &__date {
-    display: flex;
-    align-items: center;
+  &__info {
     color: var(--color-primary);
-    font-weight: 700;
-    margin-bottom: 3.125rem;
+  }
 
-    &-border {
-      width: 30px;
-      height: 2px;
-      background: var(--color-primary);
-      margin-right: 10px;
+  &__teaser-image {
+    height: 320px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0 0 0 / 10%);
+
+    @include breakpoint(lg) {
+      height: 392px;
     }
   }
 
+  ul {
+    list-style-type: none;
+  }
+
+  ul > li::before {
+    content: '–';
+    position: absolute;
+    margin-left: -1.7em;
+  }
+
   &__introduction {
-    font-style: italic;
     margin-top: 2rem;
+    color: var(--color-primary);
+
+    @include breakpoint(lg) {
+      width: 720px;
+      margin: 2rem auto;
+    }
   }
 
   &__content {
     margin-top: 4rem;
     margin-bottom: 1rem;
+    color: var(--color-primary);
+
+    @include breakpoint(lg) {
+      width: 720px;
+      margin: 2rem auto 1rem;
+    }
+
+    // change list bullet from dot to -
   }
 
   &__content-item {
@@ -58,8 +82,9 @@
     &__heading {
       @extend %heading-large;
 
+      color: var(--color-primary);
       font-size: 1.5rem;
-      margin-bottom: 1.875rem;
+      margin-bottom: 8px;
     }
 
     &__image {
@@ -68,11 +93,6 @@
       aspect-ratio: auto;
       object-fit: contain;
       max-height: 80vh;
-
-      @include breakpoint(lg) {
-        max-width: 80%;
-        margin: 2.5rem 0;
-      }
     }
   }
 }
