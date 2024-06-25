@@ -18,13 +18,21 @@ $item_repeater = get_sub_field('item_repeater');
                 ?>
                 <div class="col-6 col-lg-3 mb-3">
                     <div class="sales-arguments__card h-100">
-                        <img src="<?php echo $image['url'] ?>" class="sales-arguments__card--img"
-                            alt="<?php echo $image['alt'] ?>">
+                        <?php if ($image['url']): ?>
+                            <img src="<?php echo $image['url'] ?>" class="sales-arguments__card--img"
+                                alt="<?php echo $image['alt'] ?>">
+                        <?php endif; ?>
                         <div class="card-body">
-                            <div class="sales-arguments__card--title"><?php echo $sales_item['item_title'] ?></div>
-                            <p class="sales-arguments__card--text">
-                                <?php echo $sales_item['item_text'] ?>
-                            </p>
+                            <div class="sales-arguments__card--title">
+                                <?php if ($sales_item['item_title']): ?>
+                                    <?php echo $sales_item['item_title'] ?>
+                                <?php endif; ?>
+                            </div>
+                            <?php if ($sales_item['item_text']): ?>
+                                <p class="sales-arguments__card--text">
+                                    <?php echo $sales_item['item_text'] ?>
+                                </p>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
