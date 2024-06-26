@@ -44,6 +44,7 @@
   }
 
   ul {
+    padding-top: 0;
     list-style-type: none;
   }
 
@@ -72,8 +73,6 @@
       width: 720px;
       margin: 2rem auto 1rem;
     }
-
-    // change list bullet from dot to -
   }
 
   &__content-item {

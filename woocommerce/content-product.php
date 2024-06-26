@@ -39,48 +39,39 @@ if (empty($product) || !$product->is_visible()) {
             <?php endif; ?>
         </div>
         <div class="liebwerk-product-card__content">
-            <!-- category badge -->
-            <?php if ($product->get_category_ids()): ?>
-                <div class="liebwerk-product-card__categories">
-                    <?php
-                    $terms = get_the_terms($product->id, 'product_cat');
-                    if ($terms) {
-                        foreach ($terms as $term) {
-                            echo '<div class="liebwerk-product-card__category-item">' . $term->name . '</div>';
-                        }
-                    }
-                    ?>
-                </div>
-            <?php endif; ?>
             <!-- Name -->
-            <h2 class="liebwerk-product-card__title">
+            <div class="liebwerk-product-card__title">
                 <?php echo get_the_title($product->id) ?>
-            </h2>
+            </div>
             <!-- short description -->
             <div class="liebwerk-product-card__description">
                 <?php echo $product->get_short_description(); ?>
             </div>
         </div>
-        <div class="liebwerk-product-card__bottom">
-            <!-- Price -->
-            <div class="liebwerk-product-card__price-wrapper">
-                <?php if ($product->is_on_sale()): ?>
-                    <div class="liebwerk-product-card__price">
-                        <?php echo woocommerce_price($product->get_sale_price()); ?>
-                    </div>
-                    <div class="liebwerk-product-card__price liebwerk-product-card__price--sale">
-                        <?php echo woocommerce_price($product->get_regular_price()); ?>
-                    </div>
-                <?php else: ?>
-                    <div class="liebwerk-product-card__price">
-                        <?php echo woocommerce_price($product->get_regular_price()); ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-            <button class="liebwerk-product-card__button">
-                Details
-            </button>
+
+        <!-- Price -->
+        <div class="liebwerk-product-card__price-wrapper">
+            <?php if ($product->is_on_sale()): ?>
+                <div class="liebwerk-product-card__price">
+                    <?php echo woocommerce_price($product->get_sale_price()); ?>
+                </div>
+                <div class="liebwerk-product-card__price liebwerk-product-card__price--sale">
+                    <?php echo woocommerce_price($product->get_regular_price()); ?>
+                </div>
+            <?php else: ?>
+                <div class="liebwerk-product-card__price">
+                    <?php echo woocommerce_price($product->get_regular_price()); ?>
+                </div>
+            <?php endif; ?>
         </div>
 
+        <div class="liebwerk-product-card__bottom">
+            <button class="liebwerk-product-card__add-to-cart-button">
+                In den Warenkorb
+            </button>
+            <button class="liebwerk-product-card__details-button">
+                Mehr erfahren
+            </button>
+        </div>
     </a>
 </div>

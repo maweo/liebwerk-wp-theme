@@ -7,14 +7,18 @@
   padding: 30px 0;
 
   @include breakpoint(lg) {
-    padding: 45px 0;
+    padding: 85px 0;
   }
 
   &__heading {
     @extend %heading-small;
 
-    color: var(--color-black);
+    color: var(--color-secondary);
     font-size: 1.8rem;
+
+    @include breakpoint(lg) {
+      font-size: 3rem;
+    }
   }
 
   &__subheading {
@@ -31,76 +35,235 @@
     width: 100% !important;
   }
 
+  // Slider Main Image
   .wpgs-for .slick-list {
-    background: whitesmoke;
-    padding: 10px;
-    border-radius: 1rem;
+    background: var(--color-secondary-light);
 
     img {
-      height: 500px !important;
+      height: 380px !important;
       object-fit: contain !important;
+      padding: 10px;
+      cursor: zoom-in;
+
+      @include breakpoint(md) {
+        height: 500px !important;
+      }
     }
   }
 
+  // Slider Thumbnail
   .wpgs-nav .slick-slide {
-    border-radius: 1rem;
-
     img {
       height: 110px !important;
       object-fit: contain !important;
-      background: whitesmoke;
-      border-radius: 1rem;
+      background: var(--color-secondary-light);
     }
   }
 
-  .flaticon-back {
-    left: 10px;
+  // Slider Arrow Position
+  .slick-arrow {
+    top: 114% !important;
+
+    i {
+      display: none !important;
+    }
   }
 
+  // Slider Zoom Icon
+  .wpgs-lightbox-icon::before {
+    display: none;
+  }
+
+  // Slider Arrow Left
+  .flaticon-back {
+    left: 0px;
+    background-image: url('../assets/icons/chevron-left.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: brightness(0);
+    height: 24px;
+
+    &::before {
+      color: transparent !important;
+    }
+  }
+
+  // Slider Arrow Right
   .flaticon-right-arrow {
-    right: 10px;
+    right: -12px;
+    background-image: url('../assets/icons/chevron-right.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: brightness(0);
+    height: 24px;
+    color: transparent !important;
+
+    &::before {
+      color: transparent !important;
+    }
   }
 
   // /* stylelint-enable */
 
   &__right-col {
     @include breakpoint(lg) {
-      max-width: 450px;
+      max-width: 550px;
     }
   }
 
-  &__categories {
-    display: flex;
-    flex-flow: wrap;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-
-  &__category-item {
-    padding: 4px 8px;
-    border: 1px solid var(--color-primary);
-    border-radius: 16px;
-    font-size: 0.75rem;
-    font-weight: 600;
+  &__description {
     color: var(--color-primary);
+    font-weight: 600;
   }
 
   &__price {
-    font-weight: 500;
-    font-size: 1.125rem;
-    color: black;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+  }
+
+  &__mwst-info {
+    font-size: 0.8rem;
+  }
+
+  // ATF Sales Arguments
+  &__pdp-sales-arguments-list {
+    display: inline-block;
+    list-style: none;
+    margin: 1.25rem 0;
+
+    li {
+      list-style-image: url('../assets/icons/icon-leaf.svg');
+      margin-bottom: 0.25rem;
+      padding-left: 0.5rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+  }
+
+  // Tab Characteristic
+  &__pdp-characteristics-list {
+    position: relative;
+    margin-bottom: 1.25rem;
+    padding-left: 1rem;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      list-style-image: url('../assets/icons/icon-check.svg');
+      padding-left: 1rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  // Tab Tips and Tricks
+  &__tips-and-tricks {
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    li {
+      list-style-image: url('../assets/icons/icon-check.svg');
+      padding-left: 1rem;
+      margin-bottom: 0.8rem;
+    }
   }
 
   &__add-to-cart-button-wrapper {
-    display: block;
+    display: flex;
+    align-items: center;
     margin-top: 3rem;
+  }
+
+  &__quantity-select {
+    width: 120px;
+    margin-right: 1rem;
+    background: var(--color-secondary-light);
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.5rem;
+
+    button {
+      height: 100%;
+      background: none;
+      color: var(--color-primary);
+      border: none;
+      font-weight: bold;
+    }
+
+    input {
+      height: 100%;
+      width: 50px;
+      text-align: center;
+      font-weight: bold;
+      border: none;
+      background: none;
+      color: var(--color-primary);
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
   }
 
   &__add-to-cart-button {
     @extend %button;
 
-    width: 100%;
-    border-radius: 50px;
-    padding: 12px 0;
+    width: fit-content;
+  }
+
+  // Bootstrap Tabs
+  .nav-tabs {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-bottom: none;
+    color: var(--color-primary);
+
+    @include breakpoint(lg) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .nav-link.active {
+    color: #a0a603;
+    border-bottom: 3px solid #a0a603;
+  }
+
+  .tab-content {
+    padding: 1.5rem 1rem;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
+  .tab-border {
+    margin-top: -17px;
+    border-bottom: 2px solid var(--color-primary);
+  }
+}
+
+// Additional Product Page Styles
+.related-products-heading {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+
+  @include breakpoint(lg) {
+    font-size: 3rem;
+    max-width: 50%;
+    margin-bottom: 3rem;
   }
 }
