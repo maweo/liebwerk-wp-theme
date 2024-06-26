@@ -51,18 +51,11 @@ if (empty($product) || !$product->is_visible()) {
 
         <!-- Price -->
         <div class="liebwerk-product-card__price-wrapper">
-            <?php if ($product->is_on_sale()): ?>
-                <div class="liebwerk-product-card__price">
-                    <?php echo woocommerce_price($product->get_sale_price()); ?>
-                </div>
-                <div class="liebwerk-product-card__price liebwerk-product-card__price--sale">
-                    <?php echo woocommerce_price($product->get_regular_price()); ?>
-                </div>
-            <?php else: ?>
-                <div class="liebwerk-product-card__price">
-                    <?php echo woocommerce_price($product->get_regular_price()); ?>
-                </div>
-            <?php endif; ?>
+            <div class="liebwerk-product-card__price">
+                <?php
+                do_action('woocommerce_after_shop_loop_item_title');
+                ?>
+            </div>
         </div>
 
         <div class="liebwerk-product-card__bottom">
