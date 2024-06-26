@@ -1,0 +1,51 @@
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+@use '../global/mixins' as *;
+
+.image-slider {
+  padding: 2.5rem 0;
+
+  @include breakpoint(lg) {
+    padding: 6.25rem 0;
+  }
+
+  &__wrapper {
+    max-width: 100%;
+    position: relative;
+
+    // widescreen fallback
+    @include breakpoint(widescreen) {
+      max-width: 1290px;
+      margin: 0 auto;
+    }
+  }
+
+  &__image {
+    height: 300px;
+    position: relative;
+    object-fit: cover;
+  }
+
+  &__arrows {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 108%;
+    padding: 0 1rem;
+    display: none;
+
+    @include breakpoint(md) {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__arrow {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--color-text);
+  }
+}

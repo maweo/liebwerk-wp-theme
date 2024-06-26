@@ -31,18 +31,28 @@ if ($related_products): ?>
             <h2 class="related-products-heading"><?php echo esc_html($heading); ?></h2>
         <?php endif; ?>
 
-        <div class="row">
-            <?php foreach ($related_products as $related_product): ?>
 
-                <?php
-                $post_object = get_post($related_product->get_id());
-
-                setup_postdata($GLOBALS['post'] =& $post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
-        
-                wc_get_template_part('content', 'product');
-                ?>
-
-            <?php endforeach; ?>
+        <div class="image-slider__wrapper">
+            <div class="glide__track" data-glide-el="track">
+                <div class="glide__slides p-1">
+                    <?php foreach ($related_products as $related_product): ?>
+                        <?php
+                        $post_object = get_post($related_product->get_id());
+                        setup_postdata($GLOBALS['post'] =& $post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
+                
+                        wc_get_template_part('content', 'product');
+                        ?>
+                    <?php endforeach; ?>
+                </div>
+                <div class="image-slider__arrows">
+                    <button class="image-slider__button--prev image-slider__arrow" data-glide-dir="<">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="image-slider__button--next image-slider__arrow" data-glide-dir=">">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
     <?php

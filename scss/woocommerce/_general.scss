@@ -78,6 +78,12 @@
   }
 }
 
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product p.price,
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product span.price {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
 // Hide Reset Button for Variation Select
 .reset_variations {
   display: none !important;

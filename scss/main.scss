@@ -7,6 +7,7 @@
 @forward './global/menu-mobile';
 @forward './global/menu-desktop';
 @forward './global/back-to-top';
+@forward './global/product-slider';
 
 @forward './theme/colors';
 @forward './theme/type';
@@ -49,3 +50,6 @@
 
 // bootstrap icons
 @import 'bootstrap-icons/font/bootstrap-icons.css';
+
+@import '@glidejs/glide/dist/css/glide.core.css';
+@import '@glidejs/glide/dist/css/glide.theme.css';
