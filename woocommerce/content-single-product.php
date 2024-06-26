@@ -33,19 +33,12 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
         <div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
             <div class="container">
                 <div class="row gx-lg-5">
-                    <div class="col-lg-6">
-                        <?php
-                        /**
-                         * Hook: woocommerce_before_single_product_summary.
-                         *
-                         * @hooked woocommerce_show_product_sale_flash - 10
-                         * @hooked woocommerce_show_product_images - 20
-                         */
-                        remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10);
 
-                        do_action('woocommerce_before_single_product_summary');
-                        ?>
+                    <div class="col-lg-6">
+                        <?php echo do_shortcode('[product_gallery_slider]'); ?>
                     </div>
+
+
                     <div class="col-lg-6 liebwerk-single-product__right-col">
                         <!-- Product Title -->
                         <h1 class="liebwerk-single-product__heading">
@@ -74,8 +67,8 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
                         <!-- Price -->
                         <div class="liebwerk-single-product__price">
                             <?php echo $product->get_price_html(); ?>
+                            <div class="liebwerk-single-product__mwst-info">inkl. MwSt und zzgl. Versand</div>
                         </div>
-                        <span class="liebwerk-single-product__mwst-info">inkl. MwSt und zzgl. Versand</span>
 
                         <?php
                         /**

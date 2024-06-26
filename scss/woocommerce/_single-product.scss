@@ -35,7 +35,12 @@
     width: 100% !important;
   }
 
-  // Slider Main Image
+  // Variable Product Slider
+  .wpgs-wrapper {
+    width: 100% !important;
+  }
+
+  // Slider Main Image // Default Product
   .wpgs-for .slick-list {
     background: var(--color-secondary-light);
 
@@ -46,7 +51,7 @@
       cursor: zoom-in;
 
       @include breakpoint(md) {
-        height: 500px !important;
+        height: 444px !important;
       }
     }
   }
@@ -124,6 +129,8 @@
 
   &__mwst-info {
     font-size: 0.8rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
   }
 
   // ATF Sales Arguments
@@ -177,7 +184,7 @@
   &__add-to-cart-button-wrapper {
     display: flex;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 0;
   }
 
   &__quantity-select {

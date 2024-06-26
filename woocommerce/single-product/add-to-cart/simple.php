@@ -34,9 +34,6 @@ if ($product->is_in_stock()): ?>
         method="post" enctype='multipart/form-data'>
         <?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
-
-
-
         <div class="liebwerk-single-product__add-to-cart-button-wrapper">
             <div class="liebwerk-single-product__quantity-select">
                 <?php
