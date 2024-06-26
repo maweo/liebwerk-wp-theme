@@ -36,7 +36,7 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 			<?php echo esc_html(apply_filters('woocommerce_out_of_stock_message', __('This product is currently out of stock and unavailable.', 'woocommerce'))); ?>
 		</p>
 	<?php else: ?>
-		<table class="variations" cellspacing="0" role="presentation">
+		<table class="variations mb-4" cellspacing="0" role="presentation">
 			<tbody>
 				<?php foreach ($attributes as $attribute_name => $options): ?>
 					<tr>
