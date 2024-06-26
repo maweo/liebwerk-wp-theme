@@ -35,7 +35,7 @@ endif;
         </div>
         <?php if ($image_right): ?>
                 <div class="hero-small__image">
-                    <img src="<?php echo $image_right['url'] ?>" alt="<?php echo $image_right['alt'] ?>" class="">
+                    <img src="<?php echo $image_right['url'] ?>" alt="<?php echo $image_right['alt'] ?>">
                 </div>
             <?php endif; ?>
     </div>
