@@ -43,6 +43,8 @@
 @forward './woocommerce/archive-product';
 @forward './woocommerce/product-card';
 @forward './woocommerce/single-product';
+@forward './woocommerce/cart';
+@forward './woocommerce/checkout';
 
 // Sections Partials
 @forward './sections/partials/post-card';
