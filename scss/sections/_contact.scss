@@ -3,40 +3,60 @@
 @use '../global/mixins' as *;
 
 .contact {
-  padding: 24px 0;
+  padding: 80px 0;
   position: relative;
-
-  &--primary {
-    background-color: var(--color-primary);
-  }
-
-  &--secondary {
-    background-color: var(--color-secondary);
-  }
-
-  &__container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
 
   &__text {
     font-size: 1rem;
     padding-top: 1rem;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+  }
 
-    @include breakpoint(xl) {
-      max-width: 400px;
+  &__info {
+    padding: 2rem;
+    background: var(--color-secondary-light);
+    text-align: left;
+    color: var(--color-primary);
+
+    @include breakpoint(lg) {
+      max-width: 500px;
+    }
+
+    &--img {
+      height: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &--title {
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+
+      @include breakpoint(lg) {
+        font-size: 1.25rem;
+      }
+    }
+
+    &--text {
+      line-height: 1.2;
+      font-weight: 600;
     }
   }
 
   &__form {
     &-heading {
       @extend %heading-large;
+
+      color: var(--color-primary);
     }
 
     &-text {
       font-size: 1rem;
       line-height: 1.25rem;
       padding-bottom: 25px;
+      color: var(--color-primary);
 
       @include breakpoint(lg) {
         font-size: 0.875rem;
@@ -58,6 +78,9 @@
     }
 
     &-acceptance {
+      /* stylelint-disable */
+      display: flex !important;
+      /* stylelint-enable */
       margin-top: 10px;
 
       .wpcf7-list-item {
@@ -65,7 +88,7 @@
       }
 
       .wpcf7-form-control-wrap {
-        margin-right: 12px;
+        margin-right: 6px;
       }
 
       a {
@@ -123,7 +146,6 @@
 
 input[type='checkbox'] {
   margin-right: 5px;
-  margin-left: -12px;
   margin-bottom: 10px;
 }
 
