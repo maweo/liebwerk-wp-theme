@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Gruppe_405" data-name="Gruppe 405" transform="translate(-1176.5 -809)">
+    <g id="Ellipse_14" data-name="Ellipse 14" transform="translate(1176.5 809)" fill="none" stroke="#025959" stroke-width="2">
+      <circle cx="24" cy="24" r="24" stroke="none"/>
+      <circle cx="24" cy="24" r="23" fill="none"/>
+    </g>
+    <g id="chevron-down" transform="translate(1197.231 825.073)">
+      <path id="chevron-down-2" data-name="chevron-down" d="M.179.179a.61.61,0,0,1,.863,0L7.927,7.065,14.811.179a.61.61,0,0,1,.863.863L8.358,8.358a.61.61,0,0,1-.863,0L.179,1.042a.61.61,0,0,1,0-.863" transform="translate(0 15.853) rotate(-90)" fill="#025959" stroke="#025959" stroke-width="1" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>
