@@ -23,6 +23,14 @@ $elements = get_sub_field('elements');
         <div class="row">
             <div class="col-12 col-lg-10 mx-auto">
                 <div class="timeline__elements">
+                    <div class="timeline__elements-arrows">
+                        <button class="timeline__elements-arrow" aria-label="Slider left" data-glide-dir="<">
+                            <img src="<?php echo get_theme_icon_url('slider-arrow.svg') ?>" alt="" class="timeline__elements-arrow-img timeline__elements-arrow-img--prev">
+                        </button>
+                        <button class="timeline__elements-arrow" aria-label="Slider right" data-glide-dir=">">
+                            <img src="<?php echo get_theme_icon_url('slider-arrow.svg') ?>" alt="" class="timeline__elements-arrow-img timeline__elements-arrow-img--next">
+                        </button>
+                    </div>
                     <div class="glide__track" data-glide-el="track">
                         <div class="glide__slides">
                             <?php foreach ($elements as $element) : ?>

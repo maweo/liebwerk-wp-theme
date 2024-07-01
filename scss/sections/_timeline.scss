@@ -116,4 +116,28 @@
         line-height: 1.1875;
         margin: 21px auto 0;
     }
+
+    &__elements-arrows {
+        width: calc(100% + 200px);
+        left: -100px;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 200px;
+    }
+
+    &__elements-arrow {
+        all: unset;
+        cursor: pointer;
+    }
+
+    &__elements-arrow-img {
+        height: 48px;
+        width: 48px;
+
+        &--prev {
+            transform: rotateY(180deg);
+        }
+    }
 }

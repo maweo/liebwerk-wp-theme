@@ -23,11 +23,11 @@ export const initTimeline = () => {
       },
     });
 
-    // document.querySelectorAll('.image-slider__arrow').forEach((glideArrow) => {
-    //   glideArrow.addEventListener('click', function () {
-    //     testimonialGliderObject.go(glideArrow.dataset.glideDir);
-    //   });
-    // });
+    document.querySelectorAll('.timeline__elements-arrow').forEach((glideArrow) => {
+      glideArrow.addEventListener('click', function () {
+        timelineGliderObject.go(glideArrow.dataset.glideDir);
+      });
+    });
 
     timelineGliderObject.mount();
   });
