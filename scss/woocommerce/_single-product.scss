@@ -248,6 +248,10 @@
     padding: 1.5rem 1rem;
     color: var(--color-primary);
     font-weight: bold;
+
+    @include breakpoint(lg) {
+      max-width: 70%;
+    }
   }
 
   .tab-border {
