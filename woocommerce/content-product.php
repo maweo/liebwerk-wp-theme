@@ -60,10 +60,18 @@ if (empty($product) || !$product->is_visible()) {
 
         <div class="liebwerk-product-card__bottom">
             <button class="liebwerk-product-card__add-to-cart-button">
-                In den Warenkorb
+                <?php if (function_exists('pll_e')): ?>
+                    <?php pll_e('In den Warenkorb'); ?>
+                <?php else: ?>
+                    In den Warenkorb
+                <?php endif; ?>
             </button>
             <button class="liebwerk-product-card__details-button">
-                Mehr erfahren
+                <?php if (function_exists('pll_e')): ?>
+                    <?php pll_e('Details'); ?>
+                <?php else: ?>
+                    Details
+                <?php endif; ?>
             </button>
         </div>
     </a>

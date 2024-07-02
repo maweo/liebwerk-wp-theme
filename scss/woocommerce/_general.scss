@@ -57,13 +57,16 @@
   border-radius: 0;
   padding: 16px 24px;
   background: transparent;
+  box-shadow: 0px 0px 0px 2px rgba(2 89 89 / 100%);
+  margin-right: 10px;
 
   div {
     color: var(--color-primary);
+    font-weight: 600;
   }
 
-  &::hover {
-    box-shadow: none;
+  &:hover {
+    box-shadow: 0px 0px 0px 2px rgba(2 89 89 / 100%);
   }
 }
 
@@ -84,8 +87,19 @@
   color: var(--color-primary);
 }
 
+.woocommerce div.product form.cart .variations label {
+  margin-right: -4px;
+}
+
 // Hide Reset Button for Variation Select
 .reset_variations {
   display: none !important;
+}
+
+.wc-gzd-additional-info {
+  a {
+    color: var(--color-primary);
+    font-weight: bold;
+  }
 }
 /* stylelint-enable */

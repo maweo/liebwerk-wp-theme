@@ -67,7 +67,6 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
                         <!-- Price -->
                         <div class="liebwerk-single-product__price">
                             <?php echo $product->get_price_html(); ?>
-                            <div class="liebwerk-single-product__mwst-info">inkl. MwSt und zzgl. Versand</div>
                         </div>
 
                         <?php
