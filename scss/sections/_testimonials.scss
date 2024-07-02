@@ -44,18 +44,15 @@
 
   &__text {
     @extend %text;
-    color: var(--color-primary);
 
+    color: var(--color-primary);
     margin-bottom: 16px;
   }
 
   &__author {
     @extend %text;
 
+    color: var(--color-primary);
     font-weight: 700;
-  }
-
-  &__company {
-    @extend %text;
   }
 }
