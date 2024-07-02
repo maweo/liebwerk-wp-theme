@@ -1,0 +1,34 @@
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+@use '../global/mixins' as *;
+
+.product-grid-slider {
+  padding: 60px 0;
+
+  @include breakpoint(lg) {
+    padding: 100px 0;
+  }
+
+  &__heading {
+    @extend %heading-large;
+
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    @extend %text;
+
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  &__link {
+    @extend %button-secondary;
+
+    display: block;
+    margin: 1.5rem auto;
+    max-width: fit-content;
+  }
+}

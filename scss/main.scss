@@ -7,6 +7,7 @@
 @forward './global/menu-mobile';
 @forward './global/menu-desktop';
 @forward './global/back-to-top';
+@forward './global/product-slider';
 
 @forward './theme/colors';
 @forward './theme/type';
@@ -34,6 +35,7 @@
 @forward './sections/sales-arguments';
 @forward './sections/grid';
 @forward './sections/post-grid';
+@forward './sections/product-grid-slider';
 
 // Pages
 @forward './pages/blog-single';
@@ -50,3 +52,6 @@
 
 // bootstrap icons
 @import 'bootstrap-icons/font/bootstrap-icons.css';
+
+@import '@glidejs/glide/dist/css/glide.core.css';
+@import '@glidejs/glide/dist/css/glide.theme.css';
