@@ -23,12 +23,12 @@ $form = get_sub_field('form');
         <div class="row mt-5">
             <div class="col-lg-6">
                 <div class="contact__info">
-                    <div class="row">
+                    <div class="row g-4">
                         <?php foreach ($item_repeater as $sales_item): ?>
                             <?php
                             $image = get_image_data($sales_item['item_icon']);
                             ?>
-                            <div class="col-6 mb-4">
+                            <div class="col-6">
                                 <?php if ($image['url']): ?>
                                     <img src="<?php echo $image['url'] ?>" class="contact__info--img"
                                         alt="<?php echo $image['alt'] ?>">
@@ -39,9 +39,9 @@ $form = get_sub_field('form');
                                     <?php endif; ?>
                                 </div>
                                 <?php if ($sales_item['item_text']): ?>
-                                    <p class="contact__info--text">
+                                    <div class="contact__info--text">
                                         <?php echo $sales_item['item_text'] ?>
-                                    </p>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                         <?php endforeach; ?>

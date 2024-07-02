@@ -3,7 +3,7 @@
 @use '../global/mixins' as *;
 
 .contact {
-  padding: 80px 0;
+  padding: 96px 0;
   position: relative;
 
   &__text {
@@ -14,7 +14,7 @@
   }
 
   &__info {
-    padding: 2rem;
+    padding: 64px 48px;
     background: var(--color-secondary-light);
     text-align: left;
     color: var(--color-primary);
@@ -40,8 +40,9 @@
     }
 
     &--text {
-      line-height: 1.2;
-      font-weight: 600;
+      p {
+        line-height: 1.2;
+      }
     }
   }
 
