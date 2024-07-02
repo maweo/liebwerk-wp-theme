@@ -140,6 +140,14 @@
     padding: 8px 6px;
     margin-bottom: 8px;
 
+    /* stylelint-disable */
+    color: white !important;
+
+    &:hover {
+      color: var(--color-primary) !important;
+    }
+    /* stylelint-enable */
+
     @include breakpoint(xl) {
       font-size: 1rem;
       padding: 9px;

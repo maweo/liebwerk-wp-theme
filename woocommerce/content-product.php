@@ -27,7 +27,7 @@ if (empty($product) || !$product->is_visible()) {
 ?>
 
 <div class="col-md-6 col-lg-4 liebwerk-product-card mb-4">
-    <a href="<?php echo get_permalink($product->id) ?>" class="liebwerk-product-card--item">
+    <div class="liebwerk-product-card--item">
         <!-- Image -->
         <div class="liebwerk-product-card__image">
             <?php if ($product->get_image_id()): ?>
@@ -40,9 +40,11 @@ if (empty($product) || !$product->is_visible()) {
         </div>
         <div class="liebwerk-product-card__content">
             <!-- Name -->
-            <div class="liebwerk-product-card__title">
-                <?php echo get_the_title($product->id) ?>
-            </div>
+            <a href="<?php echo get_permalink($product->id) ?>">
+                <div class="liebwerk-product-card__title">
+                    <?php echo get_the_title($product->id) ?>
+                </div>
+            </a>
             <!-- short description -->
             <div class="liebwerk-product-card__description">
                 <?php echo $product->get_short_description(); ?>
@@ -59,20 +61,23 @@ if (empty($product) || !$product->is_visible()) {
         </div>
 
         <div class="liebwerk-product-card__bottom">
-            <button class="liebwerk-product-card__add-to-cart-button">
+            <!-- add Add to cart button and redirect to cart -->
+            <a href="<?php echo wc_get_cart_url(); ?>?add-to-cart=<?php echo $product->id; ?>"
+                class="liebwerk-product-card__add-to-cart-button">
                 <?php if (function_exists('pll_e')): ?>
-                    <?php pll_e('In den Warenkorb'); ?>
+                    <?php pll_e('Add to cart'); ?>
                 <?php else: ?>
-                    In den Warenkorb
+                    Add to cart
                 <?php endif; ?>
-            </button>
-            <button class="liebwerk-product-card__details-button">
+            </a>
+
+            <a href="<?php echo get_permalink($product->id) ?>" class="liebwerk-product-card__details-button">
                 <?php if (function_exists('pll_e')): ?>
                     <?php pll_e('Details'); ?>
                 <?php else: ?>
                     Details
                 <?php endif; ?>
-            </button>
+            </a>
         </div>
-    </a>
+    </div>
 </div>
