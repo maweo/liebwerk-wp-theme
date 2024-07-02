@@ -13,25 +13,22 @@ $date = get_the_date('F Y', $post_id);
 <div class="col">
     <a href="<?php echo $link; ?>" class="text-decoration-none">
         <div class="post-card">
+            <?php echo $image; ?>
             <div class="post-card__content">
-                <?php echo $image; ?>
-
-                <div class="post-card__content--grow">
-                    <?php if ($title): ?>
-                        <div class="post-card__title">
-                            <strong>
-                                <?php echo $title; ?>
-                            </strong>
-                        </div>
-                    <?php endif; ?>
-                </div>
+                <?php if ($title): ?>
+                    <div class="post-card__title">
+                        <strong>
+                            <?php echo $title; ?>
+                        </strong>
+                    </div>
+                <?php endif; ?>
                 <?php if ($intro): ?>
                     <div class="post-card__text">
                         <?php echo strip_tags($intro); ?>...
                     </div>
                 <?php endif; ?>
                 <a href="<?php echo $link; ?>" class="post-card__link">
-                    Artikel lesen
+                    Mehr lesen
                 </a>
             </div>
         </div>

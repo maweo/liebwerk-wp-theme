@@ -5,7 +5,7 @@ add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_callback'); 
 
 function load_posts_by_ajax_callback()
 {
-    check_ajax_referer('post_load_more', 'security');
+    check_ajax_referer('post_pagination', 'security');
 
     $page = intval($_POST['currentPage']) ?? 1;
     $posts_per_page = intval($_POST['postsPerPage']) ?? 1;
@@ -29,5 +29,6 @@ function load_posts_by_ajax_callback()
 
     die();
 }
+
 
 

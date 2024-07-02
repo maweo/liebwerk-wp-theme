@@ -28,7 +28,9 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#nav-item-<?php echo $index ?>" aria-expanded="false">
-                                        <?php echo $menuItem['dropdown'][0]['link']['title'] ?>
+                                        <span class="nav-mobile__accordion-button-inner">
+                                            <?php echo $menuItem['dropdown'][0]['link']['title'] ?>
+                                        </span>
                                     </button>
                                 </h2>
                                 <div id="nav-item-<?php echo $index ?>" class="accordion-collapse collapse">
