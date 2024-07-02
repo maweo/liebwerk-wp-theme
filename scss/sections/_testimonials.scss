@@ -55,4 +55,44 @@
     color: var(--color-primary);
     font-weight: 700;
   }
+
+  &__indicators {
+    position: unset;
+    width: auto;
+    margin: 32px 0 0 16px;
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+
+  /* stylelint-disable*/
+  /* BS wouldn't let me override this otherwise */
+  &__indicator {
+    height: 10px !important;
+    width: 10px !important;
+    background-color: var(--color-primary) !important;
+    border: 0 !important;
+    border-radius: 100px;
+  }
+  /* stylelint-enable*/
+
+  &__prev-icon {
+    background-image: url('~icon/arrow_right.svg');
+    transform: scaleX(-1);
+  }
+
+  &__next-icon {
+    background-image: url('~icon/arrow_right.svg');
+  }
+
+  &__control {
+    opacity: 1;
+    display: block;
+    position: unset;
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
 }
