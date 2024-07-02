@@ -61,7 +61,6 @@ if (empty($product) || !$product->is_visible()) {
         </div>
 
         <div class="liebwerk-product-card__bottom">
-            <!-- add Add to cart button and redirect to cart -->
             <a href="<?php echo wc_get_cart_url(); ?>?add-to-cart=<?php echo $product->id; ?>"
                 class="liebwerk-product-card__add-to-cart-button">
                 <?php if (function_exists('pll_e')): ?>

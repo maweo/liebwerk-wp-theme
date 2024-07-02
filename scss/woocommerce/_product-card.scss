@@ -4,12 +4,6 @@
 @use '../theme/buttons' as *;
 
 .liebwerk-product-card {
-  margin-bottom: 24px;
-
-  @include breakpoint(lg) {
-    margin-bottom: 0;
-  }
-
   &:hover {
     text-decoration: none;
     color: grey;
@@ -17,13 +11,13 @@
 
   &--item {
     position: relative;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    background: none;
+    background: transparent;
     border: none;
     transition: 0.3s ease-in-out;
     box-shadow: 0 0 10px 0 rgba(0 0 0 / 5%);
+    height: 100%;
 
     &:hover {
       box-shadow: 0 0 10px 0 rgba(0 0 0 / 10%);
@@ -50,7 +44,9 @@
   }
 
   &__content {
-    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     text-align: center;
     padding: 1.5rem 5rem 0;
 
