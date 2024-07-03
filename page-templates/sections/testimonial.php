@@ -42,7 +42,7 @@
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                        <div class="row justify-content-betweeen">
+                        <div class="row testimonials__navigation">
                             <div class="carousel-indicators testimonials__indicators">
                                 <?php foreach($testimonials as $index => $testimonial): ?>
                                     <?php $class = $index == 0 ? "active testimonials__indicator--active" : ""; ?>
@@ -58,7 +58,7 @@
                                     ></button>
                                 <?php endforeach; ?>
                             </div>
-                            <div class="width-auto">
+                            <div class="testimonials__arrows">
                                 <button class="carousel-control-prev testimonials__control testimonials__control--prev" type="button" data-bs-target="#<?php echo $carousel_id?>" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon testimonials__prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
@@ -70,6 +70,24 @@
                             </div>
                         </div>
                         
+                    </div>
+                    <div class="testimonials__row">
+                        <?php foreach($testimonials as $index => $testimonial) : ?>
+                            <?php 
+                                $author = get_field('author', $testimonial['testimonial']);
+                                $text = get_field('text', $testimonial['testimonial']);
+                            ?>
+                            <div class="col-12 col-lg-4 testimonials__item testimonials__item">
+                                <div class="maweo-wysiwyg testimonials__text">
+                                    <?php echo $text?>
+                                </div>
+                                <?php if($author): ?>
+                                    <div class="testimonials__author">
+                                        <?php echo $author?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
             </div>

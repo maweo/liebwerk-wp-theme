@@ -23,13 +23,20 @@
   }
 
   &__row {
-    display: flex;
+    display: none;
     justify-content: center;
     gap: 16px;
     flex-direction: column;
 
     @include breakpoint(lg) {
+      display: flex;
       flex-direction: row;
+    }
+  }
+
+  &__carousel {
+    @include breakpoint(lg) {
+      display: none;
     }
   }
 
@@ -39,6 +46,10 @@
 
     @include breakpoint(lg) {
       padding: 48px;
+    }
+
+    &-wrapper {
+      width: unset;
     }
   }
 
@@ -56,10 +67,22 @@
     font-weight: 700;
   }
 
+  &__navigation {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+  }
+
+  &__arrows {
+    width: auto;
+    display: flex;
+    gap: 16px;
+  }
+
   &__indicators {
     position: unset;
     width: auto;
-    margin: 32px 0 0 16px;
+    margin: 0 0 0 16px;
 
     @include breakpoint(lg) {
       display: none;
@@ -69,8 +92,8 @@
   /* stylelint-disable*/
   /* BS wouldn't let me override this otherwise */
   &__indicator {
-    height: 10px !important;
-    width: 10px !important;
+    height: 8px !important;
+    width: 8px !important;
     background-color: var(--color-primary) !important;
     border: 0 !important;
     border-radius: 100px;
@@ -79,11 +102,13 @@
 
   &__prev-icon {
     background-image: url('~icon/arrow_right.svg');
-    transform: scaleX(-1);
+    height: 16px;
   }
 
   &__next-icon {
     background-image: url('~icon/arrow_right.svg');
+    transform: scaleX(-1);
+    height: 16px;
   }
 
   &__control {
