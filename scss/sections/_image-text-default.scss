@@ -11,7 +11,10 @@
   }
 
   &__content {
+    margin-top: 0;
+
     @include breakpoint(lg) {
+      margin-top: 2rem;
       min-height: 100%;
       display: flex;
       flex-direction: column;
@@ -73,26 +76,13 @@
 
   &__image {
     width: 100%;
-    height: auto;
-    max-height: 100%;
-    margin-bottom: 2rem;
-
-    &-height {
-      max-height: unset;
-      height: 100%;
-    }
-
-    @include breakpoint(lg) {
-      margin-bottom: 0;
-    }
+    height: 100%;
 
     &--contain {
       object-fit: contain;
-      max-height: 380px;
 
       @include breakpoint(lg) {
         aspect-ratio: 1;
-        max-height: 100%;
       }
     }
 
