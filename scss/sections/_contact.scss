@@ -3,8 +3,12 @@
 @use '../global/mixins' as *;
 
 .contact {
-  padding: 96px 0;
   position: relative;
+  padding: var(--section-padding-mobile);
+
+  @include breakpoint(lg) {
+    padding: var(--section-padding-desktop);
+  }
 
   &__text {
     font-size: 1rem;

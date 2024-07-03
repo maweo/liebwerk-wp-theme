@@ -4,7 +4,11 @@
 @use '../theme/buttons' as *;
 
 .grid {
-  padding: 102px 0;
+  padding: var(--section-padding-mobile);
+
+  @include breakpoint(lg) {
+    padding: var(--section-padding-desktop);
+  }
 
   &__row {
     gap: 16px;
