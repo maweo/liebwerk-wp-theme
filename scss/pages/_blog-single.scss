@@ -54,6 +54,11 @@
     margin-left: -1.7em;
   }
 
+  ol > li,
+  ul > li {
+    margin-bottom: 1rem;
+  }
+
   &__introduction {
     margin-top: 2rem;
     color: var(--color-primary);
@@ -61,6 +66,12 @@
     @include breakpoint(lg) {
       width: 720px;
       margin: 2rem auto;
+    }
+
+    a {
+      text-decoration: underline;
+      color: var(--color-primary);
+      font-weight: bold;
     }
   }
 
@@ -72,6 +83,12 @@
     @include breakpoint(lg) {
       width: 720px;
       margin: 2rem auto 1rem;
+    }
+
+    a {
+      text-decoration: underline;
+      color: var(--color-primary);
+      font-weight: bold;
     }
   }
 
