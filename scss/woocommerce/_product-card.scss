@@ -4,20 +4,27 @@
 @use '../theme/buttons' as *;
 
 .liebwerk-product-card {
+  margin-bottom: 24px;
+
+  @include breakpoint(lg) {
+    margin-bottom: 0;
+  }
+
   &:hover {
     text-decoration: none;
     color: grey;
   }
 
   &--item {
+    height: 100%;
     position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    background: transparent;
+    background: none;
     border: none;
     transition: 0.3s ease-in-out;
     box-shadow: 0 0 10px 0 rgba(0 0 0 / 5%);
-    height: 100%;
 
     &:hover {
       box-shadow: 0 0 10px 0 rgba(0 0 0 / 10%);
@@ -115,7 +122,12 @@
 
   &__bottom {
     margin-top: 1rem;
-    padding: 0 1.5rem 2.5rem;
+    padding: 0 5rem 2.5rem;
+
+    @include breakpoint(md) {
+      padding: 0.5rem 5.5rem 2.5rem;
+    }
+
     display: block;
     align-items: center;
     justify-content: space-between;
@@ -127,41 +139,13 @@
     }
   }
 
-  &__add-to-cart-button {
+  &__details-button {
     @extend %button;
 
-    font-size: 0.8rem;
+    font-size: 1rem;
     display: block;
-    width: 100%;
-    padding: 8px 6px;
-    margin-bottom: 8px;
-
-    /* stylelint-disable */
-    color: white !important;
-
-    &:hover {
-      color: var(--color-primary) !important;
-    }
-    /* stylelint-enable */
-
-    @include breakpoint(xl) {
-      font-size: 1rem;
-      padding: 9px;
-      margin-bottom: 0;
-    }
-  }
-
-  &__details-button {
-    @extend %button-secondary;
-
-    font-size: 0.8rem;
-    display: block;
-    width: 100%;
-    padding: 8px 6px;
-
-    @include breakpoint(xl) {
-      font-size: 1rem;
-      padding: 9px;
-    }
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 14px;
   }
 }
