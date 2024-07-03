@@ -28,7 +28,8 @@ $is_centered_mobile_class = get_sub_field('is_text_centered_mobile') ? " d-block
         <div class="row">
             <div
                 class="col-12 <?php echo $image_two ? "col-lg-5" : "col-lg-6" ?> order-1 d-flex flex-column justify-content-center <?php echo $image_position === "right" ? "order-lg-0" : "order-1 order-lg-2 offset-lg-1 " ?> ">
-                <div class="image-text__content mt-3 mt-lg-0">
+                <div
+                    class="image-text__content mt-3 mt-lg-0  <?php echo $image_two ? "image-text__content--large" : "" ?>">
                     <?php if ($heading_icon && $heading_icon['url'] != ""): ?>
                         <img alt="<?php echo $heading_icon['alt'] ?>"
                             class="image-text__icon <?php echo $is_centered_mobile_class ?>"
