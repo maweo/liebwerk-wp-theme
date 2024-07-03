@@ -52,7 +52,23 @@
     @extend %button-secondary;
 
     display: block;
-    margin-top: 2rem;
+    margin-top: 40px;
+
+    @include breakpoint(lg) {
+      margin-top: 42px;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    gap: 32px;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
   }
 
   &__image {
@@ -60,6 +76,11 @@
     height: auto;
     max-height: 100%;
     margin-bottom: 2rem;
+
+    &-height {
+      max-height: unset;
+      height: 100%;
+    }
 
     @include breakpoint(lg) {
       margin-bottom: 0;

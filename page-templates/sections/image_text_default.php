@@ -7,7 +7,12 @@ $sub_heading = get_sub_field('sub_heading');
 $text = get_sub_field('text');
 $link = get_sub_field('link');
 
+$number_of_images = get_sub_field('number_of_images');
 $image = get_image_data_from_sub_field('image');
+if($number_of_images == 'two') {
+    $image_two = get_image_data_from_sub_field('image_two');
+};
+
 $image_position = get_sub_field('image_position');
 $image_fit = get_sub_field('image_fit') ?? "cover";
 
@@ -20,7 +25,7 @@ $is_centered_mobile_class = get_sub_field('is_text_centered_mobile') ? " d-block
     <div class="container">
         <div class="row align-items-stretch">
             <div
-                class="col-12 col-lg-5 order-1 d-flex flex-column justify-content-center <?php echo $image_position === "right" ? "order-lg-0" : "order-lg-2 offset-lg-1" ?>">
+                class="col-12 col-lg-6 order-1 <?php echo $number_of_images === "two" ? "order-0" : "" ?> <?php echo $image_position === "right" ? "order-lg-0" : "order-1 order-lg-2 offset-lg-1 " ?> ">
                 <div class="image-text__content">
                     <?php if ($heading_icon && $heading_icon['url'] != ""): ?>
                         <img alt="<?php echo $heading_icon['alt'] ?>"
@@ -41,11 +46,12 @@ $is_centered_mobile_class = get_sub_field('is_text_centered_mobile') ? " d-block
                     <?php endif; ?>
                 </div>
             </div>
-            <div
-                class="col-12 col-lg-6 order-lg-1 d-flex align-items-center <?php echo $image_position === "right" ? "offset-lg-1" : "" ?>">
-                <div class="w-100">
-                    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>"
-                        class="image-text__image image-text__image--<?php echo $image_fit ?>">
+            <div class="col-12 col-lg-5 mb-sm-5 mb-lg-0 order-lg-1 <?php echo $image_position === "right" ? "offset-lg-1" : "" ?>">
+                <div class="image-text__image-wrapper <?php echo $number_of_images === "two" ? "col-12 col-md-6" : "" ?>">
+                    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="image-text__image <?php echo $number_of_images === "two" ? "image-text__image-height" : "" ?> ">
+                    <?php if ($image_two): ?>
+                        <img src="<?php echo $image_two['url'] ?>" alt="<?php echo $image_two['alt'] ?>" class="image-text__image ">
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
