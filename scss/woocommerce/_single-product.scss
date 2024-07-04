@@ -65,9 +65,13 @@
     }
   }
 
+  .wpgs-nav .slick-active {
+    border-color: transparent !important;
+  }
+
   // Slider Arrow Position
   .slick-arrow {
-    top: 114% !important;
+    // top: 114% !important;
 
     i {
       display: none !important;
@@ -81,12 +85,13 @@
 
   // Slider Arrow Left
   .flaticon-back {
-    left: 0px;
+    left: 13px;
     background-image: url('../assets/icons/chevron-left.svg');
     background-size: contain;
     background-repeat: no-repeat;
     filter: brightness(0);
     height: 24px;
+    opacity: 0.2;
 
     &::before {
       color: transparent !important;
@@ -95,13 +100,14 @@
 
   // Slider Arrow Right
   .flaticon-right-arrow {
-    right: -12px;
+    right: 0;
     background-image: url('../assets/icons/chevron-right.svg');
     background-size: contain;
     background-repeat: no-repeat;
     filter: brightness(0);
     height: 24px;
     color: transparent !important;
+    opacity: 0.2;
 
     &::before {
       color: transparent !important;
