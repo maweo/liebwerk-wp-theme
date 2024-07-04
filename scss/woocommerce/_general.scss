@@ -1,5 +1,6 @@
 @use '../global/mixins' as *;
 @use '../theme/colors' as *;
+@use '../theme/buttons' as *;
 
 // make woocommerce-notices-wrapper to snackbar
 .woocommerce-notices-wrapper {
@@ -32,12 +33,73 @@
   }
 }
 
+// WooCommerce & Addons Overrides
+
 /* stylelint-disable */
 .woocommerce img,
 .woocommerce-page img {
   * {
     max-width: 100% !important;
     height: auto !important;
+  }
+}
+
+// Variable Product Add To Cart Button
+.woocommerce div.product form.cart .button {
+  @extend %button;
+
+  height: 50px;
+  max-width: fit-content;
+}
+
+// Woo Variations
+.woo-variation-swatches .wvs-style-squared.variable-items-wrapper .variable-item:not(.radio-variable-item) {
+  border-radius: 0;
+  padding: 16px 24px;
+  background: transparent;
+  box-shadow: 0px 0px 0px 2px rgba(2 89 89 / 100%);
+  margin-right: 10px;
+
+  div {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 0px 2px rgba(2 89 89 / 100%);
+  }
+}
+
+.woo-variation-swatches
+  .variable-items-wrapper
+  .variable-item:not(.radio-variable-item).button-variable-item.selected:not(.no-stock) {
+  background: var(--color-secondary-light);
+  box-shadow: 0px 0px 0px 2px rgba(2 89 89 / 100%);
+
+  div {
+    color: var(--color-primary);
+  }
+}
+
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product p.price,
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product span.price {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.woocommerce div.product form.cart .variations label {
+  margin-right: -4px;
+}
+
+// Hide Reset Button for Variation Select
+.reset_variations {
+  display: none !important;
+}
+
+.wc-gzd-additional-info {
+  a {
+    color: var(--color-primary);
+    font-weight: bold;
   }
 }
 /* stylelint-enable */

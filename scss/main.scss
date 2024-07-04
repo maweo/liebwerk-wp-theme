@@ -7,6 +7,7 @@
 @forward './global/menu-mobile';
 @forward './global/menu-desktop';
 @forward './global/back-to-top';
+@forward './global/product-slider';
 
 @forward './theme/colors';
 @forward './theme/type';
@@ -35,6 +36,8 @@
 @forward './sections/grid';
 @forward './sections/post-grid';
 @forward './sections/timeline';
+@forward './sections/elements-grid';
+@forward './sections/product-grid-slider';
 
 // Pages
 @forward './pages/blog-single';
@@ -44,6 +47,8 @@
 @forward './woocommerce/archive-product';
 @forward './woocommerce/product-card';
 @forward './woocommerce/single-product';
+@forward './woocommerce/cart';
+@forward './woocommerce/checkout';
 
 // Sections Partials
 @forward './sections/partials/post-card';
@@ -55,4 +60,3 @@
 // Slider 
 @import '@glidejs/glide/dist/css/glide.core.css';
 @import '@glidejs/glide/dist/css/glide.theme.css';
-

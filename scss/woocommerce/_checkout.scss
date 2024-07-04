@@ -1,0 +1,49 @@
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+@use '../global/mixins' as *;
+@use '../theme/colors' as *;
+
+.wc-block-checkout {
+  margin-top: 1rem;
+
+  h2 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+  }
+
+  a {
+    color: var(--color-primary);
+    font-weight: 600;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  .wc-block-components-totals-coupon__button {
+    @extend %button-secondary;
+
+    padding: 0.5rem 1rem;
+
+    a {
+      color: var(--color-white);
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  .wc-block-components-checkout-place-order-button {
+    @extend %button;
+
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    color: var(--color-white);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}

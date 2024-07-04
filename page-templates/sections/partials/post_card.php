@@ -27,6 +27,8 @@ $date = get_the_date('F Y', $post_id);
                         <?php echo strip_tags($intro); ?>...
                     </div>
                 <?php endif; ?>
+            </div>
+            <div class="post-card__link-wrapper">
                 <a href="<?php echo $link; ?>" class="post-card__link">
                     Mehr lesen
                 </a>
