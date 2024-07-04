@@ -8,7 +8,7 @@
   padding: var(--section-padding-mobile);
 
   @include breakpoint(lg) {
-    padding: var(--section-padding-desktop);
+    padding: calc(var(--section-padding-desktop) * 1.5);
   }
 
   &--background-image {
@@ -30,48 +30,32 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-color: var(--color-background-overlay-light);
-  }
+    background: rgba(255 255 255 / 100%);
 
-  &--background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
+    &--left-to-right {
+      background: linear-gradient(90deg, rgba(255 255 255 / 90%) 15%, rgba(255 255 255 / 0%) 100%);
+    }
 
-  &--background-primary {
-    background-color: var(--color-primary);
-  }
-
-  &--background-secondary {
-    background-color: var(--color-secondary);
+    &--right-to-left {
+      background: linear-gradient(270deg, rgba(255 255 255 / 90%) 15%, rgba(255 255 255 / 0%) 100%);
+    }
   }
 
   &--heading {
     @extend %heading-large;
-  }
 
-  &--subheading {
-    @extend %sub-heading;
+    color: var(--color-primary);
   }
 
   &--text {
-    padding-top: 50px;
-    max-width: 880px;
-    margin: 0 auto;
+    padding-top: 1rem;
+    color: var(--color-primary);
   }
 
   &--button {
     @extend %button;
 
     display: block;
-    margin-top: 40px;
-
-    @include breakpoint(lg) {
-      margin-top: 42px;
-    }
+    margin-top: 2rem;
   }
 }

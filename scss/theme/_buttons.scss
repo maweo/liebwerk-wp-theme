@@ -17,6 +17,7 @@
   font-weight: 700;
   border-radius: var(--button-border-radius);
   width: 100%;
+  max-width: fit-content;
   text-align: center;
 
   @include breakpoint(lg) {
@@ -40,6 +41,7 @@
   font-weight: 700;
   border-radius: var(--button-border-radius);
   width: 100%;
+  max-width: fit-content;
   text-align: center;
 
   @include breakpoint(lg) {
