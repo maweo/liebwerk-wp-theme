@@ -35,6 +35,7 @@
 @forward './sections/sales-arguments';
 @forward './sections/grid';
 @forward './sections/post-grid';
+@forward './sections/elements-grid';
 @forward './sections/product-grid-slider';
 
 // Pages
@@ -55,5 +56,6 @@
 // bootstrap icons
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
+// Slider
 @import '@glidejs/glide/dist/css/glide.core.css';
 @import '@glidejs/glide/dist/css/glide.theme.css';
