@@ -1,0 +1,53 @@
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+@use '../global/mixins' as *;
+
+.engravings {
+    padding: 40px 0;
+
+    @include breakpoint(lg) {
+        padding: 96px 0;
+    }
+
+    &__heading {
+        @extend %heading-large;
+
+        color: var(--color-primary);
+        margin-bottom: 16px;
+        text-align: center;
+
+        @include breakpoint(lg) {
+            color: var(--color-secondary);
+        }
+    }
+
+    &__text {
+        @extend %text;
+
+        color: var(--color-primary);
+    }
+
+    &__images-desktop {
+        margin-top: 92px;
+    }
+
+    &__image-desktop {
+        position: relative;
+
+        &--0,
+        &--2 {
+            top: -90px;
+        }
+    }
+
+    &__images-mobile {
+        margin-top: 32px;
+    }
+
+    &__image-mobile {
+        height: 50px; 
+        width: 50px;
+        object-fit: contain;
+    }
+}
+
