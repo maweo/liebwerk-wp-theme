@@ -8,7 +8,7 @@
   padding: var(--section-padding-mobile);
 
   @include breakpoint(lg) {
-    padding: calc(var(--section-padding-desktop) * 1.5);
+    padding: var(--section-padding-desktop);
   }
 
   &--background-image {
