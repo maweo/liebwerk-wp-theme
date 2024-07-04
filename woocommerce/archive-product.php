@@ -33,11 +33,7 @@ $term_id = $queried_object->term_id ?? null;
                 </h1>
             <?php endif; ?>
             <div class="row">
-                <div class="col-lg-3">
-                    <!-- WooCommerce Product filter sidebar -->
-                    <?php echo do_shortcode('[br_filters_group group_id=80]'); ?>
-                </div>
-                <div class="col-lg-9">
+                <div class="col-12">
                     <?php
                     if (woocommerce_product_loop()) {
                         do_action('woocommerce_before_shop_loop');
