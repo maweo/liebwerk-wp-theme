@@ -3,7 +3,7 @@
     You can include this section in all of your templates. 
     All you need to do is to create an array containing all of the product id's you want to display in the slider
 
-    You can create an arrray like that by:
+    You can create an array like that by:
 
         -   Adding 'fields' => 'ids' to your query-arguments, if you use a WP-Query
 
@@ -39,7 +39,7 @@ $loop = new WP_Query($args);
 // Only display controls if there are enough slides to slide
 if (count($products) == 1) {
     $controls_class = "d-none-md";
-} else if (count($products) <= 4) {
+} else if (count($products) <= 3) {
     $controls_class = "d-xl-none";
 } else {
     $controls_class = "";
@@ -47,24 +47,65 @@ if (count($products) == 1) {
 ?>
 
 <?php if ($loop->have_posts()): ?>
-    <div class="image-slider__wrapper">
-        <div class="glide__track" data-glide-el="track">
-            <div class="glide__slides p-1">
+    <?php if (count($products) < 4): ?>
+        <!-- Grid for >= Tablet Size -->
+        <div class="d-none d-lg-block">
+            <div class="row gx-3">
                 <?php
                 while ($loop->have_posts()):
                     $loop->the_post();
-                    wc_get_template_part('content', 'product');
+                    ?>
+                    <?php wc_get_template_part('content', 'product'); ?>
+                    <?php
                 endwhile;
                 ?>
             </div>
-            <div class="image-slider__arrows">
-                <button class="image-slider__button--prev image-slider__arrow" data-glide-dir="<">
-                    <i class="bi bi-chevron-left"></i>
-                </button>
-                <button class="image-slider__button--next image-slider__arrow" data-glide-dir=">">
-                    <i class="bi bi-chevron-right"></i>
-                </button>
+        </div>
+        <!-- Slider for < Tablet Size -->
+        <div class="d-lg-none">
+            <div class="image-slider__wrapper">
+                <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides p-1">
+                        <?php
+                        while ($loop->have_posts()):
+                            $loop->the_post();
+                            wc_get_template_part('content', 'product');
+                        endwhile;
+                        ?>
+                    </div>
+                    <div class="image-slider__arrows <?php echo $controls_class ?>">
+                        <button class="image-slider__button--prev image-slider__arrow" data-glide-dir="<">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="image-slider__button--next image-slider__arrow" data-glide-dir=">">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-<?php endif;
+    <?php else: ?>
+        <div class="image-slider__wrapper">
+            <div class="glide__track" data-glide-el="track">
+                <div class="glide__slides p-1">
+                    <?php
+                    while ($loop->have_posts()):
+                        $loop->the_post();
+                        wc_get_template_part('content', 'product');
+                    endwhile;
+                    ?>
+                </div>
+                <div class="image-slider__arrows <?php echo $controls_class ?>">
+                    <button class="image-slider__button--prev image-slider__arrow" data-glide-dir="<">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="image-slider__button--next image-slider__arrow" data-glide-dir=">">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
+
+<?php wp_reset_postdata(); ?>

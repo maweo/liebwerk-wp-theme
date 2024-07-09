@@ -93,36 +93,76 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
 
             <div class="container mt-5">
                 <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-description-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-description" type="button" role="tab"
-                            aria-controls="pills-description" aria-selected="true">Beschreibung</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-characteristics-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-characteristics" type="button" role="tab"
-                            aria-controls="pills-characteristics" aria-selected="false">Merkmale</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-tips-and-tricks-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-tips-and-tricks" type="button" role="tab"
-                            aria-controls="pills-tips-and-tricks" aria-selected="false">Tipps und Tricks</button>
-                    </li>
+                    <?php
+                    $firstActiveSet = false;
+
+                    if ($product->get_description()):
+                        $activeClass = !$firstActiveSet ? 'active' : '';
+                        $firstActiveSet = true;
+                        ?>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link <?php echo $activeClass; ?>" id="pills-description-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-description" type="button" role="tab"
+                                aria-controls="pills-description"
+                                aria-selected="<?php echo $activeClass ? 'true' : 'false'; ?>">
+                                <?php pll_e('Beschreibung'); ?>
+                            </button>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if ($product_characteristics_repeater):
+                        $activeClass = !$firstActiveSet ? 'active' : '';
+                        $firstActiveSet = true;
+                        ?>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link <?php echo $activeClass; ?>" id="pills-characteristics-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-characteristics" type="button" role="tab"
+                                aria-controls="pills-characteristics"
+                                aria-selected="<?php echo $activeClass ? 'true' : 'false'; ?>">
+                                <?php pll_e('Merkmale'); ?>
+                            </button>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if ($product_tips_and_tricks):
+                        $activeClass = !$firstActiveSet ? 'active' : '';
+                        $firstActiveSet = true;
+                        ?>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link <?php echo $activeClass; ?>" id="pills-tips-and-tricks-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-tips-and-tricks" type="button" role="tab"
+                                aria-controls="pills-tips-and-tricks"
+                                aria-selected="<?php echo $activeClass ? 'true' : 'false'; ?>">
+                                <?php pll_e('Tipps und Tricks'); ?>
+                            </button>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
             <div class="tab-border"></div>
             <div class="container">
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
-                        aria-labelledby="pills-description-tab">
-                        <!-- Long Description -->
-                        <?php echo $product->get_description(); ?>
-                    </div>
-                    <div class="tab-pane fade" id="pills-characteristics" role="tabpanel"
-                        aria-labelledby="pills-characteristics-tab">
+                    <?php
+                    $firstContentActiveSet = false;
 
-                        <!-- Characteristics -->
-                        <?php if ($product_characteristics_repeater): ?>
+                    if ($product->get_description()):
+                        $activeClass = !$firstContentActiveSet ? 'show active' : '';
+                        $firstContentActiveSet = true;
+                        ?>
+                        <div class="tab-pane fade <?php echo $activeClass; ?>" id="pills-description" role="tabpanel"
+                            aria-labelledby="pills-description-tab">
+                            <!-- Long Description -->
+                            <?php echo $product->get_description(); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($product_characteristics_repeater):
+                        $activeClass = !$firstContentActiveSet ? 'show active' : '';
+                        $firstContentActiveSet = true;
+                        ?>
+                        <div class="tab-pane fade <?php echo $activeClass; ?>" id="pills-characteristics" role="tabpanel"
+                            aria-labelledby="pills-characteristics-tab">
+                            <!-- Characteristics -->
                             <div>
                                 <ul class="liebwerk-single-product__pdp-characteristics-list">
                                     <?php foreach ($product_characteristics_repeater as $characteristic): ?>
@@ -130,18 +170,21 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
-                        <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
 
-                    </div>
-                    <div class="tab-pane fade" id="pills-tips-and-tricks" role="tabpanel"
-                        aria-labelledby="pills-tips-and-tricks-tab">
-                        <!-- wysiwyg -->
-                        <?php if ($product_tips_and_tricks): ?>
+                    <?php if ($product_tips_and_tricks):
+                        $activeClass = !$firstContentActiveSet ? 'show active' : '';
+                        $firstContentActiveSet = true;
+                        ?>
+                        <div class="tab-pane fade <?php echo $activeClass; ?>" id="pills-tips-and-tricks" role="tabpanel"
+                            aria-labelledby="pills-tips-and-tricks-tab">
+                            <!-- wysiwyg -->
                             <div class="liebwerk-single-product__tips-and-tricks">
                                 <?php echo $product_tips_and_tricks; ?>
                             </div>
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -157,6 +200,9 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
                 //  remove tabs
                 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
                 do_action('woocommerce_after_single_product_summary');
+
+                // remove related products
+                remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
                 ?>
             </div>
 
