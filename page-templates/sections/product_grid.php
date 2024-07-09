@@ -6,7 +6,7 @@ $heading_tag = get_sub_field('heading_tag');
 $text = get_sub_field('text');
 $link = get_sub_field('link');
 $grid_type = get_sub_field('type');
-$count = get_sub_field('count') ?? 4; // Default count 4
+$count = get_sub_field('count');
 
 $products = array();
 

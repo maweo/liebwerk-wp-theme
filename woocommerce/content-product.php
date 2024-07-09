@@ -59,8 +59,8 @@ if (empty($product) || !$product->is_visible()) {
 
         <div class="liebwerk-product-card__bottom">
             <button class="liebwerk-product-card__details-button">
-                <?php if (function_exists('pll_e')): ?>
-                    <?php pll_e('Zum Produkt'); ?>
+                <?php if (function_exists('_e')): ?>
+                    <?php _e('Zum Produkt'); ?>
                 <?php else: ?>
                     Zum produkt
                 <?php endif; ?>
