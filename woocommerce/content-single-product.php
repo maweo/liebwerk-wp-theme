@@ -152,7 +152,7 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
                         <div class="tab-pane fade <?php echo $activeClass; ?>" id="pills-description" role="tabpanel"
                             aria-labelledby="pills-description-tab">
                             <!-- Long Description -->
-                            <?php echo $product->get_description(); ?>
+                            <?php echo wpautop($product->get_description()); ?>
                         </div>
                     <?php endif; ?>
 
