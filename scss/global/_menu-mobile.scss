@@ -41,9 +41,9 @@
     height: 100vh;
     width: 100%;
     max-width: 100%;
-    top: calc((var(--header-height-mobile) + 1px) + var(--topbar-height));
+    top: calc(var(--header-height-mobile) + var(--topbar-height) - 1px);
     margin: 0;
-    background: var(--color-beige);
+    background: var(--color-primary);
     display: block;
     line-height: 30px;
     overflow-y: scroll;
@@ -106,15 +106,26 @@
     display: block;
   }
 
+  &__accordion-button-inner {
+    border-bottom: 2px solid var(--color-highlight);
+    padding-bottom: 2px;
+  }
+
   // override bootstrap's default
   .accordion {
     padding: 0;
+    background-color: transparent;
 
     button {
       background: none;
-      color: var(--color-primary);
+      color: var(--color-white);
       outline: none;
       border: none;
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: 0.36px;
+      width: fit-content;
+      padding-bottom: 2px;
 
       &:focus,
       &:active {
@@ -126,14 +137,22 @@
 
   &__accordion-link-button {
     margin-bottom: 20px;
+    text-transform: uppercase;
   }
 
   &__accordion-link {
     text-decoration: none;
-    color: var(--color-primary);
+
+    /* stylelint-disable */
+    color: var(--color-white) !important;
+    /* stylelint-enable */
+
     font-weight: 700;
     font-size: 1.125rem;
     letter-spacing: 0.36px;
+    width: fit-content;
+    border-bottom: 2px solid var(--color-highlight);
+    padding-bottom: 2px;
   }
 
   .accordion-item {
@@ -160,6 +179,7 @@
     font-weight: 700;
     font-size: 1.125rem;
     letter-spacing: 0.36px;
+    text-transform: uppercase;
 
     a {
       text-decoration: none;
@@ -175,6 +195,9 @@
 
       &:focus {
         color: var(--color-primary);
+        border: 0;
+        box-shadow: none;
+        outline: 0;
       }
     }
 
@@ -190,27 +213,26 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3c!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3e%3cpath d='M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z'/%3e%3c/svg%3e");
-      filter: invert(25%) sepia(26%) saturate(3208%) hue-rotate(148deg) brightness(90%) contrast(98%);
+      filter: invert(100%);
     }
 
     &:not(.collapsed)::after {
       transform: rotate(0);
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3c!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3e%3cpath d='M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z'/%3e%3c/svg%3e");
-      filter: invert(25%) sepia(26%) saturate(3208%) hue-rotate(148deg) brightness(90%) contrast(98%);
+      filter: invert(100%);
     }
   }
 
   .accordion-collapse {
     color: var(--color-primary);
-    background: rgba(0 0 0 / 10%);
+    background: transparent;
   }
 
   .accordion-body {
     ul {
       list-style: none;
       padding: 0 0 0 28px;
-      color: var(--color-primary);
-      background: var(--color-beige);
+      background: transparent;
       margin-bottom: 20px;
     }
 
@@ -220,8 +242,9 @@
 
     a {
       text-decoration: none;
-      color: var(--color-primary);
+      color: var(--color-highlight);
       font-size: 1rem;
+      border: 0;
     }
   }
 
