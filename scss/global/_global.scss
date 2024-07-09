@@ -37,7 +37,12 @@ h6 {
 }
 
 a {
-  text-decoration: inherit;
+  text-decoration: underline;
+  color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-primary);
+  }
 }
 
 p {

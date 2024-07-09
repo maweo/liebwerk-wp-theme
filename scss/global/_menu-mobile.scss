@@ -11,9 +11,12 @@
   background: var(--color-white);
 
   &__logo {
-    height: 20px;
+    height: auto;
     object-fit: contain;
-    max-width: 140px;
+
+    /* stylelint-disable */
+    max-width: 120px !important;
+    /* stylelint-enable */
   }
 
   &__content {
@@ -300,6 +303,8 @@
 
         a {
           padding: 0.9rem;
+          color: var(--color-primary);
+          font-weight: bold;
 
           &:hover {
             background: none;

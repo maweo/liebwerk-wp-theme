@@ -3,117 +3,121 @@
 @use '../global/mixins' as *;
 
 .testimonials {
-  padding: 100px 0 202px;
+  padding: 40px 0;
 
-  &--grey {
-    background-color: var(--color-secondary-light);
+  @include breakpoint(lg) {
+    padding: 96px 0;
+  }
+
+  &__icon {
+    align-content: center;
+    margin-bottom: 32px;
   }
 
   &__heading {
     @extend %heading-large;
 
-    margin-bottom: 60px;
+    color: var(--color-primary);
+    margin-bottom: 48px;
     text-align: center;
   }
 
-  &__item {
-    background-color: var(--color-white);
-    padding: 42px 25px 51px 24px;
+  &__row {
+    display: none;
+    justify-content: center;
+    gap: 16px;
+    flex-direction: column;
 
-    @include breakpoint(xl) {
-      padding: 68px 138px;
+    @include breakpoint(lg) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__carousel {
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+
+  &__item {
+    background-color: var(--color-secondary-light);
+    padding: 16px;
+
+    @include breakpoint(lg) {
+      padding: 48px;
     }
 
-    &--none {
-      background-color: var(--color-secondary-light);
+    &-wrapper {
+      width: unset;
     }
   }
 
   &__text {
     @extend %text;
 
-    margin-bottom: 15px;
+    color: var(--color-primary);
+    margin-bottom: 16px;
   }
 
   &__author {
     @extend %text;
 
+    color: var(--color-primary);
     font-weight: 700;
   }
 
-  &__company {
-    @extend %text;
+  &__navigation {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
   }
 
-  &__quote {
-    position: absolute;
-    height: 50px;
-    width: 54px;
-    z-index: 1;
-
-    @include breakpoint(xl) {
-      height: 70px;
-      width: 75px;
-    }
-
-    &--left {
-      bottom: -30px;
-      left: 10px;
-
-      @include breakpoint(xl) {
-        bottom: -50px;
-        left: 20px;
-      }
-    }
-
-    &--right {
-      top: -30px;
-      right: 10px;
-
-      @include breakpoint(xl) {
-        top: -50px;
-        right: 20px;
-      }
-    }
+  &__arrows {
+    width: auto;
+    display: flex;
+    gap: 16px;
   }
 
   &__indicators {
-    bottom: -102px;
+    position: unset;
+    width: auto;
+    margin: 0 0 0 16px;
+
+    @include breakpoint(lg) {
+      display: none;
+    }
   }
 
   /* stylelint-disable*/
   /* BS wouldn't let me override this otherwise */
   &__indicator {
-    height: 10px !important;
-    width: 10px !important;
+    height: 8px !important;
+    width: 8px !important;
     background-color: var(--color-primary) !important;
     border: 0 !important;
+    border-radius: 100px;
   }
   /* stylelint-enable*/
 
   &__prev-icon {
     background-image: url('~icon/arrow_right.svg');
-    transform: scaleX(-1);
+    height: 16px;
   }
 
   &__next-icon {
     background-image: url('~icon/arrow_right.svg');
+    transform: scaleX(-1);
+    height: 16px;
   }
 
   &__control {
     opacity: 1;
-    display: none;
+    display: block;
+    position: unset;
 
-    @include breakpoint(xl) {
-      display: block;
-    }
-
-    &--next {
-      right: -120px;
-    }
-
-    &--prev {
-      left: -120px;
+    @include breakpoint(lg) {
+      display: none;
     }
   }
 }

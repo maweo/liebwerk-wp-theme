@@ -5,10 +5,10 @@
 
 .accordion {
   background: rgba(122 166 225 / 20%);
-  padding: 60px 0;
+  padding: var(--section-padding-mobile);
 
-  @include breakpoint(md) {
-    padding: 100px 0;
+  @include breakpoint(lg) {
+    padding: var(--section-padding-desktop);
   }
 
   &__wrapper {

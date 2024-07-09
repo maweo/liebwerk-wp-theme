@@ -1,0 +1,24 @@
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+@use '../global/mixins' as *;
+
+.store-locator {
+    padding: 40px 0;
+
+    @include breakpoint(lg) {
+        padding: 96px 0;
+    }
+
+    &__heading {
+        @extend %heading-large;
+
+        color: var(--color-primary);
+        margin-bottom: 48px;
+        text-align: center;
+    }
+
+    .wpsf-side-panel {
+        display: none;
+    }
+}
+

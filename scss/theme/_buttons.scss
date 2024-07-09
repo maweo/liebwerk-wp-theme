@@ -1,7 +1,8 @@
 @use '../global/mixins' as *;
 
 :root {
-  --button-padding: 12px 30px;
+  --button-padding-mobile: 10px 20px;
+  --button-padding-desktop: 12px 30px;
   --button-font-size: 16px;
   --button-border-radius: 0;
 }
@@ -12,15 +13,17 @@
   border: 2px solid var(--color-primary);
   text-decoration: none;
   cursor: pointer;
-  padding: var(--button-padding);
+  padding: var(--button-padding-mobile);
   font-size: var(--button-font-size);
   font-weight: 700;
   border-radius: var(--button-border-radius);
   width: 100%;
+  max-width: fit-content;
   text-align: center;
 
   @include breakpoint(lg) {
     width: fit-content;
+    padding: var(--button-padding-desktop);
   }
 
   &:hover {
@@ -35,15 +38,17 @@
   border: 2px solid var(--color-primary);
   text-decoration: none;
   cursor: pointer;
-  padding: var(--button-padding);
+  padding: var(--button-padding-mobile);
   font-size: var(--button-font-size);
   font-weight: 700;
   border-radius: var(--button-border-radius);
   width: 100%;
+  max-width: fit-content;
   text-align: center;
 
   @include breakpoint(lg) {
     width: fit-content;
+    padding: var(--button-padding-desktop);
   }
 
   &:hover {

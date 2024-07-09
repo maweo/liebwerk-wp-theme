@@ -83,7 +83,7 @@
   &__image-wrapper {
     display: flex;
     flex-direction: column;
-    height: 150px;
+    height: 120px;
 
     @include breakpoint(lg) {
       height: 100%;

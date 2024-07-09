@@ -5,8 +5,12 @@
 
 .logo-repeater {
   position: relative;
-  padding: 60px 0;
   text-align: center;
+  padding: var(--section-padding-mobile);
+
+  @include breakpoint(lg) {
+    padding: var(--section-padding-desktop);
+  }
 
   &--grey {
     background-color: var(--color-secondary-light);
