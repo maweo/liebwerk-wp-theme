@@ -105,7 +105,7 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
                                 data-bs-toggle="pill" data-bs-target="#pills-description" type="button" role="tab"
                                 aria-controls="pills-description"
                                 aria-selected="<?php echo $activeClass ? 'true' : 'false'; ?>">
-                                <?php pll_e('Beschreibung'); ?>
+                                <?php _e('Beschreibung'); ?>
                             </button>
                         </li>
                     <?php endif; ?>
@@ -119,7 +119,7 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
                                 data-bs-toggle="pill" data-bs-target="#pills-characteristics" type="button" role="tab"
                                 aria-controls="pills-characteristics"
                                 aria-selected="<?php echo $activeClass ? 'true' : 'false'; ?>">
-                                <?php pll_e('Merkmale'); ?>
+                                <?php _e('Merkmale'); ?>
                             </button>
                         </li>
                     <?php endif; ?>
@@ -133,7 +133,7 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
                                 data-bs-toggle="pill" data-bs-target="#pills-tips-and-tricks" type="button" role="tab"
                                 aria-controls="pills-tips-and-tricks"
                                 aria-selected="<?php echo $activeClass ? 'true' : 'false'; ?>">
-                                <?php pll_e('Tipps und Tricks'); ?>
+                                <?php _e('Tipps und Tricks'); ?>
                             </button>
                         </li>
                     <?php endif; ?>
