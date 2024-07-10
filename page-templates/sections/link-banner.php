@@ -12,9 +12,9 @@ $link = get_sub_field('link');
     <div class="container">
         <div class="row">
             <?php if ($banner_layout === "content-right"): ?>
-                <div class="col-12 col-lg-5"></div>
+                <div class="col-12 col-lg-4"></div>
             <?php endif; ?>
-            <div class="col-12 col-lg-7">
+            <div class="col-12 col-lg-6">
                 <?php if ($heading): ?>
                     <?php echo maweo_get_heading($heading, $headingTag, "link-banner--heading") ?>
                 <?php endif; ?>
