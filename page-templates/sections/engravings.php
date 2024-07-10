@@ -12,10 +12,10 @@ $images_mobile = get_sub_field('images_mobile');
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6 mx-auto">
-                <?php if ($heading) : ?>
+                <?php if ($heading): ?>
                     <?php echo maweo_get_heading($heading, $heading_tag, "engravings__heading") ?>
                 <?php endif; ?>
-                <?php if ($text) : ?>
+                <?php if ($text): ?>
                     <div class="maweo-wysiwyg engravings__text text-center">
                         <?php echo $text ?>
                     </div>
@@ -25,14 +25,11 @@ $images_mobile = get_sub_field('images_mobile');
         <div class="row d-none d-lg-flex">
             <div class="col-10 mx-auto">
                 <div class="d-flex justify-content-between engravings__images-desktop">
-                    <?php $i = 0;?>
-                    <?php foreach ($images_desktop as $image) : ?>
+                    <?php $i = 0; ?>
+                    <?php foreach ($images_desktop as $image): ?>
                         <?php $data = get_image_data($image['image']) ?>
-                        <img 
-                            src="<?php echo $data['url'] ?>"
-                            alt="<?php echo $data['alt'] ?>"
-                            class="engravings__image-desktop engravings__image-desktop--<?php echo $i?>"
-                        >
+                        <img src="<?php echo $data['url'] ?>" alt="<?php echo $data['alt'] ?>"
+                            class="engravings__image-desktop engravings__image-desktop--<?php echo $i ?>">
                         <?php $i++ ?>
                     <?php endforeach; ?>
                 </div>
@@ -41,14 +38,11 @@ $images_mobile = get_sub_field('images_mobile');
         <div class="row d-lg-none">
             <div class="col-6 mx-auto">
                 <div class="d-flex justify-content-between engravings__images-mobile">
-                    <?php $i = 0;?>
-                    <?php foreach ($images_mobile as $image) : ?>
+                    <?php $i = 0; ?>
+                    <?php foreach ($images_mobile as $image): ?>
                         <?php $data = get_image_data($image['image']) ?>
-                        <img 
-                            src="<?php echo $data['url'] ?>"
-                            alt="<?php echo $data['alt'] ?>"
-                            class="engravings__image-mobile"
-                        >
+                        <img src="<?php echo $data['url'] ?>" alt="<?php echo $data['alt'] ?>"
+                            class="engravings__image-mobile">
                         <?php $i++ ?>
                     <?php endforeach; ?>
                 </div>
