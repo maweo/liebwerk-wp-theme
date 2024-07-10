@@ -10,15 +10,24 @@
     padding: var(--section-padding-desktop);
   }
 
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
   &__heading {
     @extend %heading-large;
 
     color: var(--color-secondary);
     margin-bottom: 1rem;
-    word-break: break-all;
+    word-break: break-word;
 
     @include breakpoint(lg) {
-      margin-bottom: 0;
+      margin-bottom: 2rem;
     }
   }
 
@@ -31,5 +40,11 @@
 
   &__text {
     color: var(--color-primary);
+  }
+
+  ul {
+    li {
+      margin-bottom: 0.5rem;
+    }
   }
 }

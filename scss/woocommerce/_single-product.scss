@@ -70,6 +70,10 @@
     border-color: transparent !important;
   }
 
+  .wpgs-nav .slick-current {
+    border-color: var(--color-primary) !important;
+  }
+
   // Slider Arrow Position
   .slick-arrow {
     // top: 114% !important;
@@ -86,13 +90,12 @@
 
   // Slider Arrow Left
   .flaticon-back {
-    left: 13px;
-    background-image: url('../assets/icons/chevron-left.svg');
+    left: 0px;
+    background-image: url('../assets/icons/chevron-down.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    filter: brightness(0);
     height: 24px;
-    opacity: 0.2;
+    transform: rotate(180deg);
 
     &::before {
       color: transparent !important;
@@ -102,13 +105,11 @@
   // Slider Arrow Right
   .flaticon-right-arrow {
     right: 0;
-    background-image: url('../assets/icons/chevron-right.svg');
+    background-image: url('../assets/icons/chevron-down.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    filter: brightness(0);
     height: 24px;
     color: transparent !important;
-    opacity: 0.2;
 
     &::before {
       color: transparent !important;

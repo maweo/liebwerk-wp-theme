@@ -43,7 +43,8 @@ $reading_time = calculate_reading_time($total_text . ' ' . $headlines);
       <div class="col-12 mb-4">
         <a href="<?php echo site_url('/blog') ?>" class="blog-single__back">
           <i class="bi bi-arrow-left"></i>
-          Alle Artikel </a>
+          <?php _e('Alle Artikel'); ?>
+        </a>
         <h1 class="blog-single__heading">
           <?php echo $title; ?>
         </h1>
@@ -55,12 +56,12 @@ $reading_time = calculate_reading_time($total_text . ' ' . $headlines);
         <div class="col-lg-12">
           <div class="d-flex gap-4 mb-2 blog-single__info">
             <div>
-              Von Liebwerk
+              <?php _e('Von Liebwerk'); ?>
             </div>
             <?php if ($reading_time): ?>
               <div>
-                Lesezeit:
-                <?php echo $reading_time; ?> Minuten
+                <?php _e('Lesezeit'); ?>:
+                <?php echo $reading_time; ?>   <?php _e('Minuten'); ?>
               </div>
             <?php endif; ?>
           </div>

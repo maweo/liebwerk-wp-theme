@@ -29,6 +29,7 @@
   &:hover {
     color: var(--color-primary);
     background-color: transparent;
+    opacity: 1;
   }
 }
 
@@ -55,6 +56,7 @@
     color: var(--color-white);
     background-color: var(--color-primary);
     border: 2px solid var(--color-white);
+    opacity: 1;
   }
 }
 
@@ -73,6 +75,7 @@
   &:hover {
     color: var(--color-text);
     background-color: var(--color-brand);
+    opacity: 1;
   }
 }
 
