@@ -18,13 +18,14 @@
   }
 
   &__info {
-    padding: 64px 48px;
+    padding: 2rem;
     background: var(--color-secondary-light);
     text-align: left;
     color: var(--color-primary);
 
     @include breakpoint(lg) {
       max-width: 500px;
+      padding: 64px 48px;
     }
 
     &--img {

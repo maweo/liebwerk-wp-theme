@@ -190,7 +190,8 @@
   }
 
   &__quantity-select {
-    width: 120px;
+    max-width: 120px;
+    width: 100%;
     margin-right: 1rem;
     background: var(--color-secondary-light);
     height: 52px;
@@ -230,9 +231,12 @@
     width: fit-content;
   }
 
-  // Bootstrap Tabs
   .nav-tabs {
     border-bottom: none;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    padding-right: 30px;
+    scrollbar-width: none;
   }
 
   .nav-link {
@@ -241,6 +245,7 @@
     border: none;
     border-bottom: none;
     color: var(--color-primary);
+    white-space: nowrap;
 
     @include breakpoint(lg) {
       font-size: 1.5rem;

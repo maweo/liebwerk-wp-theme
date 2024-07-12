@@ -3,8 +3,13 @@
 @use '../global/mixins' as *;
 
 .post-grid {
+  padding: var(--section-padding-mobile);
+
+  @include breakpoint(lg) {
+    padding: var(--section-padding-desktop);
+  }
+
   background-color: var(--color-brand-secondary-light);
-  padding: 100px 0;
   max-width: 920px;
   margin: 0 auto;
 
