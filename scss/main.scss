@@ -51,6 +51,7 @@
 @forward './woocommerce/single-product';
 @forward './woocommerce/cart';
 @forward './woocommerce/checkout';
+@forward './woocommerce/account';
 
 // Sections Partials
 @forward './sections/partials/post-card';
@@ -59,6 +60,6 @@
 // bootstrap icons
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
-// Slider 
+// Slider
 @import '@glidejs/glide/dist/css/glide.core.css';
 @import '@glidejs/glide/dist/css/glide.theme.css';
