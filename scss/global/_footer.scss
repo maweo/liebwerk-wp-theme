@@ -7,9 +7,10 @@
   background: var(--color-white);
   padding: 40px 0;
   border-bottom: 3px solid var(--color-primary);
+  border-top: 3px solid var(--color-primary);
 
   @include breakpoint(lg) {
-    padding: 48px 0 66px;
+    padding: 48px 0 64px;
   }
 
   &__logo {

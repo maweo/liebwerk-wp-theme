@@ -21,7 +21,7 @@
 
     color: var(--color-primary);
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   &--text {
@@ -41,13 +41,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 1rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     text-align: left;
 
     @include breakpoint(md) {
       padding: 1rem 2rem;
+      font-size: var(--text-font-size);
     }
 
     &:hover {
@@ -85,7 +85,7 @@
   }
 
   .accordion-item {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     border: none;
 
     .accordion-body {
@@ -95,6 +95,7 @@
 
       @include breakpoint(md) {
         padding: 2rem;
+        font-size: var(--text-font-size);
       }
     }
 

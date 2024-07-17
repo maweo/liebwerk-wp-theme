@@ -3,10 +3,12 @@
 @use '../global/mixins' as *;
 
 .engravings {
-  padding: 40px 0;
+  padding: var(--section-padding-mobile);
 
-  @include breakpoint(lg) {
-    padding: 96px 0;
+  &__padding-big {
+    @include breakpoint(lg) {
+      padding: var(--section-padding-desktop);
+    }
   }
 
   &__heading {

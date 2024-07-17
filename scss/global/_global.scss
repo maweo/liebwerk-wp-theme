@@ -5,8 +5,12 @@
   font-family: var(--font-primary);
 }
 
-html {
-  font-size: 16px;
+html,
+.maweo-wysiwyg p {
+  @include breakpoint(md) {
+    font-size: var(--text-font-size);
+    line-height: 1.35rem;
+  }
 }
 
 main,

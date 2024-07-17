@@ -3,7 +3,8 @@
 :root {
   --button-padding-mobile: 10px 20px;
   --button-padding-desktop: 12px 30px;
-  --button-font-size: 16px;
+  --button-font-size-mobile: 16px;
+  --button-font-size-desktop: 18px;
   --button-border-radius: 0;
 }
 
@@ -14,7 +15,7 @@
   text-decoration: none;
   cursor: pointer;
   padding: var(--button-padding-mobile);
-  font-size: var(--button-font-size);
+  font-size: var(--button-font-size-mobile);
   font-weight: 700;
   border-radius: var(--button-border-radius);
   width: 100%;
@@ -22,6 +23,7 @@
   text-align: center;
 
   @include breakpoint(lg) {
+    font-size: var(--button-font-size-desktop);
     width: fit-content;
     padding: var(--button-padding-desktop);
   }
@@ -40,7 +42,7 @@
   text-decoration: none;
   cursor: pointer;
   padding: var(--button-padding-mobile);
-  font-size: var(--button-font-size);
+  font-size: var(--button-font-size-mobile);
   font-weight: 700;
   border-radius: var(--button-border-radius);
   width: 100%;
@@ -50,6 +52,7 @@
   @include breakpoint(lg) {
     width: fit-content;
     padding: var(--button-padding-desktop);
+    font-size: var(--button-font-size-desktop);
   }
 
   &:hover {
@@ -63,7 +66,7 @@
 %button-highlight {
   cursor: pointer;
   padding: 20px 30px;
-  font-size: 1rem;
+  font-size: var(--button-font-size-mobile);
   font-weight: 700;
   border: 2px solid var(--color-brand);
   border-radius: var(--button-border-radius);
@@ -71,6 +74,10 @@
   color: var(--color-text);
   text-decoration: none;
   transition: ease 0.3s;
+
+  @include breakpoint(lg) {
+    font-size: var(--button-font-size-desktop);
+  }
 
   &:hover {
     color: var(--color-text);

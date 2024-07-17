@@ -4,7 +4,7 @@ $headingTag = get_sub_field('heading_tag');
 $item_repeater = get_sub_field('item_repeater');
 ?>
 
-<div class="sales-arguments">
+<section class="sales-arguments">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -39,4 +39,4 @@ $item_repeater = get_sub_field('item_repeater');
             <?php endforeach; ?>
         </div>
     </div>
-</div>
+</section>

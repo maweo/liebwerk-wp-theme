@@ -7,7 +7,7 @@ $form = get_sub_field('form');
 ?>
 
 <section class="contact">
-    <div class="container py-5">
+    <div class="container">
         <div class="row">
             <div class="col-lg-5">
                 <?php if ($heading): ?>

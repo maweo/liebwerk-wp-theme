@@ -6,8 +6,10 @@
   position: relative;
   padding: var(--section-padding-mobile);
 
-  @include breakpoint(lg) {
-    padding: var(--section-padding-desktop);
+  &__padding-big {
+    @include breakpoint(lg) {
+      padding: var(--section-padding-desktop);
+    }
   }
 
   &__content {
