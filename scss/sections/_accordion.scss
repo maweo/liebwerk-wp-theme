@@ -41,13 +41,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: var(--text-font-size);
     font-weight: bold;
     margin-bottom: 0.5rem;
     text-align: left;
 
     @include breakpoint(md) {
       padding: 1rem 2rem;
+      font-size: var(--text-font-size);
     }
 
     &:hover {
@@ -92,10 +92,10 @@
       padding: 1.5rem;
       color: var(--color-primary);
       font-weight: bold;
-      font-size: var(--text-font-size);
 
       @include breakpoint(md) {
         padding: 2rem;
+        font-size: var(--text-font-size);
       }
     }
 

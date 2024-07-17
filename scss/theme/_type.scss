@@ -46,6 +46,9 @@
 
 %text {
   color: var(--color-text);
-  font-size: var(--text-font-size);
-  line-height: 1.35rem;
+
+  @include breakpoint(md) {
+    font-size: var(--text-font-size);
+    line-height: 1.35rem;
+  }
 }
