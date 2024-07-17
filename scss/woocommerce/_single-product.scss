@@ -5,10 +5,10 @@
 
 .liebwerk-single-product {
   color: var(--color-primary);
-  padding: 30px 0;
+  padding: 40px 0 0 0;
 
   @include breakpoint(lg) {
-    padding: 85px 0;
+    padding: 96px 0 0 0;
   }
 
   &__heading {
@@ -237,6 +237,10 @@
     flex-wrap: nowrap;
     padding-right: 30px;
     scrollbar-width: none;
+
+    @include breakpoint(md) {
+      gap: 64px;
+    }
   }
 
   .nav-link {

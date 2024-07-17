@@ -5,8 +5,10 @@
   font-family: var(--font-primary);
 }
 
-html {
-  font-size: 1.125rem;
+html,
+.maweo-wysiwyg p {
+  font-size: var(--text-font-size);
+  line-height: 1.35rem;
 }
 
 main,

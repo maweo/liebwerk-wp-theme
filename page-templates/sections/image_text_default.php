@@ -1,4 +1,5 @@
 <?php
+$padding = get_sub_field('section_padding');
 $heading_icon = get_sub_field('heading_icon');
 $heading = get_sub_field('heading');
 $heading_tag = get_sub_field('heading_tag');
@@ -6,6 +7,8 @@ $headline_color = get_sub_field('headline_color');
 $sub_heading = get_sub_field('sub_heading');
 $text = get_sub_field('text');
 $link = get_sub_field('link');
+
+$padding = $padding === "big" ? "image-text__padding-big" : "" ;
 
 $image_one = get_image_data_from_sub_field('image');
 
@@ -23,7 +26,7 @@ $is_centered_mobile_class = get_sub_field('is_text_centered_mobile') ? " d-block
 
 <?php $headline_color = " image-text__heading--" . $headline_color ?>
 
-<section class="image-text">
+<section class="image-text <?php echo $padding; ?>">
     <div class="container">
         <div class="row">
             <div

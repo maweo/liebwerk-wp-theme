@@ -5,6 +5,12 @@
 .engravings {
   padding: var(--section-padding-mobile);
 
+  &__padding-big {
+    @include breakpoint(lg) {
+      padding: var(--section-padding-desktop);
+    }
+  }
+
   &__heading {
     @extend %heading-large;
 

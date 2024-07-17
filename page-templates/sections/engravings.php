@@ -1,14 +1,17 @@
 <?php
+$padding = get_sub_field('section_padding');
 $heading = get_sub_field('heading');
 $heading_tag = get_sub_field('heading_tag');
 $text = get_sub_field('text');
 
 $images_desktop = get_sub_field('images_desktop');
 $images_mobile = get_sub_field('images_mobile');
+
+$padding = $padding === "big" ? "engravings__padding-big" : "" ;
 ?>
 
 
-<div class="engravings">
+<section class="engravings <?php echo $padding; ?>">
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6 mx-auto">
@@ -49,4 +52,4 @@ $images_mobile = get_sub_field('images_mobile');
             </div>
         </div>
     </div>
-</div>
+</section>
