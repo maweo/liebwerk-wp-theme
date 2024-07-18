@@ -91,7 +91,6 @@
     .accordion-body {
       padding: 1.5rem;
       color: var(--color-primary);
-      font-weight: bold;
 
       @include breakpoint(md) {
         padding: 2rem;
