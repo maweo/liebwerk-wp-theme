@@ -50,16 +50,17 @@
 
   &__icons {
     display: flex;
-    gap: 16px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 16px;
     max-width: 75%;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
 
     @include breakpoint(lg) {
       max-width: unset;
       margin: unset;
+      justify-content: flex-end;
     }
   }
 

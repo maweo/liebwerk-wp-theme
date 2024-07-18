@@ -4,10 +4,8 @@
 @use '../theme/buttons' as *;
 
 .footer {
-  background: var(--color-white);
+  background: rgba(236 236 204 / 40%);
   padding: 40px 0;
-  border-bottom: 3px solid var(--color-primary);
-  border-top: 3px solid var(--color-primary);
 
   @include breakpoint(lg) {
     padding: 48px 0 64px;
@@ -22,13 +20,14 @@
   &__social-links {
     display: flex;
     gap: 32px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 18px;
+    margin-top: 2rem;
 
     @include breakpoint(lg) {
+      margin-top: 1.8rem;
       margin-bottom: 0;
-      justify-content: flex-end;
     }
   }
 
