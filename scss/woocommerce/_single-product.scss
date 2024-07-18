@@ -5,10 +5,10 @@
 
 .liebwerk-single-product {
   color: var(--color-primary);
-  padding: 40px 0 0 0;
+  padding: 40px 0 0;
 
   @include breakpoint(lg) {
-    padding: 96px 0 0 0;
+    padding: 96px 0 0;
   }
 
   &__heading {
@@ -216,6 +216,7 @@
       border: none;
       background: none;
       color: var(--color-primary);
+      font-size: 0.9rem;
 
       &::-webkit-inner-spin-button,
       &::-webkit-outer-spin-button {
@@ -272,7 +273,7 @@
   }
 
   .tab-border {
-    margin-top: -17px;
+    margin-top: -18px;
     border-bottom: 2px solid var(--color-primary);
   }
 }
