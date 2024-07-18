@@ -38,7 +38,7 @@
     color: var(--color-gold);
 
     @include breakpoint(lg) {
-      font-size: 2rem;
+      font-size: 1.4rem;
     }
   }
 
@@ -47,7 +47,7 @@
     width: 2rem;
 
     @include breakpoint(lg) {
-      width: 2.5rem;
+      width: 2rem;
     }
   }
 
