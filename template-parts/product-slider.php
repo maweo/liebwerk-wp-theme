@@ -32,6 +32,7 @@ $args = array(
     'post_type' => 'product',
     'post__in' => $products,
     'posts_per_page' => -1,
+    'orderby' => 'menu_order'
 );
 
 $loop = new WP_Query($args);
