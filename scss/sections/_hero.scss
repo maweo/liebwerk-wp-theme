@@ -40,7 +40,7 @@
     @extend %sub-heading;
 
     color: var(--color-gold);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 1px rgba(0 0 0 / 30%);
 
     @include breakpoint(lg) {
       font-size: 2rem;

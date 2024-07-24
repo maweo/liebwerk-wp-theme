@@ -185,14 +185,15 @@
 
   &__add-to-cart-button-wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 0;
+    gap: 10px;
   }
 
   &__quantity-select {
-    max-width: 120px;
-    width: 100%;
-    margin-right: 1rem;
+    width: 126px;
+    margin-right: 0;
     background: var(--color-secondary-light);
     height: 52px;
     display: flex;
