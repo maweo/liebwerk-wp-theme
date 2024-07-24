@@ -20,9 +20,13 @@
   &__heading {
     @extend %heading-x-large;
 
-    margin-bottom: 1.3rem;
     color: var(--color-primary);
     line-height: 1;
+    margin-bottom: -0.7rem;
+
+    @include breakpoint(lg) {
+      margin-bottom: 1.3rem;
+    }
   }
 
   &__subheading-wrapper {
@@ -36,6 +40,7 @@
     @extend %sub-heading;
 
     color: var(--color-gold);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 
     @include breakpoint(lg) {
       font-size: 2rem;
@@ -53,8 +58,13 @@
 
   &__link-wrapper {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+
+    @include breakpoint(lg) {
+      margin-top: 2rem;
+    }
   }
 
   &__link {
@@ -83,7 +93,11 @@
     }
 
     &--full {
-      min-height: 90vh;
+      min-height: 65vh;
+
+      @include breakpoint(lg) {
+        min-height: 90vh;
+      }
     }
   }
 
@@ -97,7 +111,7 @@
     background-color: rgba(255 255 255 / 2%);
 
     @include breakpoint(lg) {
-      background-color: none;
+      background-color: rgba(255 255 255 / 30%);
     }
   }
 

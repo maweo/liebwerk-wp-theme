@@ -18,7 +18,7 @@ $height = get_sub_field('height');
 <section class='hero hero--<?php echo $height ?>'>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <div class="hero__content">
                     <?php if ($sub_heading): ?>
                         <div class="hero__subheading-wrapper">
