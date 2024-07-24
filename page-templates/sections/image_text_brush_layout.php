@@ -39,7 +39,8 @@ $is_centered_mobile_class = get_sub_field('is_text_centered_mobile') ? " d-block
             </div>
             <div
                 class="col-12 col-lg-3 order-lg-1 <?php echo in_array($image_position_desktop, ["right-top", "right-bottom"]) ? "offset-lg-1" : "" ?>">
-                <div class="image-text-brush-layout__image-wrapper">
+                <div
+                    class="<?php echo in_array($image_position_mobile, ["center"]) ? "image-text-brush-layout__image-wrapper-centered" : "image-text-brush-layout__image-wrapper" ?>">
                     <?php if ($image_desktop): ?>
                         <img src="<?php echo $image_desktop['url'] ?>" alt="<?php echo $image_desktop['alt'] ?>"
                             class="d-none d-lg-block image-text-brush-layout__desktop-image image-text-brush-layout__desktop-image--<?php echo $image_position_desktop; ?>">
