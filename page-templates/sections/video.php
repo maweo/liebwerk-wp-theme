@@ -11,20 +11,24 @@ $link = get_sub_field('link');
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <?php echo maweo_get_heading($heading, $heading_tag, "video-section__heading mb-0") ?>
+                <?php if ($heading): ?>
+                    <?php echo maweo_get_heading($heading, $heading_tag, "video-section__heading mb-0") ?>
+                <?php endif; ?>
                 <?php if ($text): ?>
                     <div class="maweo-wysiwyg video-section__text">
                         <?php echo $text ?>
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="col-12">
-                <div class="video-section__video">
-                    <iframe src="<?php echo $video_url ?>" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+            <?php if ($video_url): ?>
+                <div class="col-12">
+                    <div class="video-section__video">
+                        <iframe src="<?php echo $video_url ?>" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
     <?php if ($link): ?>
