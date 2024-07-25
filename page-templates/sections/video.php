@@ -34,5 +34,4 @@ $link = get_sub_field('link');
     <?php if ($link): ?>
         <?php echo maweo_get_link($link, "maweo-button video-section__button" . $is_centered_class) ?>
     <?php endif; ?>
-    </div>
 </section>
