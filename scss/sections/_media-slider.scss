@@ -22,12 +22,12 @@
   &__heading {
     @extend %heading-large;
 
-    color: var(--color-black);
+    color: var(--color-primary);
     text-align: center;
   }
 
   &__text {
-    color: var(--color-black);
+    color: var(--color-primary);
     margin: 2rem 0;
     text-align: center;
   }

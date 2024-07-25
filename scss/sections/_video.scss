@@ -1,0 +1,55 @@
+@use '../global/mixins' as *;
+@use '../global/global' as *;
+@use '../theme/type' as *;
+@use '../theme/buttons' as *;
+
+.video-section {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: var(--section-padding-mobile);
+
+  @include breakpoint(lg) {
+    padding: var(--section-padding-desktop);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__heading {
+    @extend %heading-large;
+
+    color: var(--color-primary);
+    text-align: center;
+  }
+
+  &__text {
+    color: var(--color-primary);
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  &__video {
+    position: relative;
+    padding-bottom: 56.25%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__button {
+    @extend %button;
+
+    width: fit-content;
+    display: block;
+    margin: 60px auto 0;
+  }
+}
