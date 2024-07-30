@@ -6,7 +6,7 @@ $item_repeater = get_sub_field('item_repeater');
 
 <section class="sales-arguments">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-evenly">
             <div class="col-12">
                 <?php if ($heading): ?>
                     <?php echo maweo_get_heading($heading, $headingTag, "sales-arguments--heading") ?>

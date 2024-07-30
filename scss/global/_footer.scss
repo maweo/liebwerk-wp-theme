@@ -23,10 +23,10 @@
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 18px;
-    margin-top: 2rem;
+    margin-top: 0;
 
     @include breakpoint(lg) {
-      margin-top: 1.8rem;
+      margin-top: 0;
       margin-bottom: 0;
     }
   }

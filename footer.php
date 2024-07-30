@@ -22,15 +22,6 @@ include_once ('template-parts/back-to-top.php');
         <?php if ($footer_logo && $footer_logo['url'] != ""): ?>
           <img src="<?php echo $footer_logo['url'] ?>" alt="<?php echo $footer_logo['alt'] ?>" class="footer__logo">
         <?php endif; ?>
-        <?php if ($footer_social_links): ?>
-          <div class="footer__social-links">
-            <?php foreach ($footer_social_links as $link): ?>
-              <?php if ($link['link']): ?>
-                <?php echo maweo_get_icon_link($link['link'], $link['icon'], "footer__social-link", "footer__social-link-icon") ?>
-              <?php endif; ?>
-            <?php endforeach; ?>
-          </div>
-        <?php endif; ?>
       </div>
       <div class="col-12 col-lg-2">
         <?php if ($footer_column_1['heading']): ?>
@@ -77,6 +68,15 @@ include_once ('template-parts/back-to-top.php');
                 <?php echo maweo_get_link($link['link'], "footer__link") ?>
               <?php endif; ?>
             <?php endforeach; ?>
+            <?php if ($footer_social_links): ?>
+              <div class="footer__social-links">
+                <?php foreach ($footer_social_links as $link): ?>
+                  <?php if ($link['link']): ?>
+                    <?php echo maweo_get_icon_link($link['link'], $link['icon'], "footer__social-link", "footer__social-link-icon") ?>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
           </div>
         <?php endif; ?>
       </div>

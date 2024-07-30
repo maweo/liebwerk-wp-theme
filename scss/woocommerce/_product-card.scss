@@ -82,20 +82,7 @@
   }
 
   &__description {
-    font-size: 0.9rem;
-    line-height: 1.25;
-    color: var(--color-black);
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    height: 37px;
-    margin: 0.8rem 0;
-    white-space: normal !important;
-
-    @include breakpoint(lg) {
-      height: 43px;
-    }
+    display: none;
   }
   /* stylelint-enable */
 

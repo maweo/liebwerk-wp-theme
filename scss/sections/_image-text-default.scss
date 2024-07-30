@@ -35,6 +35,12 @@
     width: 4rem;
     object-fit: contain;
     margin-bottom: 0.8rem;
+
+    @include breakpoint(xl) {
+      position: absolute;
+      top: -80%;
+      right: 0;
+    }
   }
 
   &__heading {
@@ -46,6 +52,12 @@
 
     &--dark {
       color: var(--color-primary);
+    }
+
+    &-container {
+      @include breakpoint(xl) {
+        position: relative;
+      }
     }
   }
 
