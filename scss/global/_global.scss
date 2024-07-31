@@ -22,11 +22,6 @@ body {
   min-height: 80vh;
   margin-top: calc(var(--header-height-mobile) + var(--topbar-height));
 
-  @include breakpoint(md) {
-    font-size: var(--text-font-size);
-    line-height: 1.35rem;
-  }
-
   @include breakpoint(xl) {
     margin-top: calc(var(--header-height) + var(--topbar-height));
   }
