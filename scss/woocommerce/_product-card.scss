@@ -77,7 +77,8 @@
     white-space: wrap !important;
 
     @include breakpoint(lg) {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 5px;
     }
   }
 
@@ -100,7 +101,7 @@
   &__price {
     color: var(--color-primary);
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
 
     &--sale {
       color: grey;
@@ -139,5 +140,9 @@
     width: fit-content;
     margin: 0 auto;
     padding: 10px 14px;
+  }
+
+  .woocommerce-Price-amount {
+    font-weight: 400;
   }
 }

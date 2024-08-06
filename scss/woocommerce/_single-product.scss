@@ -239,6 +239,7 @@
     flex-wrap: nowrap;
     padding-right: 30px;
     scrollbar-width: none;
+    padding-top: 50px;
 
     @include breakpoint(md) {
       gap: 64px;
@@ -266,16 +267,11 @@
   .tab-content {
     padding: 1.5rem 1rem;
     color: var(--color-primary);
-    font-weight: bold;
+    font-weight: 100;
 
     @include breakpoint(lg) {
       max-width: 70%;
     }
-  }
-
-  .tab-border {
-    margin-top: -18px;
-    border-bottom: 2px solid var(--color-primary);
   }
 }
 
