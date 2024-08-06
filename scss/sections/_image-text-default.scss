@@ -101,10 +101,6 @@
 
     &--contain {
       object-fit: contain;
-
-      @include breakpoint(lg) {
-        aspect-ratio: 1;
-      }
     }
 
     &--cover {

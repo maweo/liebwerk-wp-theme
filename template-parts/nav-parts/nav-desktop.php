@@ -1,7 +1,7 @@
 <nav class="nav-desktop maweo-border-bottom--<?php echo $borderClass ?>">
     <div class="nav-desktop__wrapper container">
         <div class="nav-desktop__links-wrapper">
-            <a href="<?php echo get_home_url() ?>">
+            <a href="<?php echo get_home_url() ?>" class="nav-desktop__links-logo">
                 <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>" class="nav-desktop__logo" />
             </a>
             <ul class="nav-desktop__links">
@@ -67,8 +67,7 @@
                     <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
-        </div>
-        <div class="nav-desktop__actions">
+            <div class="nav-desktop__actions">
             <a href="<?php echo wc_get_cart_url(); ?>" class="nav-desktop__cart-link">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/cart.svg' ?>" alt="Cart Icon"
                     class="nav-desktop__actions-icon" />
@@ -81,7 +80,8 @@
             <?php if ($show_language_switcher): ?>
                 <?php include (get_stylesheet_directory() . '/template-parts/nav-parts/language-switch.php') ?>
             <?php endif; ?>
-
         </div>
+        </div>
+        
     </div>
 </nav>
