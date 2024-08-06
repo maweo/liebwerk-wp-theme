@@ -118,14 +118,25 @@
   }
 }
 
-.wc-block-grid__product-title,
+.wc-block-grid__product-title {
+  font-size: 1.3rem !important;
+}
+
 .wc-gzd-additional-info:not(.deposit-packaging-type),
 .woocommerce-Price-amount {
-  font-size: var(--text-font-size) !important;
+  font-size: 1rem !important;
+}
+
+ul.wc-block-grid__products li.wc-block-grid__product .wc-gzd-additional-info {
+  margin: 0;
 }
 
 /* stylelint-enable */
 
 .woocommerce-Price-amount {
   font-weight: bold;
+}
+
+.wp-block-woocommerce-cart a {
+  text-decoration: none;
 }
