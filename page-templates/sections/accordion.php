@@ -52,18 +52,18 @@ switch ($accordionIcon) {
                     <div class="accordion-item">
                         <div class="accordion-header">
                             <button class="maweo-accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#<?php echo esc_attr(sanitize_title($accordion_item['accordion_label'] . $id)); ?>"
+                                data-bs-target="#<?php echo "maweo-".  esc_attr(sanitize_title($accordion_item['accordion_label'] . $id)); ?>"
                                 aria-expanded="<?php echo $first ? 'true' : 'false'; ?>"
-                                aria-controls="<?php echo esc_attr(sanitize_title($accordion_item['accordion_label'] . $id)); ?>">
+                                aria-controls="<?php echo "maweo-" . esc_attr(sanitize_title($accordion_item['accordion_label'] . $id)); ?>">
                                 <?php echo $accordion_item['accordion_label'] ?>
                                 <div class="accordion-icon <?php echo $iconClass ?>">
                                     <i class="<?php echo $icon ?>"></i>
                                 </div>
                             </button>
                         </div>
-                        <div id="<?php echo esc_attr(sanitize_title($accordion_item['accordion_label'] . $id)); ?>"
+                        <div id="<?php echo "maweo-" . esc_attr(sanitize_title($accordion_item['accordion_label'] . $id)); ?>"
                             class="accordion-collapse collapse <?php echo $first ? ' show' : ''; ?>"
-                            aria-labelledby="<?php echo esc_attr(sanitize_title($accordion_item['accordion_label'] . $id)); ?>"
+                            aria-labelledby="<?php echo "maweo-" . esc_attr(sanitize_title($accordion_item['accordion_label'] . $id)); ?>"
                             data-bs-parent=".accordion">
                             <div class="accordion-body">
                                 <?php if ($accordion_item['accordion_content_image']): ?>
