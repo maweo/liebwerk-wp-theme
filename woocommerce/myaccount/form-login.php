@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Login Form
  *
@@ -21,7 +22,7 @@ if (!defined('ABSPATH')) {
 
 do_action('woocommerce_before_customer_login_form'); ?>
 
-<?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')): ?>
+<?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
 
     <div class="container py-5" id="customer_login">
         <div class="row mb-5 liebwerk-account__login-register-container">
@@ -47,13 +48,10 @@ do_action('woocommerce_before_customer_login_form'); ?>
                     <div class="form-group my-4">
                         <label class="mb-2" for="username">
                             <strong>
-                                <?php esc_html_e('E-Mail Address', 'woocommerce'); ?>&nbsp;<span
-                                    class="required">*</span>
+                                <?php esc_html_e('E-Mail Address', 'woocommerce'); ?>&nbsp;<span class="required">*</span>
                             </strong>
                         </label>
-                        <input type="text" class="form-control" name="username" id="username" placeholder="E-Mail"
-                            autocomplete="username"
-                            value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="E-Mail" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>">
                     </div>
 
                     <div class="form-group mb-1">
@@ -62,32 +60,26 @@ do_action('woocommerce_before_customer_login_form'); ?>
                                 <?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span>
                             </strong>
                         </label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Password"
-                            autocomplete="current-password"
-                            value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="current-password" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>">
                     </div>
 
 
                     <?php do_action('woocommerce_login_form'); ?>
 
                     <p class="woocommerce-LostPassword lost_password">
-                        <a
-                            href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Forgot my password', 'woocommerce'); ?></a>
+                        <a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Forgot my password', 'woocommerce'); ?></a>
                     </p>
 
                     <?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
 
                     <div>
-                        <button type="submit" class="liebwerk-account__login-register-button my-3" name="login"
-                            value="<?php esc_attr_e('Log in', 'woocommerce'); ?>">
+                        <button type="submit" class="liebwerk-account__login-register-button my-3" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>">
                             <?php esc_html_e('Log in', 'woocommerce'); ?>
                         </button>
                     </div>
 
-                    <label
-                        class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-                        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme"
-                            type="checkbox" id="rememberme" value="forever" /> <span>
+                    <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+                        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>
                             <?php esc_html_e('Keep me logged in', 'woocommerce'); ?>
                         </span>
                     </label>
@@ -95,9 +87,9 @@ do_action('woocommerce_before_customer_login_form'); ?>
                     <?php do_action('woocommerce_login_form_end'); ?>
 
                 </form>
-            </div>
+                </div>
 
-            <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')): ?>
+                <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
             </div>
 
             <!-- Register -->
@@ -117,7 +109,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
                         <?php do_action('woocommerce_register_form_start'); ?>
 
-                        <?php if ('no' === get_option('woocommerce_registration_generate_username')): ?>
+                        <?php if ('no' === get_option('woocommerce_registration_generate_username')) : ?>
 
                             <div class="form-group my-4">
                                 <label class="mb-2" for="reg_username">
@@ -125,9 +117,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
                                         <?php esc_html_e('Username', 'woocommerce'); ?>&nbsp;<span class="required">*</span>
                                     </strong>
                                 </label>
-                                <input type="text" class="form-control" name="username" id="reg_username" placeholder="E-Mail"
-                                    autocomplete="username"
-                                    value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>">
+                                <input type="text" class="form-control" name="username" id="reg_username" placeholder="E-Mail" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>">
                             </div>
 
                         <?php endif; ?>
@@ -135,16 +125,13 @@ do_action('woocommerce_before_customer_login_form'); ?>
                         <div class="form-group my-4">
                             <label class="mb-2" for="reg_email">
                                 <strong>
-                                    <?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span
-                                        class="required">*</span>
+                                    <?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span>
                                 </strong>
                             </label>
-                            <input type="email" class="form-control" name="email" id="reg_email" placeholder="E-Mail"
-                                autocomplete="email"
-                                value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>">
+                            <input type="email" class="form-control" name="email" id="reg_email" placeholder="E-Mail" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>">
                         </div>
 
-                        <?php if ('no' === get_option('woocommerce_registration_generate_password')): ?>
+                        <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
 
                             <div class="form-group my-4">
                                 <label class="mb-2" for="reg_password">
@@ -152,11 +139,10 @@ do_action('woocommerce_before_customer_login_form'); ?>
                                         <?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span>
                                     </strong>
                                 </label>
-                                <input type="password" class="form-control" name="password" id="reg_password"
-                                    placeholder="Password" autocomplete="new-password">
+                                <input type="password" class="form-control" name="password" id="reg_password" placeholder="Password" autocomplete="new-password">
                             </div>
 
-                        <?php else: ?>
+                        <?php else : ?>
 
                             <p>
                                 <?php esc_html_e('A link to set a new password will be sent to your email address.', 'woocommerce'); ?>
@@ -168,8 +154,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
                         <p class="woocommerce-form-row form-row">
                             <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
-                            <button type="submit" class="liebwerk-account__login-register-button my-3" name="register"
-                                value="<?php esc_attr_e('Register', 'woocommerce'); ?>">
+                            <button type="submit" class="liebwerk-account__login-register-button liebwerk-account__login-register-button--register mt-3" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>">
                                 <?php esc_html_e('Register', 'woocommerce'); ?>
                             </button>
                         </p>
