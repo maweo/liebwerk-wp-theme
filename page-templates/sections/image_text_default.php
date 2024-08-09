@@ -7,6 +7,8 @@ $headline_color = get_sub_field('headline_color');
 $sub_heading = get_sub_field('sub_heading');
 $text = get_sub_field('text');
 $link = get_sub_field('link');
+$media_type = get_sub_field('media_type');
+$video = get_sub_field('youtube_embedd_code');
 
 $padding = $padding === "big" ? "image-text__padding-big" : "" ;
 
@@ -57,17 +59,23 @@ $is_centered_mobile_class = get_sub_field('is_text_centered_mobile') ? " d-block
             <div
                 class="col-12 <?php echo $image_two ? "col-lg-6" : "col-lg-5" ?> order-lg-1 <?php echo $image_position === "right" ? "offset-lg-1" : "" ?>">
                 <div class="image-text__image-wrapper">
-                    <?php if ($image_one && $image_one['url'] != ""): ?>
-                        <div>
-                            <img src="<?php echo $image_one['url'] ?>" alt="<?php echo $image_one['alt'] ?>"
-                                class="image-text__image image-text__image--<?php echo $image_fit ?>">
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($image_two && $image_two['url'] != ""): ?>
-                        <div>
-                            <img src="<?php echo $image_two['url'] ?>" alt="<?php echo $image_two['alt'] ?>"
-                                class="image-text__image image-text__image--<?php echo $image_fit ?>">
-                        </div>
+                    <?php if($media_type == "youtube"):  ?>
+                        <?php if($video): ?>
+                            <?php echo $video; ?>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <?php if ($image_one && $image_one['url'] != ""): ?>
+                            <div>
+                                <img src="<?php echo $image_one['url'] ?>" alt="<?php echo $image_one['alt'] ?>"
+                                    class="image-text__image image-text__image--<?php echo $image_fit ?>">
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($image_two && $image_two['url'] != ""): ?>
+                            <div>
+                                <img src="<?php echo $image_two['url'] ?>" alt="<?php echo $image_two['alt'] ?>"
+                                    class="image-text__image image-text__image--<?php echo $image_fit ?>">
+                            </div>
+                        <?php endif; ?>
                     <?php endif; ?>
                 </div>
             </div>
