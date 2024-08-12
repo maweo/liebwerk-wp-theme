@@ -127,9 +127,12 @@
   }
 
   &__price {
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: var(--color-primary);
+    bdi {
+      font-weight: 800;
+      font-size: 1.4rem;
+      line-height: 1.1;
+      color: var(--color-primary);
+    }
   }
 
   // ATF Sales Arguments
@@ -189,7 +192,7 @@
   }
 
   &__quantity-select {
-    width: 140px;
+    width: 126px;
     margin-right: 0;
     background: var(--color-secondary-light);
     height: 52px;
@@ -204,6 +207,7 @@
       color: var(--color-primary);
       border: none;
       font-weight: bold;
+      flex-shrink: 0;
     }
 
     input {
@@ -215,12 +219,18 @@
       background: none;
       color: var(--color-primary);
       font-size: 0.9rem;
+      box-sizing: border-box;
+      appearance: none;
 
       &::-webkit-inner-spin-button,
       &::-webkit-outer-spin-button {
         -webkit-appearance: none;
+        appearance: none;
         margin: 0;
       }
+
+      flex: 1 1 auto;
+      min-width: 0;
     }
   }
 
