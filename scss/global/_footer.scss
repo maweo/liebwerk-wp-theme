@@ -12,9 +12,13 @@
   }
 
   &__logo {
-    width: 200px;
+    width: 157px;
     height: auto;
     object-fit: contain;
+
+    @include breakpoint(lg) {
+      margin-left: -15px;
+    }
   }
 
   &__social-links {

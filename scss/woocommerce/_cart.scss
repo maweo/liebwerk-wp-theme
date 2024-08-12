@@ -55,6 +55,14 @@
   }
 }
 
+.wc-block-cart-item__image {
+  img {
+    height: 130px !important;
+    object-fit: contain;
+    object-position: top;
+  }
+}
+
 // Empty Cart
 .cart-title {
   padding-top: 2rem;

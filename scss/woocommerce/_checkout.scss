@@ -34,6 +34,16 @@
     }
   }
 
+  /* stylelint-disable */
+  .wc-block-cart-item__image {
+    img {
+      height: 130px !important;
+      object-fit: contain;
+      object-position: top;
+    }
+  }
+  /* stylelint-enable */
+
   .wc-block-components-checkout-place-order-button {
     @extend %button;
 

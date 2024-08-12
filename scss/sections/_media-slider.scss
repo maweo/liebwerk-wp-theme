@@ -4,10 +4,9 @@
 @use '../theme/buttons' as *;
 
 .media-slider {
+  margin: 0 auto;
   position: relative;
   width: 100%;
-  max-width: 880px;
-  margin: 0 auto;
   padding: var(--section-padding-mobile);
 
   @include breakpoint(lg) {
@@ -24,6 +23,7 @@
 
     color: var(--color-primary);
     text-align: center;
+    display: none;
   }
 
   &__text {
@@ -45,14 +45,9 @@
   }
 
   &__image-container {
-    height: 330px;
+    height: 1080px;
     width: 100%;
-    max-width: 880px;
     object-fit: cover;
-
-    @include breakpoint(md) {
-      height: 480px;
-    }
   }
 
   &__video-wrapper {

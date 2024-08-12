@@ -4,30 +4,30 @@
 // TOP
 .maweo-border-top {
   &--brand {
-    border-top: inset 2px var(--color-brand);
+    border-top: inset 1px var(--color-brand);
   }
 
   &--primary {
-    border-top: inset 2px var(--color-primary);
+    border-top: inset 1px var(--color-primary);
   }
 
   &--secondary {
-    border-top: inset 2px var(--color-secondary);
+    border-top: inset 1px var(--color-secondary);
   }
 
   &--black {
-    border-top: inset 2px var(--color-black);
+    border-top: inset 1px var(--color-black);
   }
 
   &--white {
-    border-top: inset 2px var(--color-white);
+    border-top: inset 1px var(--color-white);
   }
 }
 
 // BOTTOM
 .maweo-border-bottom {
   &--brand {
-    border-bottom: inset 2px var(--color-brand);
+    border-bottom: inset 1px var(--color-brand);
   }
 
   &--primary {
@@ -35,14 +35,14 @@
   }
 
   &--secondary {
-    border-bottom: inset 2px var(--color-secondary);
+    border-bottom: inset 1px var(--color-secondary);
   }
 
   &--black {
-    border-bottom: inset 2px var(--color-black);
+    border-bottom: inset 1px var(--color-black);
   }
 
   &--white {
-    border-bottom: inset 2px var(--color-white);
+    border-bottom: inset 1px var(--color-white);
   }
 }

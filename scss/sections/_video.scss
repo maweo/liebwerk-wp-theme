@@ -5,14 +5,14 @@
 
 .video-section {
   position: relative;
-  width: 100%;
-  max-width: 880px;
-  margin: 0 auto;
+  background: var(--color-secondary-light);
   padding: var(--section-padding-mobile);
 
+  /* stylelint-disable */
   @include breakpoint(lg) {
-    padding: var(--section-padding-desktop);
+    padding: var(--section-padding-desktop) !important;
   }
+  /* stylelint-enable */
 
   &__content {
     position: relative;
@@ -23,14 +23,20 @@
     @extend %heading-large;
 
     color: var(--color-primary);
-    text-align: center;
+    margin-bottom: 0.5rem;
+    word-break: break-word;
+  }
+
+  &__sub-heading {
+    @extend %sub-heading;
+
     margin-bottom: 2rem;
+    color: var(--color-secondary);
   }
 
   &__text {
     color: var(--color-primary);
     margin: 2rem 0;
-    text-align: center;
   }
 
   &__video {
@@ -51,6 +57,6 @@
 
     width: fit-content;
     display: block;
-    margin: 60px auto 0;
+    margin: 1.5rem 0;
   }
 }

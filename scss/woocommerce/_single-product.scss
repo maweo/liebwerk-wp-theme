@@ -189,7 +189,7 @@
   }
 
   &__quantity-select {
-    width: 126px;
+    width: 140px;
     margin-right: 0;
     background: var(--color-secondary-light);
     height: 52px;
@@ -233,6 +233,7 @@
   .nav-tabs {
     border-bottom: none;
     overflow-x: scroll;
+    overflow-y: hidden;
     flex-wrap: nowrap;
     padding-right: 30px;
     scrollbar-width: none;

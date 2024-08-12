@@ -47,6 +47,7 @@
   ul {
     padding-top: 0;
     list-style-type: none;
+    font-size: var(--text-font-size);
   }
 
   ul > li::before {
