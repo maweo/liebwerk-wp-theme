@@ -34,6 +34,11 @@ if ($content_repeater) {
 $reading_time = calculate_reading_time($total_text . ' ' . $headlines);
 ?>
 
+<?php
+// get blog page id by language -> polylang
+$blog_page_id = pll_get_post(get_option('page_for_posts'));
+?>
+
 
 <main>
   <?php maweo_mainbody_start(); ?>
@@ -41,9 +46,10 @@ $reading_time = calculate_reading_time($total_text . ' ' . $headlines);
 
     <div class="container">
       <div class="col-12 mb-4">
-        <a href="<?php echo site_url('/blog') ?>" class="blog-single__back">
+        <a href="<?php echo get_the_permalink(pll_get_post(get_page_by_path('blog')->ID)); ?>"
+          class="blog-single__back">
           <i class="bi bi-arrow-left"></i>
-          <?php _e('Alle Artikel'); ?>
+          <?php _e('Alle Artikel', 'maweo'); ?>
         </a>
         <h1 class="blog-single__heading">
           <?php echo $title; ?>
@@ -56,12 +62,12 @@ $reading_time = calculate_reading_time($total_text . ' ' . $headlines);
         <div class="col-lg-12">
           <div class="d-flex gap-4 mb-2 blog-single__info">
             <div>
-              <?php _e('Von Liebwerk'); ?>
+              <?php _e('Von Liebwerk', 'maweo'); ?>
             </div>
             <?php if ($reading_time): ?>
               <div>
-                <?php _e('Lesezeit'); ?>:
-                <?php echo $reading_time; ?>   <?php _e('Minuten'); ?>
+                <?php _e('Lesezeit:', 'maweo'); ?>
+                <?php echo $reading_time; ?>   <?php _e('Minuten', 'maweo'); ?>
               </div>
             <?php endif; ?>
           </div>
