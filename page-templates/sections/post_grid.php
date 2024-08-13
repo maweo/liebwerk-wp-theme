@@ -57,7 +57,7 @@ $posts = get_posts(
                     </div>
                     <div class="post-grid__load-more">
                         <button class="post-grid__load-more-button">
-                            Mehr Laden
+                            <?php _e('Mehr Laden', 'maweo'); ?>
                         </button>
                     </div>
                 </div>
