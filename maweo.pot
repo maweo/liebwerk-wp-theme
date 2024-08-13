@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MAWEO Starter Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-13 08:09+0000\n"
+"POT-Creation-Date: 2024-08-13 08:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -102,6 +102,10 @@ msgstr ""
 msgid "MAWEO Starter Theme"
 msgstr ""
 
+#: page-templates/sections/post_grid.php:60
+msgid "Mehr Laden"
+msgstr ""
+
 #: page-templates/sections/partials/post_card.php:33
 msgid "Mehr lesen"
 msgstr ""
@@ -148,4 +152,8 @@ msgstr ""
 
 #: functions/setup.php:42
 msgid "XL"
+msgstr ""
+
+#: woocommerce/content-product.php:62
+msgid "Zum Produkt"
 msgstr ""

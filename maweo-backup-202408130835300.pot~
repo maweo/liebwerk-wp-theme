@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MAWEO Starter Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-13 08:07+0000\n"
+"POT-Creation-Date: 2024-08-13 08:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -37,6 +37,10 @@ msgstr ""
 msgid "Create an Account"
 msgstr ""
 
+#: woocommerce/myaccount/dashboard.php:33
+msgid "Dashboard"
+msgstr ""
+
 #: woocommerce/myaccount/form-login.php:51
 msgid "E-Mail Address"
 msgstr ""
@@ -54,7 +58,7 @@ msgid "Forgot my password"
 msgstr ""
 
 #. 1: Orders URL 2: Address URL 3: Account URL.
-#: woocommerce/myaccount/dashboard.php:47
+#: woocommerce/myaccount/dashboard.php:49
 msgid ""
 "From your account dashboard you can view your recent orders, manage your "
 "shipping and billing addresses, and edit your password and account details."
