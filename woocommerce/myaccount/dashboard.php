@@ -29,7 +29,9 @@ $allowed_html = array(
 ?>
 <div class="liebwerk-account">
     <div class="">
-        <h1 class="liebwerk-account__current-page-heading d-none d-lg-block">Dashboard</h1>
+        <h1 class="liebwerk-account__current-page-heading d-none d-lg-block">
+            <?php _e('Dashboard', 'maweo'); ?>
+        </h1>
         <p>
             <?php
             printf(
@@ -44,11 +46,7 @@ $allowed_html = array(
         <p>
             <?php
             /* translators: 1: Orders URL 2: Address URL 3: Account URL. */
-            $dashboard_desc = __('From your account dashboard you can view your ecent orders, manage your billing address, and edit your password and account details.', 'woocommerce');
-            if (wc_shipping_enabled()) {
-                /* translators: 1: Orders URL 2: Addresses URL 3: Account URL. */
-                $dashboard_desc = __('From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.', 'woocommerce');
-            }
+            $dashboard_desc = _e('From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.', 'maweo');
             printf(
                 wp_kses($dashboard_desc, $allowed_html),
                 esc_url(wc_get_endpoint_url('orders')),

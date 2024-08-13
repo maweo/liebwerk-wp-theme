@@ -1,0 +1,135 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MAWEO Starter Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-13 07:52+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.10; wp-6.6.1\n"
+"X-Domain: maweo"
+
+#: woocommerce/myaccount/form-login.php:114
+msgid "*Required field"
+msgstr ""
+
+#: archive.php:10
+msgid "Archive"
+msgstr ""
+
+#: woocommerce/content-single-product.php:108
+msgid "Beschreibung"
+msgstr ""
+
+#: category.php:10
+msgid "Category:"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:111
+msgid "Create an Account"
+msgstr ""
+
+#: loops/404.php:3
+msgid "Error"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:108
+msgid "First time here?"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:76
+msgid "Forgot my password"
+msgstr ""
+
+#. URI of the theme
+#. Author URI of the theme
+msgid "https://maweo.at"
+msgstr ""
+
+#: functions/setup.php:41
+msgid "Huge"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:92
+msgid "Keep me logged in"
+msgstr ""
+
+#: functions/setup.php:36
+msgid "L"
+msgstr ""
+
+#: functions/setup.php:35
+msgid "Large"
+msgstr ""
+
+#: functions/setup.php:30
+msgid "M"
+msgstr ""
+
+#. Name of the template
+#: page-templates/main-template.php:2
+msgid "Main Template"
+msgstr ""
+
+#. Author of the theme
+msgid "MAWEO"
+msgstr ""
+
+#. Name of the theme
+msgid "MAWEO Starter Theme"
+msgstr ""
+
+#: page-templates/sections/partials/post_card.php:33
+msgid "Mehr lesen"
+msgstr ""
+
+#: woocommerce/content-single-product.php:122
+msgid "Merkmale"
+msgstr ""
+
+#: functions/navbar.php:62
+msgid "Navbar"
+msgstr ""
+
+#: functions/setup.php:29
+msgid "Normal"
+msgstr ""
+
+#: functions/setup.php:24
+msgid "S"
+msgstr ""
+
+#: loops/search-results.php:9
+msgid "Search Results for"
+msgstr ""
+
+#: functions/setup.php:23
+msgid "Small"
+msgstr ""
+
+#: loops/404.php:5
+msgid "Sorry, we can&rsquo;t find what you were looking for."
+msgstr ""
+
+#: loops/search-results.php:33
+msgid "Sorry, your search yielded no results."
+msgstr ""
+
+#. Description of the theme
+msgid "Starter Theme by MAWEO"
+msgstr ""
+
+#: woocommerce/content-single-product.php:136
+msgid "Tipps und Tricks"
+msgstr ""
+
+#: functions/setup.php:42
+msgid "XL"
+msgstr ""

@@ -30,7 +30,7 @@ $date = get_the_date('F Y', $post_id);
             </div>
             <div class="post-card__link-wrapper">
                 <a href="<?php echo $link; ?>" class="post-card__link">
-                    Mehr lesen
+                    <?php _e('Mehr lesen', 'maweo'); ?>
                 </a>
             </div>
         </div>
