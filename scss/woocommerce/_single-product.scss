@@ -185,22 +185,32 @@
   }
 
   &__add-to-cart-button-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 0;
+    display: block;
     gap: 10px;
+
+    @include breakpoint(md) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 0;
+      gap: 10px;
+    }
   }
 
   &__quantity-select {
     width: 126px;
     margin-right: 0;
+    margin-bottom: 10px;
     background: var(--color-secondary-light);
     height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-left: 0.5rem;
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+    }
 
     button {
       height: 100%;

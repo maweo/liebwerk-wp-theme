@@ -34,12 +34,6 @@ if ($content_repeater) {
 $reading_time = calculate_reading_time($total_text . ' ' . $headlines);
 ?>
 
-<?php
-// get blog page id by language -> polylang
-$blog_page_id = pll_get_post(get_option('page_for_posts'));
-?>
-
-
 <main>
   <?php maweo_mainbody_start(); ?>
   <div class="blog-single">
