@@ -39,8 +39,9 @@
   &__subheading {
     @extend %sub-heading;
 
-    color: var(--color-gold);
-    text-shadow: 1px 1px 1px rgba(0 0 0 / 30%);
+    color: var(--color-white);
+    text-shadow: 2px -2px 25px rgba(0 0 0 / 30%);
+    font-family: proxima-nova, sans-serif;
 
     @include breakpoint(lg) {
       font-size: 2rem;
@@ -52,7 +53,7 @@
     width: 2rem;
 
     @include breakpoint(lg) {
-      width: 2.5rem;
+      width: 2rem;
     }
   }
 

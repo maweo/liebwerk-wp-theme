@@ -18,12 +18,12 @@ include_once ('template-parts/back-to-top.php');
 <footer id="site-footer" class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-md-12 col-lg-3">
         <?php if ($footer_logo && $footer_logo['url'] != ""): ?>
           <img src="<?php echo $footer_logo['url'] ?>" alt="<?php echo $footer_logo['alt'] ?>" class="footer__logo">
         <?php endif; ?>
       </div>
-      <div class="col-12 col-lg-2">
+      <div class="col-12 col-md-6 col-lg-3">
         <?php if ($footer_column_1['heading']): ?>
           <h2 class="footer__heading">
             <?php echo $footer_column_1['heading'] ?>
@@ -39,7 +39,7 @@ include_once ('template-parts/back-to-top.php');
           </div>
         <?php endif; ?>
       </div>
-      <div class="col-12 col-lg-2">
+      <div class="col-12 col-md-6 col-lg-3">
         <?php if ($footer_column_2['heading']): ?>
           <h2 class="footer__heading">
             <?php echo $footer_column_2['heading'] ?>
@@ -55,7 +55,7 @@ include_once ('template-parts/back-to-top.php');
           </div>
         <?php endif; ?>
       </div>
-      <div class="col-12 col-lg-2">
+      <div class="col-12 col-md-6 col-lg-3">
         <?php if ($footer_column_3['heading']): ?>
           <h2 class="footer__heading">
             <?php echo $footer_column_3['heading'] ?>
