@@ -27,7 +27,6 @@
 
   &__text {
     display: block;
-    font-weight: bold;
     color: var(--color-primary);
 
     @include breakpoint(mobile) {
