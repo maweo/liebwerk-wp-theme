@@ -36,6 +36,14 @@
                                 <div id="nav-item-<?php echo $index ?>" class="accordion-collapse collapse">
                                     <div class="accordion-body">
                                         <ul>
+                                            <?php if ($menuItem['dropdown'][0]['link']): ?>
+                                                <li>
+                                                    <a class="nav-mobile__accordion-link"
+                                                        href="<?php echo $menuItem['dropdown'][0]['link']['url'] ?>">
+                                                        <?php _e('Übersicht', 'maweo'); ?>
+                                                    </a>
+                                                </li>
+                                            <?php endif; ?>
                                             <?php foreach ($subLinks as $subLink): ?>
                                                 <li>
                                                     <?php echo maweo_get_link($subLink['sub_link'], 'nav-mobile__accordion-link'); ?>
@@ -109,7 +117,7 @@
             </ul>
 
             <?php if ($show_language_switcher): ?>
-                <?php include (get_stylesheet_directory() . '/template-parts/nav-parts/language-switch.php') ?>
+                <?php include(get_stylesheet_directory() . '/template-parts/nav-parts/language-switch.php') ?>
             <?php endif; ?>
 
             <div class="nav-mobile__actions">
