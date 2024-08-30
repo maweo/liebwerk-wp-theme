@@ -3,48 +3,51 @@
 @use '../global/mixins' as *;
 
 .testimonials {
-  padding: 40px 0;
+  padding: var(--section-padding-desktop);
 
   @include breakpoint(lg) {
-    padding: 96px 0;
-  }
-
-  &__icon {
-    align-content: center;
-    margin-bottom: 32px;
+    padding: var(--section-padding-desktop);
   }
 
   &__heading {
     @extend %heading-large;
 
+    margin-bottom: 2rem;
     color: var(--color-primary);
-    margin-bottom: 48px;
     text-align: center;
   }
 
   &__item {
-    background-color: var(--color-secondary-light);
-    padding: 16px;
+    padding: 2rem;
+    height: 100%;
+    text-align: left;
+    position: relative;
+    background: var(--color-secondary-light);
 
-    @include breakpoint(lg) {
-      padding: 48px;
-    }
-
-    &-wrapper {
-      width: unset;
-
-      @include breakpoint(lg) {
-        max-width: 880px;
-        margin: 0 auto;
-      }
+    * {
+      white-space: initial;
     }
   }
 
   &__text {
     @extend %text;
 
-    color: var(--color-primary);
-    margin-bottom: 16px;
+    height: 160px;
+    padding-bottom: 0;
+    overflow: scroll;
+    mask-image: linear-gradient(180deg, #ffffff 60%, transparent);
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+
+    p {
+      margin-bottom: 2rem;
+      color: var(--color-text-static);
+      max-height: fit-content;
+    }
+  }
+
+  &__text::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
   }
 
   &__author {
@@ -52,52 +55,34 @@
 
     color: var(--color-primary);
     font-weight: 700;
+    margin-top: 1rem;
   }
 
-  &__navigation {
-    justify-content: space-between;
-    align-items: center;
-    max-width: 880px;
-    margin: 32px auto 0;
+  &__wrapper {
+    position: relative;
   }
 
   &__arrows {
-    width: auto;
-    display: flex;
-    gap: 16px;
+    position: absolute;
+    bottom: -3rem;
+    right: 1rem;
+
+    @include breakpoint(lg) {
+      bottom: -3.5rem;
+      right: 0;
+    }
   }
 
-  &__indicators {
-    position: unset;
-    width: auto;
-    margin: 0 0 0 16px;
-  }
+  &__arrow {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    margin-left: -15px;
+    color: var(--color-primary);
 
-  /* stylelint-disable*/
-  /* BS wouldn't let me override this otherwise */
-  &__indicator {
-    height: 8px !important;
-    width: 8px !important;
-    background-color: var(--color-primary) !important;
-    border: 0 !important;
-    border-radius: 100px;
-  }
-  /* stylelint-enable*/
-
-  &__prev-icon {
-    background-image: url('~icon/arrow_right.svg');
-    height: 16px;
-  }
-
-  &__next-icon {
-    background-image: url('~icon/arrow_right.svg');
-    transform: scaleX(-1);
-    height: 16px;
-  }
-
-  &__control {
-    opacity: 1;
-    display: block;
-    position: unset;
+    @include breakpoint(lg) {
+      font-size: 1.7rem;
+      margin-left: -10px;
+    }
   }
 }
