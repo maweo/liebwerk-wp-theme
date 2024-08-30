@@ -22,6 +22,7 @@ if (!defined('ABSPATH')) {
 global $product;
 
 ?>
-<!-- <p class="liebwerk-single-product__price">
-    <?php echo $product->get_price_html(); ?>
-</p> -->
+<p class="liebwerk-single-product__price">
+    <?php echo $product->get_price_html(); ?> <br />
+    <?php _e('inkl. MwSt.', 'maweo'); ?>
+</p>

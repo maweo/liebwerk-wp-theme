@@ -64,11 +64,6 @@ $product_tips_and_tricks = get_field('tips_and_tricks_content');
                             </div>
                         <?php endif; ?>
 
-                        <!-- Price -->
-                        <div class="liebwerk-single-product__price">
-                            <?php echo $product->get_price_html(); ?>
-                        </div>
-
                         <?php
                         /**
                          * Hook: woocommerce_single_product_summary.
