@@ -1,5 +1,4 @@
 <?php
-$icon = get_sub_field('icon');
 $heading = get_sub_field('heading');
 $heading_tag = get_sub_field('heading_tag');
 $text = get_sub_field('text');
@@ -21,18 +20,35 @@ $carousel_id = "testimonialCarousel" . uniqid();
                             <?php
                             $author = get_field('author', $testimonial['testimonial']);
                             $text = get_field('text', $testimonial['testimonial']);
+                            $link = get_field('link', $testimonial['testimonial']);
+                            $icon = get_field('testimonial_icon', $testimonial['testimonial']);
                             ?>
                             <div class="testimonials__item">
-
                                 <div class="maweo-wysiwyg testimonials__text">
                                     <?php echo $text ?>
                                 </div>
-                                <?php if ($author): ?>
-                                    <div class="testimonials__author">
-                                        <?php echo $author ?>
+                                <div class="testimonials__item--grid">
+                                    <div>
+                                        <?php if ($author): ?>
+                                            <div class="testimonials__item--author">
+                                                <?php echo $author ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if ($link): ?>
+                                            <a href="<?php echo $link['url'] ?>" class="testimonials__item--link">
+                                                <img src='<?php echo get_stylesheet_directory_uri() . '/assets/icons/open.svg' ?>'
+                                                    alt='Open Icon'>
+                                            </a>
+                                        <?php endif; ?>
                                     </div>
-                                <?php endif; ?>
-
+                                    <div class="testimonials__item--icon-wrapper">
+                                        <?php if ($icon): ?>
+                                            <div class="testimonials__item--icon pl-2">
+                                                <img src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['alt'] ?>">
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
                             </div>
                         <?php endforeach; ?>
                     </div>

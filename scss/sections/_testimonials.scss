@@ -5,10 +5,6 @@
 .testimonials {
   padding: var(--section-padding-desktop);
 
-  @include breakpoint(lg) {
-    padding: var(--section-padding-desktop);
-  }
-
   &__heading {
     @extend %heading-large;
 
@@ -17,9 +13,12 @@
     text-align: center;
   }
 
+  &__wrapper {
+    position: relative;
+  }
+
   &__item {
     padding: 2rem;
-    height: 100%;
     text-align: left;
     position: relative;
     background: var(--color-secondary-light);
@@ -27,12 +26,39 @@
     * {
       white-space: initial;
     }
+
+    &--grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &--author {
+      @extend %text;
+
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    &--link {
+      color: var(--color-primary);
+    }
+
+    &--icon-wrapper {
+      height: 2.5rem;
+    }
+
+    &--icon > img {
+      height: 2.4rem;
+      max-width: 120px;
+      object-fit: contain;
+    }
   }
 
   &__text {
     @extend %text;
 
-    height: 160px;
+    height: 210px;
     padding-bottom: 0;
     overflow: scroll;
     mask-image: linear-gradient(180deg, #ffffff 60%, transparent);
@@ -48,18 +74,6 @@
 
   &__text::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
-  }
-
-  &__author {
-    @extend %text;
-
-    color: var(--color-primary);
-    font-weight: 700;
-    margin-top: 1rem;
-  }
-
-  &__wrapper {
-    position: relative;
   }
 
   &__arrows {
