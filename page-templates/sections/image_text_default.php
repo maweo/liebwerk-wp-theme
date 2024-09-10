@@ -10,7 +10,7 @@ $link = get_sub_field('link');
 $media_type = get_sub_field('media_type');
 $video = get_sub_field('youtube_embedd_code');
 
-$padding = $padding === "big" ? "image-text__padding-big" : "" ;
+$padding = $padding === "big" ? "image-text__padding-big" : "";
 
 $image_one = get_image_data_from_sub_field('image');
 
@@ -35,13 +35,13 @@ $is_centered_mobile_class = get_sub_field('is_text_centered_mobile') ? " d-block
                 class="col-12 <?php echo $image_two ? "col-lg-5" : "col-lg-6" ?> order-1 d-flex flex-column justify-content-center <?php echo $image_position === "right" ? "order-lg-0" : "order-1 order-lg-2 offset-lg-1 " ?> ">
                 <div
                     class="image-text__content mt-3 mt-lg-0  <?php echo $image_two ? "image-text__content--large" : "" ?>">
-                    <div class="image-text__heading-container"> 
-                    <?php if ($heading_icon && $heading_icon['url'] != ""): ?>
-                        <img alt="<?php echo $heading_icon['alt'] ?>"
-                            class="image-text__icon <?php echo $is_centered_mobile_class ?>"
-                            src="<?php echo $heading_icon['url'] ?>">
-                    <?php endif; ?>
-                    <?php echo maweo_get_heading($heading, $heading_tag, "image-text__heading mb-0" . $is_centered_mobile_class . $headline_color) ?>
+                    <div class="image-text__heading-container">
+                        <?php if ($heading_icon && $heading_icon['url'] != ""): ?>
+                            <img alt="<?php echo $heading_icon['alt'] ?>"
+                                class="image-text__icon <?php echo $is_centered_mobile_class ?>"
+                                src="<?php echo $heading_icon['url'] ?>">
+                        <?php endif; ?>
+                        <?php echo maweo_get_heading($heading, $heading_tag, "image-text__heading mb-0" . $is_centered_mobile_class . $headline_color) ?>
                     </div>
                     <?php if ($sub_heading): ?>
                         <div class="image-text__sub-heading <?php echo $is_centered_mobile_class ?>">
@@ -59,9 +59,20 @@ $is_centered_mobile_class = get_sub_field('is_text_centered_mobile') ? " d-block
             <div
                 class="col-12 <?php echo $image_two ? "col-lg-6" : "col-lg-5" ?> order-lg-1 <?php echo $image_position === "right" ? "offset-lg-1" : "" ?>">
                 <div class="image-text__image-wrapper">
-                    <?php if($media_type == "youtube"):  ?>
-                        <?php if($video): ?>
-                            <?php echo $video; ?>
+                    <?php if ($media_type == "youtube"): ?>
+                        <?php if ($video): ?>
+
+                            <!-- Workaround // Gallery -->
+                            <script>
+                                window.onload = function () {
+                                    var iframe = document.createElement('iframe');
+                                    iframe.src = "https://www.youtube-nocookie.com/embed/<?php echo $video ?>";
+                                    document.getElementById('iframe-container').appendChild(iframe);
+                                }
+                            </script>
+
+                            <div class="image-text__iframe-container" id="iframe-container"></div>
+
                         <?php endif; ?>
                     <?php else: ?>
                         <?php if ($image_one && $image_one['url'] != ""): ?>
