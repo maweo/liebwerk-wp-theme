@@ -36,6 +36,24 @@
     justify-content: space-between;
   }
 
+  &__cart-link {
+    position: relative;
+  }
+
+  &__cart-count {
+    color: var(--color-white);
+    background-color: var(--color-highlight);
+    height: 8px;
+    width: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: calc(32%); 
+    right: -5px;
+    border-radius: 50%;
+  }
+
   &__links {
     position: fixed;
     height: 100vh;
