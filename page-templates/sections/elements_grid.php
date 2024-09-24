@@ -54,7 +54,7 @@ $elements = get_sub_field('elements');
                         </div>
                     </div>
                     <div class="elements-grid__controls">
-                        <div class=" elements-grid__bullets" data-glide-el="controls[nav]">
+                        <div class="d-none elements-grid__bullets" data-glide-el="controls[nav]">
                             <?php foreach ($elements as $element): ?>
                                 <button class="glide__bullet elements-grid__bullet"></button>
                             <?php endforeach; ?>

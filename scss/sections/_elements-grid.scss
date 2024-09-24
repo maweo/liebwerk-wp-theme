@@ -55,6 +55,7 @@
     object-fit: cover;
     object-position: top center;
     height: 350px;
+    width: 100%;
 
     @include breakpoint(lg) {
       height: 340px;
@@ -71,6 +72,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: 20px;
+    margin-left: auto;
   }
 
   &__slider-arrow {
