@@ -1,3 +1,7 @@
+<?php 
+    $cart_count = count(WC()->cart->get_cart());
+?>
+
 <nav class="nav-desktop maweo-border-bottom--<?php echo $borderClass ?>">
     <div class="nav-desktop__wrapper container">
         <div class="nav-desktop__links-wrapper">
@@ -68,20 +72,25 @@
                 <?php endforeach; ?>
             </ul>
             <div class="nav-desktop__actions">
-            <a href="<?php echo wc_get_cart_url(); ?>" class="nav-desktop__cart-link">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/cart.svg' ?>" alt="Cart Icon"
-                    class="nav-desktop__actions-icon" />
-            </a>
-            <a class="nav-desktop__cart-link" href="<?php echo wc_get_page_permalink('myaccount') ?>">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/user.svg' ?>" alt="Account Icon"
-                    class="nav-desktop__actions-icon" />
-            </a>
+                <a href="<?php echo wc_get_cart_url(); ?>" class="nav-desktop__cart-link">
+                    <?php if($cart_count > 0):?>
+                        <div class="nav-desktop__cart-count">
+                            <?php echo $cart_count; ?>
+                        </div>
+                    <?php endif; ?>
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/cart.svg' ?>" alt="Cart Icon"
+                        class="nav-desktop__actions-icon" />
+                </a>
+                <a class="nav-desktop__cart-link" href="<?php echo wc_get_page_permalink('myaccount') ?>">
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/user.svg' ?>" alt="Account Icon"
+                        class="nav-desktop__actions-icon" />
+                </a>
 
-            <?php if ($show_language_switcher): ?>
-                <?php include (get_stylesheet_directory() . '/template-parts/nav-parts/language-switch.php') ?>
-            <?php endif; ?>
+                <?php if ($show_language_switcher): ?>
+                    <?php include(get_stylesheet_directory() . '/template-parts/nav-parts/language-switch.php') ?>
+                <?php endif; ?>
+            </div>
         </div>
-        </div>
-        
+
     </div>
 </nav>

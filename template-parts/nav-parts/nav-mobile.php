@@ -121,7 +121,11 @@
             <?php endif; ?>
 
             <div class="nav-mobile__actions">
-                <a href="<?php echo wc_get_cart_url(); ?>" class="nav-mobile__actions-link">
+                <a href="<?php echo wc_get_cart_url(); ?>" class="nav-mobile__actions-link nav-mobile__cart-link">
+                    <?php if ($cart_count > 0): ?>
+                        <div class="nav-mobile__cart-count">
+                        </div>
+                    <?php endif; ?>
                     <img src="<?php echo get_stylesheet_directory_uri() . '/assets/icons/cart.svg' ?>" alt="Cart Icon"
                         class="nav-mobile__actions-icon" />
                 </a>

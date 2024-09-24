@@ -4,7 +4,7 @@ import { backToTop } from './sections/back-to-top';
 import { initProductSlider } from './sections/product-slider';
 import { initPostGrid } from './sections/post-grid';
 import { initTestimonials } from './sections/testimonials';
-import { initTopbar } from './sections/topbar';
+// import { initTopbar } from './sections/topbar';
 import { initTimeline } from './sections/timeline';
 import { initElementsGrid } from './sections/elements-grid';
 
@@ -14,6 +14,6 @@ backToTop();
 initProductSlider();
 initPostGrid();
 initTestimonials();
-initTopbar();
+// initTopbar();
 initTimeline();
 initElementsGrid();

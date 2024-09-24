@@ -101,12 +101,15 @@
   display: none !important;
 }
 
-.wc-gzd-additional-info {
-  display: none;
+.wc-gzd-additional-info {  
   a {
     color: var(--color-primary);
     font-weight: bold;
   }
+}
+
+.wc-gzd-additional-info.tax-info {  
+  display: none !important;  
 }
 
 .wc-block-grid__products .wc-block-grid__product-image img {
