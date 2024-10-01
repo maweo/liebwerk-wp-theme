@@ -145,3 +145,13 @@ ul.wc-block-grid__products li.wc-block-grid__product .wc-gzd-additional-info {
 .woocommerce-Price-amount {
   font-weight: bold;
 }
+
+// Hide Description Label
+.wc-block-components-totals-shipping__via {
+  display: none;
+}
+
+// Hide Selection (wished by customer)
+.wc-block-components-totals-shipping__fieldset {
+  display: none;
+}
