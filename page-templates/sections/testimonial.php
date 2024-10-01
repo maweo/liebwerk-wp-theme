@@ -34,18 +34,21 @@ $carousel_id = "testimonialCarousel" . uniqid();
                                                 <?php echo $author ?>
                                             </div>
                                         <?php endif; ?>
-                                        <?php if ($link): ?>
-                                            <a href="<?php echo $link['url'] ?>" class="testimonials__item--link">
-                                                <img src='<?php echo get_stylesheet_directory_uri() . '/assets/icons/open.svg' ?>'
-                                                    alt='Open Icon'>
-                                            </a>
-                                        <?php endif; ?>
                                     </div>
                                     <div class="testimonials__item--icon-wrapper">
-                                        <?php if ($icon): ?>
-                                            <div class="testimonials__item--icon pl-2">
-                                                <img src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['alt'] ?>">
-                                            </div>
+                                        <?php if ($icon && $link): ?>
+                                            <a href="<?php echo $link['url'] ?>" target="_blank"
+                                                class="testimonials__item--link">
+                                                <div class="testimonials__item--icon pl-2">
+                                                    <img src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['alt'] ?>">
+                                                </div>
+                                            </a>
+                                        <?php else: ?>
+                                            <?php if ($icon['url']): ?>
+                                                <div class="testimonials__item--icon pl-2">
+                                                    <img src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['alt'] ?>">
+                                                </div>
+                                            <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
                                 </div>
