@@ -13,6 +13,9 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 remove_action('woocommerce_single_product_summary', "woocommerce_template_single_excerpt", 20);
 
+// Disable instant order confirmation in Germanized
+add_filter('woocommerce_gzd_instant_order_confirmation', '__return_false');
+
 // Hide Related Products Slider
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
@@ -40,4 +43,3 @@ function maweo_hide_shipping_when_free_shipping_available($rates)
     return $rates;
 }
 add_filter('woocommerce_package_rates', 'maweo_hide_shipping_when_free_shipping_available', 100);
-
