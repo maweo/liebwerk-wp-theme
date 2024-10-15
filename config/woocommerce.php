@@ -43,3 +43,13 @@ function maweo_hide_shipping_when_free_shipping_available($rates)
     return $rates;
 }
 add_filter('woocommerce_package_rates', 'maweo_hide_shipping_when_free_shipping_available', 100);
+
+add_filter('woocommerce_attribute_label', 'polylang_translate_product_attributes', 10, 3);
+
+function polylang_translate_product_attributes($label, $name, $product)
+{
+    if (function_exists('pll__')) {
+        return pll__($label);
+    }
+    return $label;
+}
